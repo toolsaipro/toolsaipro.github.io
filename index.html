@@ -116,15 +116,15 @@ footer a:hover{color:var(--accent);}
 </nav>
 <div id="home">
   <div class="hero">
-    <div class="badge">⚡ 4 Free Tools — No Signup</div>
+    <div class="badge">⚡ 4 Free Tools — No Signup Required</div>
     <h1><span class="g1">Smart</span> Tools<br>for <span class="g2">Everyone</span></h1>
-    <p>PDF merge, image compress, background remove, text rewrite — bilkul free! By <strong style="color:white;">Karna Ray</strong></p>
+    <p>PDF Merge, Image Compress, BG Remove, Text Rewrite — 100% Free!</p>
   </div>
   <div class="tools-grid">
-    <div class="tcb c1" onclick="openTool('pdf')"><div class="ti bg1">📄</div><div class="tt">PDF Merger</div><div class="td">Multiple PDFs ek file mein merge karo. Fast aur safe.</div><span class="tg tg1">100% Free</span></div>
-    <div class="tcb c2" onclick="openTool('comp')"><div class="ti bg2">🗜️</div><div class="tt">Image Compressor</div><div class="td">Image size kam karo quality khoye bina.</div><span class="tg tg2">No Upload</span></div>
-    <div class="tcb c3" onclick="openTool('bg')"><div class="ti bg3">🖼️</div><div class="tt">BG Remover</div><div class="td">Background hatao — transparent ya custom color.</div><span class="tg tg3">Instant</span></div>
-    <div class="tcb c4" onclick="openTool('para')"><div class="ti bg4">✍️</div><div class="tt">Paraphraser</div><div class="td">Text 5 styles mein rewrite karo.</div><span class="tg tg4">5 Modes</span></div>
+    <div class="tcb c1" onclick="openTool('pdf')"><div class="ti bg1">📄</div><div class="tt">PDF Merger</div><div class="td">Merge multiple PDFs into one file — fast and secure.</div><span class="tg tg1">100% Free</span></div>
+    <div class="tcb c2" onclick="openTool('comp')"><div class="ti bg2">🗜️</div><div class="tt">Image Compressor</div><div class="td">Compress images without losing quality.</div><span class="tg tg2">No Upload</span></div>
+    <div class="tcb c3" onclick="openTool('bg')"><div class="ti bg3">🖼️</div><div class="tt">BG Remover</div><div class="td">Remove background — transparent or custom color.</div><span class="tg tg3">Instant</span></div>
+    <div class="tcb c4" onclick="openTool('para')"><div class="ti bg4">✍️</div><div class="tt">Paraphraser</div><div class="td">Rewrite text in 5 different styles.</div><span class="tg tg4">5 Modes</span></div>
   </div>
   <div class="sstrip">
     <div class="ssi"><div class="ssn">4</div><div class="ssl">Free Tools</div></div>
@@ -136,29 +136,29 @@ footer a:hover{color:var(--accent);}
 
 <!-- PDF -->
 <div class="screen" id="screen-pdf">
-  <div class="back-btn" onclick="goHome()">← Wapas Jao</div>
+  <div class="back-btn" onclick="goHome()">← ← Back</div>
   <div class="sc">
-    <div class="sh"><div class="shi bg1">📄</div><div><div class="sht">PDF Merger</div><div class="shs">Multiple PDFs ek file mein</div></div></div>
-    <div class="uz" onclick="document.getElementById('pdfFiles').click()"><div class="uzi">📁</div><div class="uzt">PDF Files Chunno</div><div class="uzs">Multiple files ek saath select karo</div><div class="uzb" style="background:var(--accent)">Browse Files</div></div>
+    <div class="sh"><div class="shi bg1">📄</div><div><div class="sht">PDF Merger</div><div class="shs">Merge multiple PDFs into one</div></div></div>
+    <div class="uz" onclick="document.getElementById('pdfFiles').click()"><div class="uzi">📁</div><div class="uzt">Choose PDF Files</div><div class="uzs">Select multiple files at once</div><div class="uzb" style="background:var(--accent)">Browse Files</div></div>
     <input type="file" id="pdfFiles" accept=".pdf" multiple style="display:none" onchange="addPDFs(this)">
     <div class="fl" id="pdfList"></div>
-    <div class="br"><button class="btn bp" onclick="mergePDFs()" id="mergeBtn" disabled>⚡ Merge Karo</button><button class="btn bg" onclick="clearPDFs()">🗑️ Clear</button></div>
+    <div class="br"><button class="btn bp" onclick="mergePDFs()" id="mergeBtn" disabled>⚡ Merge Now</button><button class="btn bg" onclick="clearPDFs()">🗑️ Clear</button></div>
     <div class="pw" id="pdfProgress"><div class="pb"><div class="pf" id="pdfFill"></div></div><div class="pl" id="pdfLabel">Processing...</div></div>
-    <div class="ra ok" id="pdfResult"><div style="font-weight:700;color:var(--accent3);margin-bottom:12px;">✅ Merge Ho Gaya!</div><button class="btn bp" onclick="downloadPDF()">💾 Download PDF</button></div>
+    <div class="ra ok" id="pdfResult"><div style="font-weight:700;color:var(--accent3);margin-bottom:12px;">✅ Merged Successfully!</div><button class="btn bp" onclick="downloadPDF()">💾 Download PDF</button></div>
   </div>
 </div>
 
 <!-- COMPRESSOR -->
 <div class="screen" id="screen-comp">
-  <div class="back-btn" onclick="goHome()">← Wapas Jao</div>
+  <div class="back-btn" onclick="goHome()">← ← Back</div>
   <div class="sc">
-    <div class="sh"><div class="shi bg2">🗜️</div><div><div class="sht">Image Compressor</div><div class="shs">Size kam karo, quality rakho</div></div></div>
-    <div class="uz" onclick="document.getElementById('compFile').click()"><div class="uzi">🖼️</div><div class="uzt">Image Upload Karo</div><div class="uzs">JPG, PNG, WebP support</div><div class="uzb" style="background:var(--accent2)">Image Chunno</div></div>
+    <div class="sh"><div class="shi bg2">🗜️</div><div><div class="sht">Image Compressor</div><div class="shs">Reduce size, keep quality</div></div></div>
+    <div class="uz" onclick="document.getElementById('compFile').click()"><div class="uzi">🖼️</div><div class="uzt">Upload Image</div><div class="uzs">JPG, PNG, WebP supported</div><div class="uzb" style="background:var(--accent2)">Choose Image</div></div>
     <input type="file" id="compFile" accept="image/*" style="display:none" onchange="loadCompImage(this)">
     <div id="compSettings" style="display:none;margin-top:20px;">
       <div class="slr"><label>Quality:</label><input type="range" id="qualSlider" min="10" max="100" value="75" oninput="document.getElementById('qualVal').textContent=this.value+'%'"><div class="slv" id="qualVal">75%</div></div>
       <div class="slr"><label>Max Width:</label><input type="range" id="widthSlider" min="200" max="4000" value="1920" step="100" oninput="document.getElementById('widthVal').textContent=this.value+'px'"><div class="slv" id="widthVal">1920px</div></div>
-      <div class="br"><button class="btn bp2" onclick="compressImage()">🗜️ Compress Karo</button></div>
+      <div class="br"><button class="btn bp2" onclick="compressImage()">🗜️ Compress Now</button></div>
     </div>
     <canvas id="compCanvas"></canvas>
     <div class="ra ok" id="compResult">
@@ -175,16 +175,16 @@ footer a:hover{color:var(--accent);}
 
 <!-- BG REMOVER -->
 <div class="screen" id="screen-bg">
-  <div class="back-btn" onclick="goHome()">← Wapas Jao</div>
+  <div class="back-btn" onclick="goHome()">← ← Back</div>
   <div class="sc">
-    <div class="sh"><div class="shi bg3">🖼️</div><div><div class="sht">Background Remover</div><div class="shs">Light background hatao instantly</div></div></div>
-    <div class="uz" onclick="document.getElementById('bgFile').click()"><div class="uzi">📸</div><div class="uzt">Image Upload Karo</div><div class="uzs">Light/white background best kaam karta hai</div><div class="uzb" style="background:var(--accent3);color:#0d0d14">Image Chunno</div></div>
+    <div class="sh"><div class="shi bg3">🖼️</div><div><div class="sht">Background Remover</div><div class="shs">Remove background instantly</div></div></div>
+    <div class="uz" onclick="document.getElementById('bgFile').click()"><div class="uzi">📸</div><div class="uzt">Upload Image</div><div class="uzs">Works best with light/white backgrounds</div><div class="uzb" style="background:var(--accent3);color:#0d0d14">Choose Image</div></div>
     <input type="file" id="bgFile" accept="image/*" style="display:none" onchange="loadBGImage(this)">
     <div id="bgSettings" style="display:none;margin-top:20px;">
       <div class="slr"><label>Threshold:</label><input type="range" id="threshSlider" min="10" max="240" value="180" oninput="document.getElementById('threshVal').textContent=this.value"><div class="slv" id="threshVal">180</div></div>
       <div class="slr"><label>Tolerance:</label><input type="range" id="tolSlider" min="5" max="80" value="30" oninput="document.getElementById('tolVal').textContent=this.value"><div class="slv" id="tolVal">30</div></div>
       <div style="display:flex;align-items:center;gap:12px;margin:12px 0;font-size:13px;color:var(--muted);">BG Color: <input type="color" id="bgReplace" value="#ffffff" style="width:40px;height:32px;border-radius:8px;border:1px solid var(--border);padding:2px;cursor:pointer;"> <label style="display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="checkbox" id="bgTransparent" checked style="accent-color:var(--accent3);"> Transparent</label></div>
-      <div class="br"><button class="btn bp3" onclick="removeBG()">✨ Background Hatao</button></div>
+      <div class="br"><button class="btn bp3" onclick="removeBG()">✨ Remove BG</button></div>
     </div>
     <canvas id="bgCanvas"></canvas>
     <div class="ra ok" id="bgResult"><div style="font-weight:700;color:var(--accent3);margin-bottom:12px;">✅ Done!</div><button class="btn bp3" onclick="downloadBG()">💾 Download PNG</button></div>
@@ -193,10 +193,10 @@ footer a:hover{color:var(--accent);}
 
 <!-- PARAPHRASER -->
 <div class="screen" id="screen-para">
-  <div class="back-btn" onclick="goHome()">← Wapas Jao</div>
+  <div class="back-btn" onclick="goHome()">← ← Back</div>
   <div class="sc">
-    <div class="sh"><div class="shi bg4">✍️</div><div><div class="sht">Text Paraphraser</div><div class="shs">Text apne style mein rewrite karo</div></div></div>
-    <div style="margin-bottom:12px;"><div class="cl">Mode chunno:</div>
+    <div class="sh"><div class="shi bg4">✍️</div><div><div class="sht">Text Paraphraser</div><div class="shs">Rewrite text in your style</div></div></div>
+    <div style="margin-bottom:12px;"><div class="cl">Choose Mode:</div>
       <div class="mr">
         <button class="mb active" onclick="setMode('formal',this)">🎩 Formal</button>
         <button class="mb" onclick="setMode('casual',this)">😎 Casual</button>
@@ -206,11 +206,11 @@ footer a:hover{color:var(--accent);}
       </div>
     </div>
     <div class="tc">
-      <div><div class="cl">📥 Original Text</div><textarea id="paraInput" rows="10" placeholder="Yahan text paste karo..." oninput="document.getElementById('paraCount').textContent=(this.value.trim()?this.value.trim().split(/\s+/).length:0)+' words'"></textarea><div style="font-size:12px;color:var(--muted);margin-top:6px;" id="paraCount">0 words</div></div>
-      <div><div class="cl">📤 Rewritten Text</div><textarea id="paraOutput" rows="10" placeholder="Rewritten text yahan aayega..." readonly style="background:rgba(247,151,30,0.05);border-color:rgba(247,151,30,0.2);"></textarea></div>
+      <div><div class="cl">📥 Original Text</div><textarea id="paraInput" rows="10" placeholder="Paste your text here..." oninput="document.getElementById('paraCount').textContent=(this.value.trim()?this.value.trim().split(/\s+/).length:0)+' words'"></textarea><div style="font-size:12px;color:var(--muted);margin-top:6px;" id="paraCount">0 words</div></div>
+      <div><div class="cl">📤 Rewritten Text</div><textarea id="paraOutput" rows="10" placeholder="Rewritten text will appear here..." readonly style="background:rgba(247,151,30,0.05);border-color:rgba(247,151,30,0.2);"></textarea></div>
     </div>
     <div class="br">
-      <button class="btn bp4" onclick="paraphrase()" id="paraBtn">✍️ Rewrite Karo</button>
+      <button class="btn bp4" onclick="paraphrase()" id="paraBtn">✍️ Rewrite Now</button>
       <button class="btn bg" onclick="copyPara()">📋 Copy</button>
       <button class="btn bg" onclick="document.getElementById('paraInput').value='';document.getElementById('paraOutput').value='';document.getElementById('paraCount').textContent='0 words'">🗑️ Clear</button>
     </div>
@@ -219,8 +219,8 @@ footer a:hover{color:var(--accent);}
 </div>
 
 <footer>
-  <strong>ToolsAI Pro</strong> — Made with ❤️ by <strong>Karna Ray</strong><br>
-  Free Online Tools | No Signup | 100% Browser Based<br><br>
+  <strong>ToolsAI Pro</strong> — Free Online Tools<br>
+  Free Online Tools | No Signup Required | 100% Browser Based<br><br>
   <a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a>
 </footer>
 
@@ -234,14 +234,14 @@ function renderList(){document.getElementById('pdfList').innerHTML=pdfFiles.map(
 function removePDF(i){pdfFiles.splice(i,1);renderList();}
 function clearPDFs(){pdfFiles=[];renderList();document.getElementById('pdfResult').classList.remove('show');}
 async function mergePDFs(){
-  if(pdfFiles.length<2){toast('⚠️ 2+ PDF chahiye!');return;}
+  if(pdfFiles.length<2){toast('⚠️ Need 2+ PDF files!');return;}
   const pr=document.getElementById('pdfProgress'),pf=document.getElementById('pdfFill'),pl=document.getElementById('pdfLabel');
   pr.classList.add('show');document.getElementById('pdfResult').classList.remove('show');
   try{
     const{PDFDocument}=PDFLib;const m=await PDFDocument.create();
     for(let i=0;i<pdfFiles.length;i++){pf.style.width=((i/pdfFiles.length)*85)+'%';pl.textContent='Processing: '+pdfFiles[i].name;const b=await pdfFiles[i].arrayBuffer();const d=await PDFDocument.load(b);const pg=await m.copyPages(d,d.getPageIndices());pg.forEach(p=>m.addPage(p));}
     pf.style.width='100%';pl.textContent='Finalizing...';mergedBytes=await m.save();
-    setTimeout(()=>{pr.classList.remove('show');document.getElementById('pdfResult').classList.add('show');toast('✅ Merge Ho Gaya!');},400);
+    setTimeout(()=>{pr.classList.remove('show');document.getElementById('pdfResult').classList.add('show');toast('✅ Merged Successfully!');},400);
   }catch(e){pr.classList.remove('show');toast('❌ Error: '+e.message);}
 }
 function downloadPDF(){if(!mergedBytes)return;const b=new Blob([mergedBytes],{type:'application/pdf'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='merged-karnaray.pdf';a.click();toast('💾 Downloaded!');}
@@ -263,15 +263,29 @@ function removeBG(){
   const c=document.getElementById('bgCanvas');const sc=Math.min(1,1200/Math.max(bgImg.width,bgImg.height));c.width=Math.round(bgImg.width*sc);c.height=Math.round(bgImg.height*sc);
   const ctx=c.getContext('2d');ctx.drawImage(bgImg,0,0,c.width,c.height);
   const id=ctx.getImageData(0,0,c.width,c.height);const d=id.data;
-  const br=parseInt(bc.slice(1,3),16),bg=parseInt(bc.slice(3,5),16),bb=parseInt(bc.slice(5,7),16);
-  for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2];const brt=(r+g+b)/3;const il=brt>th;const iw=Math.abs(r-g)<tl&&Math.abs(g-b)<tl&&Math.abs(r-b)<tl&&r>th-40;if(il||iw){if(tr){d[i+3]=0;}else{d[i]=br;d[i+1]=bg;d[i+2]=bb;}}}
+  const W=c.width,H=c.height;
+  const br2=parseInt(bc.slice(1,3),16),bg2=parseInt(bc.slice(3,5),16),bb2=parseInt(bc.slice(5,7),16);
+  // Sample corner pixels to detect background color
+  function getPixel(x,y){const i=(y*W+x)*4;return[d[i],d[i+1],d[i+2]];}
+  const corners=[getPixel(0,0),getPixel(W-1,0),getPixel(0,H-1),getPixel(W-1,H-1),getPixel(Math.floor(W/2),0),getPixel(0,Math.floor(H/2))];
+  // Average corner color = background color
+  const bgR=Math.round(corners.reduce((s,c)=>s+c[0],0)/corners.length);
+  const bgG=Math.round(corners.reduce((s,c)=>s+c[1],0)/corners.length);
+  const bgBl=Math.round(corners.reduce((s,c)=>s+c[2],0)/corners.length);
+  for(let i=0;i<d.length;i+=4){
+    const r=d[i],g=d[i+1],b=d[i+2];
+    const diff=Math.abs(r-bgR)+Math.abs(g-bgG)+Math.abs(b-bgBl);
+    if(diff<tl*2){
+      if(tr){d[i+3]=0;}else{d[i]=br2;d[i+1]=bg2;d[i+2]=bb2;}
+    }
+  }
   ctx.putImageData(id,0,0);c.style.display='block';document.getElementById('bgResult').classList.add('show');toast('✨ Done!');
 }
 function downloadBG(){const c=document.getElementById('bgCanvas');const a=document.createElement('a');a.href=c.toDataURL('image/png');a.download='nobg-karnaray.png';a.click();toast('💾 Downloaded!');}
 let pMode='formal';
 function setMode(m,el){pMode=m;document.querySelectorAll('.mb').forEach(b=>b.classList.remove('active'));el.classList.add('active');}
 function paraphrase(){
-  const text=document.getElementById('paraInput').value.trim();if(!text){toast('⚠️ Text daalo!');return;}
+  const text=document.getElementById('paraInput').value.trim();if(!text){toast('⚠️ Please enter text!');return;}
   const btn=document.getElementById('paraBtn'),pr=document.getElementById('paraProgress'),pf=document.getElementById('paraFill');
   btn.disabled=true;pr.classList.add('show');let w=0;
   const iv=setInterval(()=>{w+=8;pf.style.width=Math.min(w,95)+'%';},80);
@@ -291,7 +305,7 @@ function doPara(text,mode){
   else if(mode==='short'){const fl=/\b(very|really|just|quite|rather|actually|basically|literally|honestly|definitely|absolutely|certainly|clearly|obviously|simply)\b/gi;return s.slice(0,Math.max(1,Math.ceil(s.length*0.65))).map(x=>x.replace(fl,'').replace(/\s+/g,' ').trim()).join(' ');}
   return s.map((x,i)=>{let r=x.trim();Object.entries(map).forEach(([f,t])=>{const re=new RegExp('\\b'+f.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','gi');r=r.replace(re,t);});if(i>0&&i%2===0&&st.length){const st2=st[i%st.length];r=st2+' '+r.charAt(0).toLowerCase()+r.slice(1);}return r.charAt(0).toUpperCase()+r.slice(1);}).join(' ');
 }
-function copyPara(){const o=document.getElementById('paraOutput').value;if(!o){toast('⚠️ Pehle rewrite karo!');return;}navigator.clipboard.writeText(o).then(()=>toast('📋 Copied!'));}
+function copyPara(){const o=document.getElementById('paraOutput').value;if(!o){toast('⚠️ Please rewrite first!');return;}navigator.clipboard.writeText(o).then(()=>toast('📋 Copied!'));}
 </script>
 </body>
 </html>
