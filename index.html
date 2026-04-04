@@ -3,152 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ToolsAI Pro - Free Online Tools</title>
-<meta name="description" content="Free online tools: PDF Merger, Image Compressor, Color Picker, Password Generator, Word Counter, Age Calculator. No signup needed!">
-<meta name="keywords" content="free online tools, PDF merger, image compressor, color picker, password generator, word counter, age calculator">
+<title>ToolsAI Pro - Free Online Tools | PDF Merger, Image Compressor, Password Generator</title>
+<meta name="description" content="ToolsAI Pro offers 7 free online tools: PDF Merger, Images to PDF, Image Compressor, Color Picker, Password Generator, Word Counter and Age Calculator. No signup, no download, works in browser.">
+<meta name="keywords" content="free online tools, PDF merger online free, images to PDF converter, image compressor online, color picker hex rgb, password generator strong, word counter online, age calculator">
 <meta name="robots" content="index, follow">
+<meta property="og:title" content="ToolsAI Pro - 7 Free Online Tools">
+<meta property="og:description" content="PDF Merger, Images to PDF, Image Compressor, Color Picker, Password Generator, Word Counter, Age Calculator — all free, no signup!">
+<meta property="og:type" content="website">
 <link rel="canonical" href="https://karnaray333-hub.github.io/karnaray-tools/">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <style>
-:root{--bg:#0d0d14;--sur:#16161f;--card:#1c1c28;--bor:#2a2a3a;--a1:#6c63ff;--a2:#ff6584;--a3:#43e97b;--a4:#f7971e;--a5:#00c9ff;--a6:#ff4757;--tx:#e8e8f0;--mu:#6b6b80;}
+:root{--bg:#0d0d14;--sur:#16161f;--card:#1c1c28;--bor:#2a2a3a;--a1:#6c63ff;--a2:#ff6584;--a3:#43e97b;--a4:#f7971e;--a5:#00c9ff;--a6:#ff4757;--a7:#a855f7;--tx:#e8e8f0;--mu:#6b6b80;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;min-height:100vh;}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 40% at 20% 20%,rgba(108,99,255,0.07) 0%,transparent 60%);}
-nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--bor);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--bor);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;}
 .logo{font-size:19px;font-weight:800;color:#fff;text-decoration:none;}
-.logo span{color:var(--a1);}
-.logo em{color:var(--a2);font-style:normal;}
+.logo span{color:var(--a1);}.logo em{color:var(--a2);font-style:normal;}
 .nav-links{display:flex;gap:4px;}
 .nl{padding:5px 11px;border-radius:16px;font-size:11px;font-weight:600;color:var(--mu);text-decoration:none;border:1px solid transparent;transition:all 0.2s;}
 .nl:hover,.nl.act{color:var(--a1);border-color:rgba(108,99,255,0.3);}
-.hero{position:relative;z-index:1;text-align:center;padding:56px 24px 40px;}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);color:var(--a1);padding:5px 14px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
-.hero h1{font-size:clamp(34px,7vw,72px);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:14px;color:#fff;}
-.c1{color:var(--a1);}
-.c2{color:var(--a2);}
-.hero p{color:var(--mu);font-size:15px;max-width:460px;margin:0 auto 36px;line-height:1.65;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:960px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
-.tc{background:var(--card);border:1.5px solid var(--bor);border-radius:18px;padding:24px 20px;cursor:pointer;transition:all 0.25s;text-align:left;display:flex;flex-direction:column;gap:10px;}
-.tc:hover{transform:translateY(-4px);}
-.tc.t1:hover{border-color:var(--a1);box-shadow:0 12px 36px rgba(108,99,255,0.15);}
-.tc.t2:hover{border-color:var(--a2);box-shadow:0 12px 36px rgba(255,101,132,0.15);}
-.tc.t3:hover{border-color:var(--a3);box-shadow:0 12px 36px rgba(67,233,123,0.15);}
-.tc.t4:hover{border-color:var(--a4);box-shadow:0 12px 36px rgba(247,151,30,0.15);}
-.tc.t5:hover{border-color:var(--a5);box-shadow:0 12px 36px rgba(0,201,255,0.15);}
-.tc.t6:hover{border-color:var(--a6);box-shadow:0 12px 36px rgba(255,71,87,0.15);}
-.ti{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;}
-.i1{background:rgba(108,99,255,0.15);}
-.i2{background:rgba(255,101,132,0.15);}
-.i3{background:rgba(67,233,123,0.15);}
-.i4{background:rgba(247,151,30,0.15);}
-.i5{background:rgba(0,201,255,0.15);}
-.i6{background:rgba(255,71,87,0.15);}
-.tt{font-size:15px;font-weight:700;color:#fff;}
-.td{font-size:12px;color:var(--mu);line-height:1.5;}
-.tg{display:inline-block;padding:2px 9px;border-radius:8px;font-size:10px;font-weight:700;margin-top:2px;}
+.hero{text-align:center;padding:50px 24px 36px;}
+.badge{display:inline-flex;background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);color:var(--a1);padding:5px 14px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;}
+.hero h1{font-size:clamp(32px,7vw,68px);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:12px;color:#fff;}
+.g1{color:var(--a1);}.g2{color:var(--a2);}
+.hero p{color:var(--mu);font-size:14px;max-width:520px;margin:0 auto;line-height:1.65;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:980px;margin:32px auto 0;padding:0 20px;}
+.tc{background:var(--card);border:1.5px solid var(--bor);border-radius:16px;padding:20px;cursor:pointer;transition:all 0.25s;text-align:left;display:flex;flex-direction:column;gap:8px;}
+.tc:hover{transform:translateY(-3px);}
+.tc.t1:hover{border-color:var(--a1);box-shadow:0 8px 28px rgba(108,99,255,0.15);}
+.tc.t2:hover{border-color:var(--a7);box-shadow:0 8px 28px rgba(168,85,247,0.15);}
+.tc.t3:hover{border-color:var(--a2);box-shadow:0 8px 28px rgba(255,101,132,0.15);}
+.tc.t4:hover{border-color:var(--a3);box-shadow:0 8px 28px rgba(67,233,123,0.15);}
+.tc.t5:hover{border-color:var(--a4);box-shadow:0 8px 28px rgba(247,151,30,0.15);}
+.tc.t6:hover{border-color:var(--a5);box-shadow:0 8px 28px rgba(0,201,255,0.15);}
+.tc.t7:hover{border-color:var(--a6);box-shadow:0 8px 28px rgba(255,71,87,0.15);}
+.ti{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.i1{background:rgba(108,99,255,0.15);}.i2{background:rgba(168,85,247,0.15);}.i3{background:rgba(255,101,132,0.15);}.i4{background:rgba(67,233,123,0.15);}.i5{background:rgba(247,151,30,0.15);}.i6{background:rgba(0,201,255,0.15);}.i7{background:rgba(255,71,87,0.15);}
+.tt{font-size:14px;font-weight:700;color:#fff;}
+.td{font-size:11px;color:var(--mu);line-height:1.5;}
+.tg{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-top:2px;}
 .tg1{background:rgba(108,99,255,0.15);color:var(--a1);}
-.tg2{background:rgba(255,101,132,0.15);color:var(--a2);}
-.tg3{background:rgba(67,233,123,0.15);color:var(--a3);}
-.tg4{background:rgba(247,151,30,0.15);color:var(--a4);}
-.tg5{background:rgba(0,201,255,0.15);color:var(--a5);}
-.tg6{background:rgba(255,71,87,0.15);color:var(--a6);}
-.strip{display:flex;justify-content:center;gap:36px;padding:24px;position:relative;z-index:1;margin-top:16px;}
-.si{text-align:center;}
-.sn{font-size:26px;font-weight:800;color:#fff;}
-.sl{font-size:11px;color:var(--mu);margin-top:2px;}
-.sc{display:none;position:relative;z-index:1;max-width:780px;margin:0 auto;padding:20px;}
+.tg2{background:rgba(168,85,247,0.15);color:var(--a7);}
+.tg3{background:rgba(255,101,132,0.15);color:var(--a2);}
+.tg4{background:rgba(67,233,123,0.15);color:var(--a3);}
+.tg5{background:rgba(247,151,30,0.15);color:var(--a4);}
+.tg6{background:rgba(0,201,255,0.15);color:var(--a5);}
+.tg7{background:rgba(255,71,87,0.15);color:var(--a6);}
+.strip{display:flex;justify-content:center;gap:32px;padding:24px 20px 0;flex-wrap:wrap;}
+.si{text-align:center;}.sn{font-size:24px;font-weight:800;color:#fff;}.sl{font-size:11px;color:var(--mu);margin-top:2px;}
+
+/* SEO DESCRIPTIONS SECTION */
+.seo-section{max-width:980px;margin:48px auto 0;padding:0 20px;}
+.seo-tool-block{background:var(--card);border:1px solid var(--bor);border-radius:16px;padding:28px;margin-bottom:16px;}
+.seo-tool-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.seo-tool-icon{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.seo-tool-title{font-size:19px;font-weight:800;color:#fff;}
+.seo-tool-sub{font-size:12px;color:var(--mu);margin-top:3px;}
+.seo-tool-desc h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;margin-top:14px;}
+.seo-tool-desc h3:first-child{margin-top:0;}
+.seo-tool-desc p{font-size:13px;color:var(--mu);line-height:1.8;margin-bottom:10px;}
+.seo-tool-desc ul{padding-left:18px;margin-bottom:10px;}
+.seo-tool-desc li{font-size:13px;color:var(--mu);line-height:1.8;margin-bottom:5px;}
+.seo-icon-title{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
+.seo-ti{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.seo-h2{font-size:18px;font-weight:800;color:#fff;margin-bottom:5px;line-height:1.3;}
+.seo-sub{font-size:12px;color:var(--mu);line-height:1.5;}
+.seo-use-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:9px;border:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;color:#fff;margin-bottom:20px;transition:all 0.2s;}
+.seo-use-btn:hover{transform:translateY(-2px);}
+.seo-body h3{font-size:15px;font-weight:700;color:#fff;margin:18px 0 8px;}
+.seo-body h3:first-child{margin-top:0;}
+.seo-body p{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:10px;}
+.seo-body ul{padding-left:18px;margin-bottom:12px;}
+.seo-body li{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:6px;}
+.faq-section{max-width:980px;margin:32px auto 0;padding:0 20px 60px;}
+.faq-title{font-size:22px;font-weight:800;color:#fff;margin-bottom:18px;text-align:center;}
+.faq-item{background:var(--card);border:1px solid var(--bor);border-radius:12px;padding:18px 20px;margin-bottom:10px;}
+.faq-q{font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;}
+.faq-a{font-size:13px;color:var(--mu);line-height:1.75;}
+
+/* TOOL SCREENS */
+.sc{display:none;max-width:820px;margin:0 auto;padding:20px;position:relative;z-index:1;}
 .sc.active{display:block;animation:fu 0.3s ease;}
-@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.bk{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bor);color:var(--mu);padding:7px 14px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:18px;transition:all 0.2s;}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.bk{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--bor);color:var(--mu);padding:7px 14px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:16px;transition:all 0.2s;}
 .bk:hover{color:var(--tx);border-color:var(--a1);}
-.scard{background:var(--card);border:1px solid var(--bor);border-radius:20px;padding:28px;}
-.sh{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--bor);}
-.shi{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.scard{background:var(--card);border:1px solid var(--bor);border-radius:16px;padding:24px;}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--bor);}
+.shi{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;}
 .sht{font-size:20px;font-weight:800;color:#fff;}
 .shs{font-size:12px;color:var(--mu);margin-top:2px;}
-.uz{border:2px dashed var(--bor);border-radius:14px;padding:36px 20px;text-align:center;cursor:pointer;transition:all 0.25s;}
+.uz{border:2px dashed var(--bor);border-radius:12px;padding:32px 20px;text-align:center;cursor:pointer;transition:all 0.25s;}
 .uz:hover{border-color:var(--a1);background:rgba(108,99,255,0.04);}
-.uzi{font-size:40px;margin-bottom:10px;}
-.uzt{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;}
-.uzs{font-size:12px;color:var(--mu);}
-.uzb{display:inline-block;margin-top:14px;padding:9px 22px;border-radius:9px;font-size:12px;font-weight:700;cursor:pointer;color:#fff;}
-.btn{padding:11px 22px;border-radius:10px;border:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:7px;}
-.bp1{background:var(--a1);color:#fff;}
-.bp1:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(108,99,255,0.35);}
-.bp2{background:var(--a2);color:#fff;}
-.bp2:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,101,132,0.35);}
-.bp3{background:var(--a3);color:#0d0d14;}
-.bp3:hover{transform:translateY(-2px);}
-.bp4{background:var(--a4);color:#fff;}
-.bp4:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(247,151,30,0.35);}
-.bp5{background:var(--a5);color:#0d0d14;}
-.bp5:hover{transform:translateY(-2px);}
-.bp6{background:var(--a6);color:#fff;}
-.bp6:hover{transform:translateY(-2px);}
-.bgbtn{background:var(--sur);color:var(--tx);border:1px solid var(--bor);}
-.bgbtn:hover{border-color:var(--a1);color:var(--a1);}
+.uzi{font-size:36px;margin-bottom:8px;}.uzt{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}.uzs{font-size:12px;color:var(--mu);}
+.uzb{display:inline-block;margin-top:12px;padding:9px 22px;border-radius:9px;font-size:12px;font-weight:700;cursor:pointer;color:#fff;}
+.btn{padding:10px 20px;border-radius:9px;border:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;}
+.bp1{background:var(--a1);color:#fff;}.bp1:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(108,99,255,0.35);}
+.bp2{background:var(--a2);color:#fff;}.bp2:hover{transform:translateY(-2px);}
+.bp3{background:var(--a3);color:#0d0d14;}.bp3:hover{transform:translateY(-2px);}
+.bp4{background:var(--a4);color:#fff;}.bp4:hover{transform:translateY(-2px);}
+.bp5{background:var(--a5);color:#0d0d14;}.bp5:hover{transform:translateY(-2px);}
+.bp6{background:var(--a6);color:#fff;}.bp6:hover{transform:translateY(-2px);}
+.bp7{background:var(--a7);color:#fff;}.bp7:hover{transform:translateY(-2px);}
+.bgbtn{background:var(--sur);color:var(--tx);border:1px solid var(--bor);}.bgbtn:hover{border-color:var(--a1);color:var(--a1);}
 .btn:disabled{opacity:0.5;cursor:not-allowed;transform:none!important;}
-.br{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;}
-textarea,.inp{width:100%;background:var(--sur);border:1.5px solid var(--bor);border-radius:10px;padding:12px 14px;color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;}
+.br{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+textarea,.inp{width:100%;background:var(--sur);border:1.5px solid var(--bor);border-radius:9px;padding:11px 13px;color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;}
 textarea{resize:vertical;}
 textarea:focus,.inp:focus{border-color:var(--a1);box-shadow:0 0 0 3px rgba(108,99,255,0.1);}
-.fl{margin-top:14px;display:flex;flex-direction:column;gap:7px;}
-.fi{display:flex;align-items:center;justify-content:space-between;background:var(--sur);border:1px solid var(--bor);border-radius:9px;padding:10px 12px;}
-.fil{display:flex;align-items:center;gap:9px;}
+.fl{margin-top:12px;display:flex;flex-direction:column;gap:6px;}
+.fi{display:flex;align-items:center;justify-content:space-between;background:var(--sur);border:1px solid var(--bor);border-radius:9px;padding:9px 12px;}
+.fil{display:flex;align-items:center;gap:8px;}
 .fin{font-size:12px;font-weight:600;color:var(--tx);}
 .fis{font-size:10px;color:var(--mu);margin-top:1px;}
-.fir{background:none;border:none;color:var(--mu);cursor:pointer;font-size:15px;}
-.fir:hover{color:var(--a2);}
-.ra{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:18px;margin-top:14px;display:none;}
+.fir{background:none;border:none;color:var(--mu);cursor:pointer;font-size:14px;}.fir:hover{color:var(--a2);}
+.ra{background:var(--sur);border:1px solid var(--bor);border-radius:11px;padding:16px;margin-top:12px;display:none;}
 .ra.show{display:block;animation:fu 0.3s ease;}
 .ra.ok{border-color:rgba(67,233,123,0.3);}
-.pw{margin-top:14px;display:none;}
-.pw.show{display:block;}
+.pw{margin-top:12px;display:none;}.pw.show{display:block;}
 .pb{height:5px;background:var(--bor);border-radius:3px;overflow:hidden;}
 .pf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--a1),var(--a2));width:0;transition:width 0.3s;}
 .pl{font-size:11px;color:var(--mu);margin-top:5px;}
 .sr{display:flex;gap:10px;flex-wrap:wrap;}
-.sb{flex:1;min-width:90px;background:var(--card);border:1px solid var(--bor);border-radius:10px;padding:12px;text-align:center;}
-.sv{font-size:20px;font-weight:800;color:var(--a1);}
+.sb{flex:1;min-width:80px;background:var(--card);border:1px solid var(--bor);border-radius:9px;padding:11px;text-align:center;}
+.sv{font-size:19px;font-weight:800;color:var(--a1);}
 .sl2{font-size:10px;color:var(--mu);margin-top:2px;text-transform:uppercase;letter-spacing:0.8px;}
-#compCanvas{display:none;max-width:100%;border-radius:10px;margin-top:14px;border:1px solid var(--bor);}
-.slr{display:flex;align-items:center;gap:10px;margin:10px 0;}
-.slr label{font-size:12px;color:var(--mu);white-space:nowrap;min-width:75px;}
+#compCanvas{display:none;max-width:100%;border-radius:9px;margin-top:12px;border:1px solid var(--bor);}
+.slr{display:flex;align-items:center;gap:10px;margin:9px 0;}
+.slr label{font-size:12px;color:var(--mu);white-space:nowrap;min-width:72px;}
 input[type="range"]{flex:1;accent-color:var(--a1);}
-.slv{background:var(--a1);color:#fff;padding:2px 9px;border-radius:7px;font-size:11px;font-weight:700;min-width:38px;text-align:center;}
-.chk{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0;}
-.cl2{display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;color:var(--tx);}
-.cl2 input[type="checkbox"]{width:15px;height:15px;accent-color:var(--a3);cursor:pointer;}
-.pass-display{background:var(--bg);color:#00ff88;font-family:monospace;font-size:16px;padding:16px;border-radius:10px;margin-top:14px;word-break:break-all;letter-spacing:1.5px;display:none;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--bor);}
+.slv{background:var(--a1);color:#fff;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;min-width:36px;text-align:center;}
+.chk{display:flex;gap:12px;flex-wrap:wrap;margin:9px 0;}
+.cl2{display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;color:var(--tx);}
+.cl2 input[type="checkbox"]{width:14px;height:14px;accent-color:var(--a3);cursor:pointer;}
+.pass-display{background:var(--bg);color:#00ff88;font-family:monospace;font-size:15px;padding:14px;border-radius:9px;margin-top:12px;word-break:break-all;letter-spacing:1.5px;display:none;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--bor);}
 .pass-display.show{display:flex;}
-.str-bar{height:5px;border-radius:3px;margin-top:8px;transition:all 0.3s;display:none;}
+.str-bar{height:5px;border-radius:3px;margin-top:7px;transition:all 0.3s;display:none;}
 .str-bar.show{display:block;}
-.color-preview{width:100%;height:100px;border-radius:12px;margin-top:14px;border:1px solid var(--bor);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:16px;font-weight:bold;letter-spacing:2px;}
-input[type="color"]{width:100%;height:54px;border:1.5px solid var(--bor);border-radius:10px;padding:3px;cursor:pointer;background:var(--sur);}
-.cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px;}
-.cv{background:var(--sur);border:1px solid var(--bor);border-radius:9px;padding:10px;text-align:center;}
+.color-preview{width:100%;height:90px;border-radius:11px;margin-top:12px;border:1px solid var(--bor);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:15px;font-weight:bold;letter-spacing:2px;}
+input[type="color"]{width:100%;height:52px;border:1.5px solid var(--bor);border-radius:9px;padding:3px;cursor:pointer;background:var(--sur);}
+.cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:11px;}
+.cv{background:var(--sur);border:1px solid var(--bor);border-radius:9px;padding:9px;text-align:center;}
 .cvl{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
-.cvv{font-family:monospace;font-size:13px;font-weight:600;}
-.age-grid{display:none;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
+.cvv{font-family:monospace;font-size:12px;font-weight:600;}
+.age-grid{display:none;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}
 .age-grid.show{display:grid;}
-.ab{background:var(--bg);border:1px solid var(--bor);border-radius:12px;padding:16px;text-align:center;}
-.an{font-size:28px;font-weight:800;color:var(--a1);}
+.ab{background:var(--bg);border:1px solid var(--bor);border-radius:11px;padding:14px;text-align:center;}
+.an{font-size:26px;font-weight:800;color:var(--a1);}
 .al{font-size:11px;color:var(--mu);margin-top:3px;}
-.age-total{background:var(--sur);border:1px solid var(--bor);border-radius:10px;padding:12px;margin-top:10px;text-align:center;font-size:13px;color:var(--mu);display:none;}
+.age-total{background:var(--sur);border:1px solid var(--bor);border-radius:9px;padding:11px;margin-top:9px;text-align:center;font-size:13px;color:var(--mu);display:none;}
 .age-total.show{display:block;}
-.age-total strong{color:var(--a1);font-size:17px;}
-.wc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
-.wc-item{background:var(--sur);border:1px solid var(--bor);border-radius:10px;padding:12px;text-align:center;}
-.wc-num{font-size:22px;font-weight:800;color:var(--a5);}
+.age-total strong{color:var(--a1);font-size:16px;}
+.wc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px;}
+.wc-item{background:var(--sur);border:1px solid var(--bor);border-radius:9px;padding:11px;text-align:center;}
+.wc-num{font-size:20px;font-weight:800;color:var(--a5);}
 .wc-lbl{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;}
-.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:#fff;color:#0d0d14;padding:10px 22px;border-radius:28px;font-size:13px;font-weight:700;z-index:9999;transition:transform 0.3s;box-shadow:0 6px 28px rgba(0,0,0,0.25);}
+.img-thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(75px,1fr));gap:7px;margin-top:11px;}
+.img-thumb{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1;background:var(--bor);}
+.img-thumb img{width:100%;height:100%;object-fit:cover;}
+.img-thumb button{position:absolute;top:3px;right:3px;background:rgba(0,0,0,0.7);border:none;color:#fff;width:18px;height:18px;border-radius:50%;cursor:pointer;font-size:10px;display:flex;align-items:center;justify-content:center;}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#fff;color:#0d0d14;padding:10px 20px;border-radius:26px;font-size:12px;font-weight:700;z-index:9999;transition:transform 0.3s;box-shadow:0 6px 24px rgba(0,0,0,0.25);}
 .toast.show{transform:translateX(-50%) translateY(0);}
-footer{text-align:center;padding:36px 20px 24px;color:var(--mu);font-size:12px;position:relative;z-index:1;border-top:1px solid var(--bor);margin-top:50px;}
+footer{text-align:center;padding:32px 20px 22px;color:var(--mu);font-size:12px;border-top:1px solid var(--bor);margin-top:20px;}
 footer strong{color:var(--a1);}
-footer a{color:var(--mu);text-decoration:none;margin:0 7px;}
+footer a{color:var(--mu);text-decoration:none;margin:0 6px;}
 footer a:hover{color:var(--a1);}
-@media(max-width:580px){.strip{gap:18px;}.scard{padding:20px 14px;}nav{padding:0 12px;}}
+@media(max-width:580px){.strip{gap:16px;}.scard{padding:18px 14px;}.seo-tool-block{padding:20px 16px;}nav{padding:0 14px;}}
 </style>
 </head>
 <body>
@@ -163,62 +183,421 @@ footer a:hover{color:var(--a1);}
   </div>
 </nav>
 
+<!-- HOME PAGE -->
 <div id="home">
   <div class="hero">
-    <div class="badge">6 FREE TOOLS — NO SIGNUP</div>
-    <h1><span class="c1">Smart</span> Tools<br>for <span class="c2">Everyone</span></h1>
-    <p>PDF Merger, Image Compressor, Color Picker, Password Generator, Word Counter, Age Calculator — all 100% free!</p>
+    <div class="badge">7 FREE TOOLS — NO SIGNUP REQUIRED</div>
+    <h1><span class="g1">Smart</span> Tools<br>for <span class="g2">Everyone</span></h1>
+    <p>Free online tools for PDF merging, image compression, password generation and more. No account needed, works directly in your browser — fast, secure and completely free.</p>
   </div>
-  <div class="grid">
-    <div class="tc t1" onclick="openTool('pdf')"><div class="ti i1">📄</div><div class="tt">PDF Merger</div><div class="td">Merge multiple PDFs into one file.</div><span class="tg tg1">100% Free</span></div>
-    <div class="tc t2" onclick="openTool('comp')"><div class="ti i2">🗜️</div><div class="tt">Image Compressor</div><div class="td">Reduce image size without losing quality.</div><span class="tg tg2">No Upload</span></div>
-    <div class="tc t3" onclick="openTool('color')"><div class="ti i3">🎨</div><div class="tt">Color Picker</div><div class="td">Pick any color — get HEX, RGB and HSL.</div><span class="tg tg3">Instant</span></div>
-    <div class="tc t4" onclick="openTool('pass')"><div class="ti i4">🔐</div><div class="tt">Password Generator</div><div class="td">Generate strong secure passwords.</div><span class="tg tg4">Secure</span></div>
-    <div class="tc t5" onclick="openTool('word')"><div class="ti i5">📝</div><div class="tt">Word Counter</div><div class="td">Count words, characters and sentences.</div><span class="tg tg5">Real-time</span></div>
-    <div class="tc t6" onclick="openTool('age')"><div class="ti i6">🎂</div><div class="tt">Age Calculator</div><div class="td">Calculate your exact age instantly.</div><span class="tg tg6">Exact</span></div>
-  </div>
-  <div class="strip">
-    <div class="si"><div class="sn">6</div><div class="sl">Free Tools</div></div>
-    <div class="si"><div class="sn">0</div><div class="sl">Cost</div></div>
-    <div class="si"><div class="sn">0</div><div class="sl">Signup</div></div>
-    <div class="si"><div class="sn">100%</div><div class="sl">Browser</div></div>
-  </div>
-</div>
 
-<!-- PDF -->
+  <!-- TOOL CARDS -->
+  <div class="grid">
+    <div class="tc t1" onclick="openTool('pdf')">
+      <div class="ti i1">📄</div>
+      <div class="tt">PDF Merger</div>
+      <div class="td">Combine multiple PDF files into one document.</div>
+      <span class="tg tg1">Free</span>
+    </div>
+    <div class="tc t2" onclick="openTool('img2pdf')">
+      <div class="ti i2">🖼️</div>
+      <div class="tt">Images to PDF</div>
+      <div class="td">Convert JPG and PNG images into a PDF file.</div>
+      <span class="tg tg2">New</span>
+    </div>
+    <div class="tc t3" onclick="openTool('comp')">
+      <div class="ti i3">🗜️</div>
+      <div class="tt">Image Compressor</div>
+      <div class="td">Reduce image file size without losing quality.</div>
+      <span class="tg tg3">Fast</span>
+    </div>
+    <div class="tc t4" onclick="openTool('color')">
+      <div class="ti i4">🎨</div>
+      <div class="tt">Color Picker</div>
+      <div class="td">Pick any color and get HEX, RGB, HSL codes.</div>
+      <span class="tg tg4">Instant</span>
+    </div>
+    <div class="tc t5" onclick="openTool('pass')">
+      <div class="ti i5">🔐</div>
+      <div class="tt">Password Generator</div>
+      <div class="td">Generate strong and secure random passwords.</div>
+      <span class="tg tg5">Secure</span>
+    </div>
+    <div class="tc t6" onclick="openTool('word')">
+      <div class="ti i6">📝</div>
+      <div class="tt">Word Counter</div>
+      <div class="td">Count words, characters, sentences instantly.</div>
+      <span class="tg tg6">Real-time</span>
+    </div>
+    <div class="tc t7" onclick="openTool('age')">
+      <div class="ti i7">🎂</div>
+      <div class="tt">Age Calculator</div>
+      <div class="td">Calculate your exact age in years, months, days.</div>
+      <span class="tg tg7">Exact</span>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="si"><div class="sn">7</div><div class="sl">Free Tools</div></div>
+    <div class="si"><div class="sn">₹0</div><div class="sl">Cost</div></div>
+    <div class="si"><div class="sn">0</div><div class="sl">Signup</div></div>
+    <div class="si"><div class="sn">100%</div><div class="sl">Browser Based</div></div>
+  </div>
+
+  <!-- LONG SEO DESCRIPTIONS - BELOW TOOLS -->
+  <div class="seo-section">
+
+    <!-- PDF MERGER -->
+    <div class="seo-tool-block" id="desc-pdf">
+      <div class="seo-icon-title">
+        <div class="seo-ti i1">📄</div>
+        <div>
+          <h2 class="seo-h2">PDF Merger — Combine PDF Files Online for Free</h2>
+          <p class="seo-sub">Merge multiple PDF documents into one single file instantly — no signup, no software needed</p>
+        </div>
+      </div>
+      <button class="seo-use-btn bp1" onclick="openTool('pdf')">Use PDF Merger Free →</button>
+
+      <div class="seo-body">
+        <h3>What is an Online PDF Merger?</h3>
+        <p>A PDF Merger is a tool that combines two or more separate PDF files into one single PDF document. Instead of sending multiple PDF files to someone, you can merge them all into one easy-to-share file. ToolsAI Pro's PDF Merger works entirely inside your web browser — meaning your files never leave your device and are never uploaded to any server. It is completely free, requires no account creation and works on all devices including Android phones, iPhones, tablets and computers.</p>
+
+        <h3>Why Would You Need to Merge PDF Files?</h3>
+        <p>There are many situations where merging PDF files is useful. Students often need to combine assignment pages into one submission. Professionals need to merge invoices, contracts or reports into a single document. Job applicants combine their resume, cover letter and certificates into one PDF. Business owners merge multiple receipts or bills for accounting purposes. With our free PDF Merger, you can handle all of these tasks in just a few clicks without installing any software.</p>
+
+        <h3>Key Features of Our PDF Merger</h3>
+        <ul>
+          <li><strong>100% Free</strong> — No payment, no subscription, no hidden charges of any kind</li>
+          <li><strong>No File Upload Required</strong> — All processing happens locally in your browser for complete privacy</li>
+          <li><strong>Supports Encrypted PDFs</strong> — Merge password-protected PDF files without issues</li>
+          <li><strong>No Limit on Number of Files</strong> — Merge as many PDF files as you need in one go</li>
+          <li><strong>Works on All Devices</strong> — Mobile, tablet and desktop browsers all supported</li>
+          <li><strong>No Watermark</strong> — Your merged PDF will have no watermarks or branding added</li>
+          <li><strong>Fast Processing</strong> — Merge even large PDF files in seconds</li>
+        </ul>
+
+        <h3>How to Merge PDF Files Online — Step by Step</h3>
+        <ul>
+          <li>Click the "PDF Merger" tool card at the top of this page</li>
+          <li>Click "Browse Files" and select 2 or more PDF files from your device</li>
+          <li>All selected files will appear in a list — you can remove any unwanted files</li>
+          <li>Click "Merge Now" to begin combining the files</li>
+          <li>Once complete, click "Download Merged PDF" to save the file to your device</li>
+        </ul>
+
+        <h3>Is It Safe to Merge PDF Files Online?</h3>
+        <p>Yes, using ToolsAI Pro to merge PDF files is completely safe. Unlike many other online PDF tools, our PDF Merger processes your files entirely within your web browser using JavaScript. Your PDF files are never sent to our servers, never stored anywhere online, and automatically cleared from memory when you close or refresh the page. This means there is zero risk of your confidential documents being accessed by anyone else.</p>
+
+        <h3>Can I Merge PDF Files on My Mobile Phone?</h3>
+        <p>Absolutely. Our PDF Merger is fully optimized for mobile devices. You can merge PDF files directly from your Android or iPhone browser without downloading any app. The interface is designed to work smoothly on small screens, making it easy to select files, view the list and download the merged result — all from your smartphone.</p>
+      </div>
+    </div>
+
+    <!-- IMAGES TO PDF -->
+    <div class="seo-tool-block" id="desc-img2pdf">
+      <div class="seo-icon-title">
+        <div class="seo-ti i2">🖼️</div>
+        <div>
+          <h2 class="seo-h2">Images to PDF Converter — Convert JPG PNG to PDF Free</h2>
+          <p class="seo-sub">Convert multiple JPG, PNG or WebP images into a single PDF document in seconds</p>
+        </div>
+      </div>
+      <button class="seo-use-btn bp7" onclick="openTool('img2pdf')">Use Images to PDF Free →</button>
+
+      <div class="seo-body">
+        <h3>What is an Images to PDF Converter?</h3>
+        <p>An Images to PDF Converter is a tool that transforms your image files — such as JPG, PNG or WebP — into a PDF document. Each image is placed on its own page within the PDF, preserving the original image quality and size. This tool is incredibly useful when you need to submit photos as a PDF, create a scanned document from photos, compile a photo album into a printable format, or send multiple images as a single attached file. ToolsAI Pro's converter works directly in your browser with no software installation required.</p>
+
+        <h3>Common Uses for Images to PDF Conversion</h3>
+        <ul>
+          <li>Converting scanned document photos into a proper PDF for submission</li>
+          <li>Creating a PDF portfolio from multiple design or artwork images</li>
+          <li>Combining product photos into a single PDF catalog</li>
+          <li>Turning WhatsApp photos of documents into a PDF file</li>
+          <li>Submitting ID proofs, certificates or photos as a single PDF attachment</li>
+          <li>Creating printable photo albums or memory books</li>
+        </ul>
+
+        <h3>Supported Image Formats</h3>
+        <p>Our Images to PDF converter supports the three most common image formats used today. JPG and JPEG files are the most widely used format for photographs and are fully supported. PNG files, which support transparent backgrounds and are commonly used for screenshots and graphics, are also fully supported. WebP files, which are used by modern websites and apps for optimized image delivery, are supported as well.</p>
+
+        <h3>How to Convert Images to PDF — Step by Step</h3>
+        <ul>
+          <li>Click the "Images to PDF" tool card at the top of this page</li>
+          <li>Click "Choose Images" and select one or more image files from your device</li>
+          <li>Preview thumbnails of your selected images will be shown</li>
+          <li>Click "Convert to PDF" to generate your PDF document</li>
+          <li>Click "Download PDF" to save the completed file to your device</li>
+        </ul>
+
+        <h3>Will My Image Quality Be Affected?</h3>
+        <p>No. Our Images to PDF converter embeds your images directly into the PDF at their original resolution and dimensions. There is no compression or quality reduction applied during the conversion process. The resulting PDF will display your images at exactly the same quality as the original files you uploaded.</p>
+      </div>
+    </div>
+
+    <!-- IMAGE COMPRESSOR -->
+    <div class="seo-tool-block" id="desc-comp">
+      <div class="seo-icon-title">
+        <div class="seo-ti i3">🗜️</div>
+        <div>
+          <h2 class="seo-h2">Image Compressor — Reduce Image File Size Online Free</h2>
+          <p class="seo-sub">Compress JPG, PNG and WebP images without losing visible quality — fast and free</p>
+        </div>
+      </div>
+      <button class="seo-use-btn bp2" onclick="openTool('comp')">Use Image Compressor Free →</button>
+
+      <div class="seo-body">
+        <h3>What is an Online Image Compressor?</h3>
+        <p>An Image Compressor is a tool that reduces the file size of your images while maintaining acceptable visual quality. Large image files can slow down websites, consume excessive mobile data, fail to attach to emails due to size limits, and fill up your device storage quickly. Our free online Image Compressor solves all of these problems by reducing image file size by up to 80% or more, depending on the settings you choose. You can control both the output quality and the maximum width of the compressed image to get the exact result you need.</p>
+
+        <h3>Why You Should Compress Your Images</h3>
+        <ul>
+          <li><strong>Website Speed</strong> — Compressed images load faster, improving user experience and Google rankings</li>
+          <li><strong>Email Attachments</strong> — Most email services have a 25MB attachment limit; compressed images are easier to share</li>
+          <li><strong>WhatsApp and Social Media</strong> — Smaller images upload and download faster on messaging apps</li>
+          <li><strong>Storage Space</strong> — Save space on your phone, computer or cloud storage service</li>
+          <li><strong>SEO Benefits</strong> — Faster loading websites rank higher in Google search results</li>
+          <li><strong>Mobile Data Savings</strong> — Smaller files use less mobile data when sharing or uploading</li>
+        </ul>
+
+        <h3>How to Compress an Image Online — Step by Step</h3>
+        <ul>
+          <li>Click the "Image Compressor" tool card at the top of this page</li>
+          <li>Click "Choose Image" and upload a JPG, PNG or WebP image from your device</li>
+          <li>Adjust the quality slider — 75% is recommended for the best balance of quality and size</li>
+          <li>Optionally adjust the maximum width to resize the image at the same time</li>
+          <li>Click "Compress Now" to process the image</li>
+          <li>Review the original size, compressed size and percentage saved</li>
+          <li>Click "Download Image" to save your compressed file</li>
+        </ul>
+
+        <h3>What Quality Setting Should I Use?</h3>
+        <p>For most purposes, a quality setting of 70 to 80 percent provides an excellent balance between file size reduction and visual quality. At 75%, most people cannot tell the difference between the original and compressed image, while the file size is reduced by 50 to 70%. For images that will be displayed on screen such as website images or social media posts, 70% is recommended. For images that will be printed, a higher quality setting of 85 to 90% is advisable to maintain sharpness and detail.</p>
+      </div>
+    </div>
+
+    <!-- COLOR PICKER -->
+    <div class="seo-tool-block" id="desc-color">
+      <div class="seo-icon-title">
+        <div class="seo-ti i4">🎨</div>
+        <div>
+          <h2 class="seo-h2">Color Picker — Get HEX RGB HSL Color Codes Online Free</h2>
+          <p class="seo-sub">Pick any color and instantly get its HEX, RGB and HSL values — perfect for designers and developers</p>
+        </div>
+      </div>
+      <button class="seo-use-btn bp3" onclick="openTool('color')">Use Color Picker Free →</button>
+
+      <div class="seo-body">
+        <h3>What is an Online Color Picker?</h3>
+        <p>A Color Picker is a tool that allows you to select any color and obtain its precise color code in multiple formats including HEX, RGB and HSL. Color codes are used by web designers, front-end developers, graphic designers and digital artists to specify exact colors in their projects. Instead of guessing color values or converting between formats manually, our Color Picker gives you all three formats instantly with a single click. This saves time and ensures color accuracy across your entire project.</p>
+
+        <h3>Understanding Color Formats</h3>
+        <ul>
+          <li><strong>HEX Code</strong> — A 6-character code starting with # used in HTML and CSS. Example: #FF5733 for an orange-red color. This is the most commonly used format in web design.</li>
+          <li><strong>RGB Value</strong> — Specifies a color using Red, Green and Blue values from 0 to 255. Example: rgb(255, 87, 51). Widely used in CSS and digital design software.</li>
+          <li><strong>HSL Value</strong> — Stands for Hue, Saturation and Lightness. Example: hsl(11, 100%, 60%). This format is more intuitive for creating color variations and is increasingly popular in modern CSS.</li>
+        </ul>
+
+        <h3>Who Uses Color Pickers?</h3>
+        <p>Color pickers are used by a wide range of professionals and hobbyists. Web designers use color codes to ensure consistent branding across a website. Front-end developers use HEX and RGB values in CSS stylesheets. Graphic designers need precise color specifications when creating logos, posters and marketing materials. App developers use color codes to define the visual theme of their applications. Even students learning web design or digital art need a reliable color picker to get started.</p>
+
+        <h3>How to Use the Color Picker — Step by Step</h3>
+        <ul>
+          <li>Click the "Color Picker" tool card at the top of this page</li>
+          <li>Click anywhere on the color input field to open the color selection panel</li>
+          <li>Choose your desired color by clicking, dragging or entering a value</li>
+          <li>The HEX, RGB and HSL values are displayed instantly below the preview</li>
+          <li>Click the "Copy" button next to any value to copy it to your clipboard</li>
+          <li>Paste the color code directly into your CSS, HTML or design software</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PASSWORD GENERATOR -->
+    <div class="seo-tool-block" id="desc-pass">
+      <div class="seo-icon-title">
+        <div class="seo-ti i5">🔐</div>
+        <div>
+          <h2 class="seo-h2">Password Generator — Create Strong Secure Passwords Free</h2>
+          <p class="seo-sub">Generate random strong passwords instantly — protect your accounts from hacking</p>
+        </div>
+      </div>
+      <button class="seo-use-btn bp4" onclick="openTool('pass')">Use Password Generator Free →</button>
+
+      <div class="seo-body">
+        <h3>What is a Password Generator?</h3>
+        <p>A Password Generator is a tool that creates random, strong passwords for your online accounts. A strong password is one that is long, uses a mix of character types and cannot be easily guessed. Many people use weak passwords like their name, birthdate or simple words because they are easy to remember — but these are also the easiest passwords for hackers to crack. Our free Password Generator creates highly secure passwords that are virtually impossible to guess or break using brute-force attacks.</p>
+
+        <h3>What Makes a Password Strong?</h3>
+        <ul>
+          <li><strong>Length</strong> — A password should be at least 12 characters long. Longer passwords are exponentially harder to crack. We recommend 16 characters or more for important accounts.</li>
+          <li><strong>Uppercase Letters (A-Z)</strong> — Including uppercase letters increases the number of possible combinations significantly.</li>
+          <li><strong>Lowercase Letters (a-z)</strong> — Standard lowercase letters are the base of most passwords.</li>
+          <li><strong>Numbers (0-9)</strong> — Adding numbers to a password greatly increases its complexity.</li>
+          <li><strong>Special Symbols (!@#$%)</strong> — Symbols like !, @, #, $ make passwords extremely difficult to crack and are required by many websites.</li>
+          <li><strong>Randomness</strong> — A truly random password has no patterns, no words and no personal information.</li>
+        </ul>
+
+        <h3>How Often Should You Change Your Passwords?</h3>
+        <p>Security experts recommend changing your passwords every 3 to 6 months for sensitive accounts like banking and email. You should also change a password immediately if you suspect your account has been compromised, if the website you use reports a data breach, or if you have shared the password with someone. Using our Password Generator, you can create a new strong password in seconds whenever you need one.</p>
+
+        <h3>How to Generate a Strong Password — Step by Step</h3>
+        <ul>
+          <li>Click the "Password Generator" tool card at the top of this page</li>
+          <li>Use the slider to set your desired password length (16 or more is recommended)</li>
+          <li>Check the boxes for the character types you want to include</li>
+          <li>Click "Generate Password" to create a random password</li>
+          <li>The strength indicator will show how strong your password is</li>
+          <li>Click the clipboard icon to copy the password</li>
+          <li>Paste it into your account settings and save it in a password manager</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WORD COUNTER -->
+    <div class="seo-tool-block" id="desc-word">
+      <div class="seo-icon-title">
+        <div class="seo-ti i6">📝</div>
+        <div>
+          <h2 class="seo-h2">Word Counter — Count Words and Characters Online Free</h2>
+          <p class="seo-sub">Real-time word, character, sentence and paragraph counter for writers, students and bloggers</p>
+        </div>
+      </div>
+      <button class="seo-use-btn bp5" onclick="openTool('word')">Use Word Counter Free →</button>
+
+      <div class="seo-body">
+        <h3>What is an Online Word Counter?</h3>
+        <p>A Word Counter is a tool that counts the number of words, characters, sentences, paragraphs and estimated reading time in a piece of text. It is one of the most universally useful writing tools available, benefiting students, bloggers, authors, journalists, copywriters, translators and content creators. Our Word Counter updates all statistics in real-time as you type or paste text, giving you instant feedback without any delay or need to click a button. Simply open the tool and start typing.</p>
+
+        <h3>Who Needs a Word Counter?</h3>
+        <ul>
+          <li><strong>Students</strong> — Essays, assignments and academic papers often have strict word count requirements that must be met precisely</li>
+          <li><strong>Bloggers and Content Writers</strong> — Articles for SEO typically need to be between 800 and 2000 words; a counter helps you hit the target</li>
+          <li><strong>Authors and Novelists</strong> — Tracking daily word count goals and overall manuscript progress</li>
+          <li><strong>Social Media Managers</strong> — Twitter has a 280-character limit; LinkedIn and other platforms also have character restrictions</li>
+          <li><strong>Translators</strong> — Word count is used to calculate translation costs and deadlines</li>
+          <li><strong>Copywriters</strong> — Advertisement copy, headlines and product descriptions often have strict length limits</li>
+        </ul>
+
+        <h3>What Statistics Does Our Word Counter Show?</h3>
+        <ul>
+          <li><strong>Word Count</strong> — The total number of words in your text, counted by spaces between words</li>
+          <li><strong>Character Count</strong> — Total characters including letters, numbers, spaces and punctuation</li>
+          <li><strong>Characters Without Spaces</strong> — Character count with all spaces removed, useful for Twitter and SMS</li>
+          <li><strong>Sentence Count</strong> — Number of sentences detected based on full stops, exclamation marks and question marks</li>
+          <li><strong>Paragraph Count</strong> — Number of paragraphs detected based on line breaks in the text</li>
+          <li><strong>Reading Time</strong> — Estimated time to read the text at an average reading speed of 200 words per minute</li>
+        </ul>
+
+        <h3>How to Use the Word Counter — Step by Step</h3>
+        <ul>
+          <li>Click the "Word Counter" tool card at the top of this page</li>
+          <li>Type your text directly into the text box, or paste text from another source</li>
+          <li>All six statistics update automatically in real-time as you type</li>
+          <li>Use the "Copy Text" button to copy your text to clipboard when finished</li>
+          <li>Use the "Clear" button to reset the text box and all counts</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AGE CALCULATOR -->
+    <div class="seo-tool-block" id="desc-age">
+      <div class="seo-icon-title">
+        <div class="seo-ti i7">🎂</div>
+        <div>
+          <h2 class="seo-h2">Age Calculator — Find Your Exact Age Online Free</h2>
+          <p class="seo-sub">Calculate your precise age in years, months and days from your date of birth</p>
+        </div>
+      </div>
+      <button class="seo-use-btn bp6" onclick="openTool('age')">Use Age Calculator Free →</button>
+
+      <div class="seo-body">
+        <h3>What is an Online Age Calculator?</h3>
+        <p>An Age Calculator is a tool that determines your exact age from your date of birth, calculated up to today's date. While most people know their age in years, many situations require knowing your precise age in years, months and days — such as filling out official government forms, applying for age-restricted programs, calculating retirement dates or determining eligibility for various schemes and competitions. Our Age Calculator gives you all of this information instantly, including the total number of days you have been alive.</p>
+
+        <h3>When Do You Need to Know Your Exact Age?</h3>
+        <ul>
+          <li><strong>Government Forms and Applications</strong> — Many official forms require age in years, months and days, not just years</li>
+          <li><strong>Passport and Visa Applications</strong> — Age verification for international travel documents</li>
+          <li><strong>School and College Admissions</strong> — Age cutoff dates are strictly enforced for many educational institutions</li>
+          <li><strong>Job Applications</strong> — Some government and private sector jobs have minimum and maximum age requirements</li>
+          <li><strong>Government Schemes</strong> — Many welfare schemes, subsidies and benefits have specific age eligibility criteria</li>
+          <li><strong>Sports and Competitions</strong> — Age categories in sports tournaments require precise age calculation</li>
+          <li><strong>Medical and Insurance</strong> — Insurance premiums and medical eligibility are often calculated based on exact age</li>
+        </ul>
+
+        <h3>How Accurate is Our Age Calculator?</h3>
+        <p>Our Age Calculator is highly accurate and accounts for all calendar complexities including leap years, months with different numbers of days and the exact date of calculation. The result shows your age in complete years, complete months and remaining days — exactly as required by most official documents and institutions. The total days counter also accurately reflects the current date so the calculation is always up to date.</p>
+
+        <h3>How to Calculate Your Age — Step by Step</h3>
+        <ul>
+          <li>Click the "Age Calculator" tool card at the top of this page</li>
+          <li>Click the date input field and select your date of birth</li>
+          <li>Click "Calculate Age" to see your exact age</li>
+          <li>Your age is displayed in years, months and days</li>
+          <li>The total number of days you have lived is shown below</li>
+          <li>Click "Clear" to reset and calculate a different date</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="faq-title">Frequently Asked Questions</div>
+    <div class="faq-item"><div class="faq-q">Are all tools on ToolsAI Pro completely free to use?</div><div class="faq-a">Yes, every single tool on ToolsAI Pro is 100% free with no hidden fees, no subscription plans and no premium tiers. All 7 tools — PDF Merger, Images to PDF, Image Compressor, Color Picker, Password Generator, Word Counter and Age Calculator — are available to everyone at absolutely no cost.</div></div>
+    <div class="faq-item"><div class="faq-q">Do I need to create an account or sign up?</div><div class="faq-a">No account, no signup and no email address is required. You can use all tools immediately by simply visiting this website. We believe that useful tools should be accessible to everyone without any barriers.</div></div>
+    <div class="faq-item"><div class="faq-q">Are my files safe and private when I use these tools?</div><div class="faq-a">Absolutely. All file processing on ToolsAI Pro happens locally inside your web browser using JavaScript. Your files are never uploaded to our servers and we have no access to any files, documents or images you process with our tools. Your data is 100% private.</div></div>
+    <div class="faq-item"><div class="faq-q">Do these tools work on mobile phones and tablets?</div><div class="faq-a">Yes. All tools are fully responsive and optimized for mobile devices. They work on Android phones, iPhones, tablets and desktop computers using any modern web browser. No app download is required.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I merge encrypted or password-protected PDF files?</div><div class="faq-a">Yes. Our PDF Merger supports encrypted PDF files and will attempt to merge them even when they have password protection applied. This makes it compatible with a wider range of real-world PDF documents.</div></div>
+    <div class="faq-item"><div class="faq-q">How much can the Image Compressor reduce my file size?</div><div class="faq-a">The amount of compression depends on the original image and the quality setting you choose. On average, our Image Compressor reduces file size by 50 to 80% while maintaining good visual quality at the recommended 75% quality setting. Some images may compress more or less depending on their content and format.</div></div>
+    <div class="faq-item"><div class="faq-q">Is there a limit on how many files I can process?</div><div class="faq-a">There is no limit on how many times you can use any tool. You can merge as many PDF files as needed, compress as many images as you want, and use the Word Counter for as many documents as required — all completely free with no restrictions.</div></div>
+  </div>
+
+<!-- TOOL SCREENS -->
 <div class="sc" id="sc-pdf">
-  <div class="bk" onclick="goHome()">← Back</div>
+  <div class="bk" onclick="goHome()">← Back to All Tools</div>
   <div class="scard">
-    <div class="sh"><div class="shi i1">📄</div><div><div class="sht">PDF Merger</div><div class="shs">Merge multiple PDFs into one</div></div></div>
+    <div class="sh"><div class="shi i1">📄</div><div><div class="sht">PDF Merger</div><div class="shs">Combine multiple PDFs into one file</div></div></div>
     <div class="uz" onclick="document.getElementById('pdfF').click()">
-      <div class="uzi">📁</div><div class="uzt">Choose PDF Files</div><div class="uzs">Select multiple files at once</div>
+      <div class="uzi">📁</div><div class="uzt">Choose PDF Files</div><div class="uzs">Select 2 or more PDF files at once</div>
       <div class="uzb" style="background:var(--a1)">Browse Files</div>
     </div>
     <input type="file" id="pdfF" accept=".pdf" multiple style="display:none" onchange="addPDFs(this)">
     <div class="fl" id="pdfList"></div>
-    <div class="br">
-      <button class="btn bp1" onclick="mergePDFs()" id="mergeBtn" disabled>Merge Now</button>
-      <button class="btn bgbtn" onclick="clearPDFs()">Clear</button>
-    </div>
+    <div class="br"><button class="btn bp1" onclick="mergePDFs()" id="mergeBtn" disabled>Merge Now</button><button class="btn bgbtn" onclick="clearPDFs()">Clear All</button></div>
     <div class="pw" id="pdfProg"><div class="pb"><div class="pf" id="pdfFill"></div></div><div class="pl" id="pdfLbl">Processing...</div></div>
-    <div class="ra ok" id="pdfRes">
-      <div style="font-weight:700;color:var(--a3);margin-bottom:10px;">Merged Successfully!</div>
-      <button class="btn bp1" onclick="dlPDF()">Download PDF</button>
-    </div>
+    <div class="ra ok" id="pdfRes"><div style="font-weight:700;color:var(--a3);margin-bottom:10px;">Merged Successfully!</div><button class="btn bp1" onclick="dlPDF()">Download Merged PDF</button></div>
   </div>
 </div>
 
-<!-- COMPRESSOR -->
-<div class="sc" id="sc-comp">
-  <div class="bk" onclick="goHome()">← Back</div>
+<div class="sc" id="sc-img2pdf">
+  <div class="bk" onclick="goHome()">← Back to All Tools</div>
   <div class="scard">
-    <div class="sh"><div class="shi i2">🗜️</div><div><div class="sht">Image Compressor</div><div class="shs">Reduce file size, keep quality</div></div></div>
+    <div class="sh"><div class="shi i2">🖼️</div><div><div class="sht">Images to PDF</div><div class="shs">Convert images into a PDF document</div></div></div>
+    <div class="uz" onclick="document.getElementById('imgPdfF').click()">
+      <div class="uzi">🖼️</div><div class="uzt">Choose Images</div><div class="uzs">JPG, PNG, WebP — select multiple images</div>
+      <div class="uzb" style="background:var(--a7)">Choose Images</div>
+    </div>
+    <input type="file" id="imgPdfF" accept="image/*" multiple style="display:none" onchange="addImgPdf(this)">
+    <div class="img-thumb-grid" id="imgThumbGrid"></div>
+    <div class="br"><button class="btn bp7" onclick="convertImgToPDF()" id="img2pdfBtn" disabled>Convert to PDF</button><button class="btn bgbtn" onclick="clearImgPdf()">Clear</button></div>
+    <div class="pw" id="img2pdfProg"><div class="pb"><div class="pf" id="img2pdfFill"></div></div><div class="pl">Converting images to PDF...</div></div>
+    <div class="ra ok" id="img2pdfRes"><div style="font-weight:700;color:var(--a3);margin-bottom:10px;">PDF Created Successfully!</div><button class="btn bp7" onclick="dlImgPdf()">Download PDF</button></div>
+  </div>
+</div>
+
+<div class="sc" id="sc-comp">
+  <div class="bk" onclick="goHome()">← Back to All Tools</div>
+  <div class="scard">
+    <div class="sh"><div class="shi i3">🗜️</div><div><div class="sht">Image Compressor</div><div class="shs">Reduce file size, keep quality</div></div></div>
     <div class="uz" onclick="document.getElementById('compF').click()">
       <div class="uzi">🖼️</div><div class="uzt">Upload Image</div><div class="uzs">JPG, PNG, WebP supported</div>
       <div class="uzb" style="background:var(--a2)">Choose Image</div>
     </div>
     <input type="file" id="compF" accept="image/*" style="display:none" onchange="loadComp(this)">
-    <div id="compSet" style="display:none;margin-top:18px;">
+    <div id="compSet" style="display:none;margin-top:16px;">
       <div class="slr"><label>Quality:</label><input type="range" id="qualS" min="10" max="100" value="75" oninput="document.getElementById('qualV').textContent=this.value+'%'"><div class="slv" id="qualV">75%</div></div>
       <div class="slr"><label>Max Width:</label><input type="range" id="widthS" min="200" max="4000" value="1920" step="100" oninput="document.getElementById('widthV').textContent=this.value+'px'"><div class="slv" id="widthV">1920px</div></div>
       <div class="br"><button class="btn bp2" onclick="compressImg()">Compress Now</button></div>
@@ -226,36 +605,34 @@ footer a:hover{color:var(--a1);}
     <canvas id="compCanvas"></canvas>
     <div class="ra ok" id="compRes">
       <div style="font-weight:700;color:var(--a3);margin-bottom:10px;">Compressed!</div>
-      <div class="sr" style="margin-bottom:12px;">
+      <div class="sr" style="margin-bottom:11px;">
         <div class="sb"><div class="sv" id="origSz">-</div><div class="sl2">Original</div></div>
         <div class="sb"><div class="sv" id="compSz">-</div><div class="sl2">Compressed</div></div>
         <div class="sb"><div class="sv" id="savedP">-</div><div class="sl2">Saved</div></div>
       </div>
-      <button class="btn bp2" onclick="dlComp()">Download</button>
+      <button class="btn bp2" onclick="dlComp()">Download Image</button>
     </div>
   </div>
 </div>
 
-<!-- COLOR -->
 <div class="sc" id="sc-color">
-  <div class="bk" onclick="goHome()">← Back</div>
+  <div class="bk" onclick="goHome()">← Back to All Tools</div>
   <div class="scard">
-    <div class="sh"><div class="shi i3">🎨</div><div><div class="sht">Color Picker</div><div class="shs">Get HEX, RGB and HSL values</div></div></div>
+    <div class="sh"><div class="shi i4">🎨</div><div><div class="sht">Color Picker</div><div class="shs">Get HEX, RGB and HSL color codes</div></div></div>
     <input type="color" id="colorPick" value="#6c63ff" oninput="updateColor(this.value)">
     <div class="color-preview" id="colorPrev" style="background:#6c63ff;color:#fff;">#6C63FF</div>
     <div class="cgrid">
-      <div class="cv"><div class="cvl">HEX</div><div class="cvv" id="hexV">#6C63FF</div><button class="btn bgbtn" style="margin-top:7px;padding:5px 10px;font-size:11px;width:100%" onclick="copyV('hexV')">Copy</button></div>
-      <div class="cv"><div class="cvl">RGB</div><div class="cvv" id="rgbV">108,99,255</div><button class="btn bgbtn" style="margin-top:7px;padding:5px 10px;font-size:11px;width:100%" onclick="copyV('rgbV')">Copy</button></div>
-      <div class="cv"><div class="cvl">HSL</div><div class="cvv" id="hslV">243,100%,70%</div><button class="btn bgbtn" style="margin-top:7px;padding:5px 10px;font-size:11px;width:100%" onclick="copyV('hslV')">Copy</button></div>
+      <div class="cv"><div class="cvl">HEX</div><div class="cvv" id="hexV">#6C63FF</div><button class="btn bgbtn" style="margin-top:7px;padding:5px 8px;font-size:11px;width:100%" onclick="copyV('hexV')">Copy</button></div>
+      <div class="cv"><div class="cvl">RGB</div><div class="cvv" id="rgbV">108, 99, 255</div><button class="btn bgbtn" style="margin-top:7px;padding:5px 8px;font-size:11px;width:100%" onclick="copyV('rgbV')">Copy</button></div>
+      <div class="cv"><div class="cvl">HSL</div><div class="cvv" id="hslV">243, 100%, 70%</div><button class="btn bgbtn" style="margin-top:7px;padding:5px 8px;font-size:11px;width:100%" onclick="copyV('hslV')">Copy</button></div>
     </div>
   </div>
 </div>
 
-<!-- PASSWORD -->
 <div class="sc" id="sc-pass">
-  <div class="bk" onclick="goHome()">← Back</div>
+  <div class="bk" onclick="goHome()">← Back to All Tools</div>
   <div class="scard">
-    <div class="sh"><div class="shi i4">🔐</div><div><div class="sht">Password Generator</div><div class="shs">Generate strong secure passwords</div></div></div>
+    <div class="sh"><div class="shi i5">🔐</div><div><div class="sht">Password Generator</div><div class="shs">Generate strong secure passwords</div></div></div>
     <div class="slr"><label>Length:</label><input type="range" id="passLen" min="6" max="32" value="16" oninput="document.getElementById('lenV').textContent=this.value"><div class="slv" id="lenV">16</div></div>
     <div class="chk">
       <label class="cl2"><input type="checkbox" id="useUp" checked> A-Z</label>
@@ -264,47 +641,36 @@ footer a:hover{color:var(--a1);}
       <label class="cl2"><input type="checkbox" id="useSym"> !@#$</label>
     </div>
     <div class="br"><button class="btn bp4" onclick="genPass()">Generate Password</button></div>
-    <div class="pass-display" id="passDisp">
-      <span id="passText"></span>
-      <span style="cursor:pointer;font-size:18px;" onclick="copyPass()">📋</span>
-    </div>
+    <div class="pass-display" id="passDisp"><span id="passText"></span><span style="cursor:pointer;font-size:18px;" onclick="copyPass()">📋</span></div>
     <div class="str-bar" id="strBar"></div>
     <div id="strLbl" style="font-size:12px;color:var(--mu);margin-top:5px;display:none;"></div>
   </div>
 </div>
 
-<!-- WORD COUNTER -->
 <div class="sc" id="sc-word">
-  <div class="bk" onclick="goHome()">← Back</div>
+  <div class="bk" onclick="goHome()">← Back to All Tools</div>
   <div class="scard">
-    <div class="sh"><div class="shi i5">📝</div><div><div class="sht">Word Counter</div><div class="shs">Count words, characters and more</div></div></div>
-    <textarea id="wordTxt" rows="8" placeholder="Paste or type your text here..."></textarea>
+    <div class="sh"><div class="shi i6">📝</div><div><div class="sht">Word Counter</div><div class="shs">Count words, characters and more</div></div></div>
+    <textarea id="wordTxt" rows="7" placeholder="Paste or type your text here..."></textarea>
     <div class="wc-grid">
       <div class="wc-item"><div class="wc-num" id="wcW">0</div><div class="wc-lbl">Words</div></div>
-      <div class="wc-item"><div class="wc-num" id="wcC">0</div><div class="wc-lbl">Chars</div></div>
+      <div class="wc-item"><div class="wc-num" id="wcC">0</div><div class="wc-lbl">Characters</div></div>
       <div class="wc-item"><div class="wc-num" id="wcN">0</div><div class="wc-lbl">No Spaces</div></div>
       <div class="wc-item"><div class="wc-num" id="wcS">0</div><div class="wc-lbl">Sentences</div></div>
       <div class="wc-item"><div class="wc-num" id="wcP">0</div><div class="wc-lbl">Paragraphs</div></div>
-      <div class="wc-item"><div class="wc-num" id="wcR">0</div><div class="wc-lbl">Read min</div></div>
+      <div class="wc-item"><div class="wc-num" id="wcR">0</div><div class="wc-lbl">Read (min)</div></div>
     </div>
-    <div class="br">
-      <button class="btn bgbtn" onclick="clearWord()">Clear</button>
-      <button class="btn bp5" onclick="copyTxt()">Copy Text</button>
-    </div>
+    <div class="br"><button class="btn bgbtn" onclick="clearWord()">Clear</button><button class="btn bp5" onclick="copyTxt()">Copy Text</button></div>
   </div>
 </div>
 
-<!-- AGE CALCULATOR -->
 <div class="sc" id="sc-age">
-  <div class="bk" onclick="goHome()">← Back</div>
+  <div class="bk" onclick="goHome()">← Back to All Tools</div>
   <div class="scard">
-    <div class="sh"><div class="shi i6">🎂</div><div><div class="sht">Age Calculator</div><div class="shs">Find your exact age instantly</div></div></div>
+    <div class="sh"><div class="shi i7">🎂</div><div><div class="sht">Age Calculator</div><div class="shs">Find your exact age instantly</div></div></div>
     <label style="font-size:12px;color:var(--mu);display:block;margin-bottom:7px;">Your Date of Birth:</label>
     <input type="date" id="dobIn" class="inp">
-    <div class="br">
-      <button class="btn bp6" onclick="calcAge()">Calculate Age</button>
-      <button class="btn bgbtn" onclick="clearAge()">Clear</button>
-    </div>
+    <div class="br"><button class="btn bp6" onclick="calcAge()">Calculate Age</button><button class="btn bgbtn" onclick="clearAge()">Clear</button></div>
     <div class="age-grid" id="ageGrid">
       <div class="ab"><div class="an" id="ageY">0</div><div class="al">Years</div></div>
       <div class="ab"><div class="an" id="ageM">0</div><div class="al">Months</div></div>
@@ -316,287 +682,45 @@ footer a:hover{color:var(--a1);}
 </div>
 
 <footer>
-  <strong>ToolsAI Pro</strong> — Free Online Tools | No Signup | 100% Browser Based<br><br>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms</a>
-  <a href="contact.html">Contact</a>
+  <strong>ToolsAI Pro</strong> — Free Online Tools | No Signup Required | 100% Browser Based<br><br>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a>
 </footer>
 
 <script>
-function goHome() {
-  document.getElementById("home").style.display = "block";
-  document.querySelectorAll(".sc").forEach(function(s) { s.classList.remove("active"); });
-}
-
-function openTool(n) {
-  document.getElementById("home").style.display = "none";
-  document.querySelectorAll(".sc").forEach(function(s) { s.classList.remove("active"); });
-  document.getElementById("sc-" + n).classList.add("active");
-  window.scrollTo({top: 0, behavior: "smooth"});
-}
-
-function showToast(m) {
-  var t = document.getElementById("toast");
-  t.textContent = m;
-  t.classList.add("show");
-  setTimeout(function() { t.classList.remove("show"); }, 2200);
-}
-
-// PDF MERGER
-var pdfFiles = [];
-var mergedB = null;
-
-function addPDFs(inp) {
-  Array.from(inp.files).forEach(function(f) {
-    if (!pdfFiles.find(function(p) { return p.name === f.name; })) {
-      pdfFiles.push(f);
-    }
-  });
-  renderPDF();
-  inp.value = "";
-}
-
-function renderPDF() {
-  var html = "";
-  pdfFiles.forEach(function(f, i) {
-    html += '<div class="fi"><div class="fil"><span style="font-size:18px">📄</span><div><div class="fin">' + f.name + '</div><div class="fis">' + (f.size/1024).toFixed(1) + ' KB</div></div></div><button class="fir" onclick="rmPDF(' + i + ')">✕</button></div>';
-  });
-  document.getElementById("pdfList").innerHTML = html;
-  document.getElementById("mergeBtn").disabled = pdfFiles.length < 2;
-}
-
-function rmPDF(i) { pdfFiles.splice(i, 1); renderPDF(); }
-function clearPDFs() { pdfFiles = []; renderPDF(); document.getElementById("pdfRes").classList.remove("show"); }
-
-async function mergePDFs() {
-  if (pdfFiles.length < 2) { showToast("Need 2+ PDF files!"); return; }
-  var pr = document.getElementById("pdfProg");
-  var pf = document.getElementById("pdfFill");
-  var pl = document.getElementById("pdfLbl");
-  pr.classList.add("show");
-  document.getElementById("pdfRes").classList.remove("show");
-  try {
-    var merged = await PDFLib.PDFDocument.create();
-    for (var i = 0; i < pdfFiles.length; i++) {
-      pf.style.width = ((i / pdfFiles.length) * 85) + "%";
-      pl.textContent = "Processing: " + pdfFiles[i].name;
-      var bytes = await pdfFiles[i].arrayBuffer();
-      var doc = await PDFLib.PDFDocument.load(bytes, {ignoreEncryption: true});
-      var pages = await merged.copyPages(doc, doc.getPageIndices());
-      pages.forEach(function(p) { merged.addPage(p); });
-    }
-    pf.style.width = "100%";
-    mergedB = await merged.save();
-    setTimeout(function() {
-      pr.classList.remove("show");
-      document.getElementById("pdfRes").classList.add("show");
-      showToast("Merged!");
-    }, 400);
-  } catch(e) {
-    pr.classList.remove("show");
-    showToast("Error: " + e.message);
-  }
-}
-
-function dlPDF() {
-  if (!mergedB) return;
-  var blob = new Blob([mergedB], {type: "application/pdf"});
-  var a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "merged-toolsaipro.pdf";
-  a.click();
-  showToast("Downloaded!");
-}
-
-// IMAGE COMPRESSOR
-var compFile = null;
-var compURL = null;
-
-function loadComp(inp) {
-  var f = inp.files[0];
-  if (!f) return;
-  compFile = f;
-  document.getElementById("compSet").style.display = "block";
-  document.getElementById("compRes").classList.remove("show");
-  document.getElementById("compCanvas").style.display = "none";
-  showToast("Image loaded!");
-}
-
-function compressImg() {
-  if (!compFile) return;
-  var q = parseInt(document.getElementById("qualS").value) / 100;
-  var mw = parseInt(document.getElementById("widthS").value);
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var img = new Image();
-    img.onload = function() {
-      var w = img.width, h = img.height;
-      if (w > mw) { h = Math.round(h * mw / w); w = mw; }
-      var canvas = document.getElementById("compCanvas");
-      canvas.width = w; canvas.height = h;
-      var ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0, w, h);
-      var mime = compFile.type === "image/png" ? "image/png" : "image/jpeg";
-      compURL = canvas.toDataURL(mime, q);
-      canvas.style.display = "block";
-      var origKB = (compFile.size / 1024).toFixed(1);
-      var compBytes = Math.round(compURL.length * 0.75);
-      var compKB = (compBytes / 1024).toFixed(1);
-      var saved = Math.max(0, Math.round((1 - compBytes / compFile.size) * 100));
-      document.getElementById("origSz").textContent = origKB + " KB";
-      document.getElementById("compSz").textContent = compKB + " KB";
-      document.getElementById("savedP").textContent = saved + "%";
-      document.getElementById("compRes").classList.add("show");
-      showToast("Compressed!");
-    };
-    img.src = e.target.result;
-  };
-  reader.readAsDataURL(compFile);
-}
-
-function dlComp() {
-  if (!compURL) return;
-  var a = document.createElement("a");
-  a.href = compURL;
-  a.download = "compressed-toolsaipro.jpg";
-  a.click();
-  showToast("Downloaded!");
-}
-
-// COLOR PICKER
-function updateColor(hex) {
-  var r = parseInt(hex.slice(1,3), 16);
-  var g = parseInt(hex.slice(3,5), 16);
-  var b = parseInt(hex.slice(5,7), 16);
-  var rn = r/255, gn = g/255, bn = b/255;
-  var max = Math.max(rn,gn,bn), min = Math.min(rn,gn,bn);
-  var h, s, l = (max+min)/2;
-  if (max === min) { h = s = 0; }
-  else {
-    var d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-    if (max === rn) h = (gn - bn) / d + (gn < bn ? 6 : 0);
-    else if (max === gn) h = (bn - rn) / d + 2;
-    else h = (rn - gn) / d + 4;
-    h /= 6;
-  }
-  var bright = (r*299 + g*587 + b*114) / 1000;
-  var tc = bright > 128 ? "#1a1a2e" : "#fff";
-  document.getElementById("colorPrev").style.background = hex;
-  document.getElementById("colorPrev").style.color = tc;
-  document.getElementById("colorPrev").textContent = hex.toUpperCase();
-  document.getElementById("hexV").textContent = hex.toUpperCase();
-  document.getElementById("rgbV").textContent = r + ", " + g + ", " + b;
-  document.getElementById("hslV").textContent = Math.round(h*360) + ", " + Math.round(s*100) + "%, " + Math.round(l*100) + "%";
-}
-
-function copyV(id) {
-  navigator.clipboard.writeText(document.getElementById(id).textContent).then(function() { showToast("Copied!"); });
-}
-
+function goHome(){document.getElementById("home").style.display="block";document.querySelectorAll(".sc").forEach(function(s){s.classList.remove("active");});window.scrollTo({top:0,behavior:"smooth"});}
+function openTool(n){document.getElementById("home").style.display="none";document.querySelectorAll(".sc").forEach(function(s){s.classList.remove("active");});document.getElementById("sc-"+n).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+window.addEventListener("load",function(){var h=window.location.hash.replace("#","");var tools=["pdf","img2pdf","comp","color","pass","word","age"];if(h&&tools.indexOf(h)!==-1){openTool(h);}});
+function showToast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(function(){t.classList.remove("show");},2200);}
+var pdfFiles=[],mergedB=null;
+function addPDFs(inp){Array.from(inp.files).forEach(function(f){if(!pdfFiles.find(function(p){return p.name===f.name;}))pdfFiles.push(f);});renderPDF();inp.value="";}
+function renderPDF(){var html="";pdfFiles.forEach(function(f,i){html+='<div class="fi"><div class="fil"><span style="font-size:16px">📄</span><div><div class="fin">'+f.name+'</div><div class="fis">'+(f.size/1024).toFixed(1)+' KB</div></div></div><button class="fir" onclick="rmPDF('+i+')">✕</button></div>';});document.getElementById("pdfList").innerHTML=html;document.getElementById("mergeBtn").disabled=pdfFiles.length<2;}
+function rmPDF(i){pdfFiles.splice(i,1);renderPDF();}
+function clearPDFs(){pdfFiles=[];renderPDF();document.getElementById("pdfRes").classList.remove("show");}
+async function mergePDFs(){if(pdfFiles.length<2){showToast("Please add at least 2 PDF files!");return;}var pr=document.getElementById("pdfProg"),pf=document.getElementById("pdfFill"),pl=document.getElementById("pdfLbl");pr.classList.add("show");document.getElementById("pdfRes").classList.remove("show");try{var merged=await PDFLib.PDFDocument.create();for(var i=0;i<pdfFiles.length;i++){pf.style.width=((i/pdfFiles.length)*85)+"%";pl.textContent="Processing: "+pdfFiles[i].name;var bytes=await pdfFiles[i].arrayBuffer();var doc=await PDFLib.PDFDocument.load(bytes,{ignoreEncryption:true});var pages=await merged.copyPages(doc,doc.getPageIndices());pages.forEach(function(p){merged.addPage(p);});}pf.style.width="100%";mergedB=await merged.save();setTimeout(function(){pr.classList.remove("show");document.getElementById("pdfRes").classList.add("show");showToast("Merged successfully!");},400);}catch(e){pr.classList.remove("show");showToast("Error: "+e.message);}}
+function dlPDF(){if(!mergedB)return;var blob=new Blob([mergedB],{type:"application/pdf"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="merged-toolsaipro.pdf";a.click();showToast("Downloaded!");}
+var imgPdfFiles=[],imgPdfResult=null;
+function addImgPdf(inp){Array.from(inp.files).forEach(function(f){imgPdfFiles.push(f);});renderImgThumbs();inp.value="";}
+function renderImgThumbs(){var grid=document.getElementById("imgThumbGrid");grid.innerHTML="";imgPdfFiles.forEach(function(f,i){var div=document.createElement("div");div.className="img-thumb";var img=document.createElement("img");img.src=URL.createObjectURL(f);var btn=document.createElement("button");btn.textContent="✕";btn.onclick=function(){rmImgPdf(i);};div.appendChild(img);div.appendChild(btn);grid.appendChild(div);});document.getElementById("img2pdfBtn").disabled=imgPdfFiles.length===0;}
+function rmImgPdf(i){imgPdfFiles.splice(i,1);renderImgThumbs();}
+function clearImgPdf(){imgPdfFiles=[];document.getElementById("imgThumbGrid").innerHTML="";document.getElementById("img2pdfRes").classList.remove("show");document.getElementById("img2pdfBtn").disabled=true;}
+async function convertImgToPDF(){if(imgPdfFiles.length===0){showToast("Please add at least one image!");return;}var pr=document.getElementById("img2pdfProg"),pf=document.getElementById("img2pdfFill");pr.classList.add("show");document.getElementById("img2pdfRes").classList.remove("show");try{var pdfDoc=await PDFLib.PDFDocument.create();for(var i=0;i<imgPdfFiles.length;i++){pf.style.width=((i/imgPdfFiles.length)*90)+"%";var file=imgPdfFiles[i];var ab=await file.arrayBuffer();var img;if(file.type==="image/png"){img=await pdfDoc.embedPng(ab);}else{img=await pdfDoc.embedJpg(ab);}var page=pdfDoc.addPage([img.width,img.height]);page.drawImage(img,{x:0,y:0,width:img.width,height:img.height});}pf.style.width="100%";imgPdfResult=await pdfDoc.save();setTimeout(function(){pr.classList.remove("show");document.getElementById("img2pdfRes").classList.add("show");showToast("PDF created!");},400);}catch(e){pr.classList.remove("show");showToast("Error: "+e.message);}}
+function dlImgPdf(){if(!imgPdfResult)return;var blob=new Blob([imgPdfResult],{type:"application/pdf"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="images-toolsaipro.pdf";a.click();showToast("Downloaded!");}
+var compFile=null,compURL=null;
+function loadComp(inp){var f=inp.files[0];if(!f)return;compFile=f;document.getElementById("compSet").style.display="block";document.getElementById("compRes").classList.remove("show");document.getElementById("compCanvas").style.display="none";showToast("Image loaded!");}
+function compressImg(){if(!compFile)return;var q=parseInt(document.getElementById("qualS").value)/100;var mw=parseInt(document.getElementById("widthS").value);var reader=new FileReader();reader.onload=function(e){var img=new Image();img.onload=function(){var w=img.width,h=img.height;if(w>mw){h=Math.round(h*mw/w);w=mw;}var canvas=document.getElementById("compCanvas");canvas.width=w;canvas.height=h;var ctx=canvas.getContext("2d");ctx.drawImage(img,0,0,w,h);var mime=compFile.type==="image/png"?"image/png":"image/jpeg";compURL=canvas.toDataURL(mime,q);canvas.style.display="block";var origKB=(compFile.size/1024).toFixed(1);var compBytes=Math.round(compURL.length*0.75);var compKB=(compBytes/1024).toFixed(1);var saved=Math.max(0,Math.round((1-compBytes/compFile.size)*100));document.getElementById("origSz").textContent=origKB+" KB";document.getElementById("compSz").textContent=compKB+" KB";document.getElementById("savedP").textContent=saved+"%";document.getElementById("compRes").classList.add("show");showToast("Compressed!");};img.src=e.target.result;};reader.readAsDataURL(compFile);}
+function dlComp(){if(!compURL)return;var a=document.createElement("a");a.href=compURL;a.download="compressed-toolsaipro.jpg";a.click();showToast("Downloaded!");}
+function updateColor(hex){var r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);var rn=r/255,gn=g/255,bn=b/255;var max=Math.max(rn,gn,bn),min=Math.min(rn,gn,bn);var h,s,l=(max+min)/2;if(max===min){h=s=0;}else{var d=max-min;s=l>0.5?d/(2-max-min):d/(max+min);if(max===rn)h=(gn-bn)/d+(gn<bn?6:0);else if(max===gn)h=(bn-rn)/d+2;else h=(rn-gn)/d+4;h/=6;}var bright=(r*299+g*587+b*114)/1000;var tc=bright>128?"#1a1a2e":"#fff";document.getElementById("colorPrev").style.background=hex;document.getElementById("colorPrev").style.color=tc;document.getElementById("colorPrev").textContent=hex.toUpperCase();document.getElementById("hexV").textContent=hex.toUpperCase();document.getElementById("rgbV").textContent=r+", "+g+", "+b;document.getElementById("hslV").textContent=Math.round(h*360)+", "+Math.round(s*100)+"%, "+Math.round(l*100)+"%";}
+function copyV(id){navigator.clipboard.writeText(document.getElementById(id).textContent).then(function(){showToast("Copied!");});}
 updateColor("#6c63ff");
-
-// PASSWORD GENERATOR
-function genPass() {
-  var len = parseInt(document.getElementById("passLen").value);
-  var up = document.getElementById("useUp").checked;
-  var lo = document.getElementById("useLo").checked;
-  var nu = document.getElementById("useNum").checked;
-  var sy = document.getElementById("useSym").checked;
-  var chars = "";
-  if (up) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  if (lo) chars += "abcdefghijklmnopqrstuvwxyz";
-  if (nu) chars += "0123456789";
-  if (sy) chars += "!@#$%^&*()_+-=[]{}|";
-  if (!chars) { showToast("Select at least one option!"); return; }
-  var pass = "";
-  for (var i = 0; i < len; i++) {
-    pass += chars[Math.floor(Math.random() * chars.length)];
-  }
-  document.getElementById("passText").textContent = pass;
-  document.getElementById("passDisp").classList.add("show");
-  var sc = 0;
-  if (up && lo) sc++;
-  if (nu) sc++;
-  if (sy) sc++;
-  if (len >= 12) sc++;
-  if (len >= 20) sc++;
-  var cols = ["#ff4757","#ff6348","#ffa502","#2ed573","#00c48c"];
-  var lbls = ["Very Weak","Weak","Fair","Strong","Very Strong"];
-  var bar = document.getElementById("strBar");
-  var lbl = document.getElementById("strLbl");
-  bar.style.width = ((sc+1)*20) + "%";
-  bar.style.background = cols[sc];
-  bar.classList.add("show");
-  lbl.textContent = "Strength: " + lbls[sc];
-  lbl.style.display = "block";
-  lbl.style.color = cols[sc];
-}
-
-function copyPass() {
-  var p = document.getElementById("passText").textContent;
-  navigator.clipboard.writeText(p).then(function() { showToast("Password Copied!"); });
-}
-
-// WORD COUNTER
-document.getElementById("wordTxt").addEventListener("input", function() { countWords(); });
-
-function countWords() {
-  var t = document.getElementById("wordTxt").value;
-  var words = t.trim() === "" ? 0 : t.trim().split(/\s+/).length;
-  var sentences = t.split(/[.!?]+/).filter(function(s) { return s.trim().length > 0; }).length;
-  var paras = t.split(/\n+/).filter(function(p) { return p.trim().length > 0; }).length;
-  document.getElementById("wcW").textContent = words;
-  document.getElementById("wcC").textContent = t.length;
-  document.getElementById("wcN").textContent = t.replace(/\s/g, "").length;
-  document.getElementById("wcS").textContent = sentences;
-  document.getElementById("wcP").textContent = paras || 0;
-  document.getElementById("wcR").textContent = Math.max(1, Math.ceil(words / 200));
-}
-
-function clearWord() {
-  document.getElementById("wordTxt").value = "";
-  countWords();
-}
-
-function copyTxt() {
-  var v = document.getElementById("wordTxt").value;
-  navigator.clipboard.writeText(v).then(function() { showToast("Copied!"); });
-}
-
-// AGE CALCULATOR
-document.getElementById("dobIn").max = new Date().toISOString().split("T")[0];
-
-function calcAge() {
-  var val = document.getElementById("dobIn").value;
-  var err = document.getElementById("ageErr");
-  err.classList.remove("show");
-  if (!val) { err.textContent = "Please select your date of birth!"; err.classList.add("show"); return; }
-  var dob = new Date(val);
-  var today = new Date();
-  if (dob > today) { err.textContent = "Date cannot be in the future!"; err.classList.add("show"); return; }
-  var y = today.getFullYear() - dob.getFullYear();
-  var mo = today.getMonth() - dob.getMonth();
-  var d = today.getDate() - dob.getDate();
-  if (d < 0) { mo--; d += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
-  if (mo < 0) { y--; mo += 12; }
-  var totalD = Math.floor((today - dob) / (1000*60*60*24));
-  document.getElementById("ageY").textContent = y;
-  document.getElementById("ageM").textContent = mo;
-  document.getElementById("ageD").textContent = d;
-  document.getElementById("totalD").textContent = totalD.toLocaleString();
-  document.getElementById("ageGrid").classList.add("show");
-  document.getElementById("ageTotal").classList.add("show");
-}
-
-function clearAge() {
-  document.getElementById("dobIn").value = "";
-  document.getElementById("ageGrid").classList.remove("show");
-  document.getElementById("ageTotal").classList.remove("show");
-  document.getElementById("ageErr").classList.remove("show");
-}
+function genPass(){var len=parseInt(document.getElementById("passLen").value);var up=document.getElementById("useUp").checked,lo=document.getElementById("useLo").checked,nu=document.getElementById("useNum").checked,sy=document.getElementById("useSym").checked;var chars="";if(up)chars+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";if(lo)chars+="abcdefghijklmnopqrstuvwxyz";if(nu)chars+="0123456789";if(sy)chars+="!@#$%^&*()_+-=[]{}|";if(!chars){showToast("Select at least one option!");return;}var pass="";for(var i=0;i<len;i++)pass+=chars[Math.floor(Math.random()*chars.length)];document.getElementById("passText").textContent=pass;document.getElementById("passDisp").classList.add("show");var sc=0;if(up&&lo)sc++;if(nu)sc++;if(sy)sc++;if(len>=12)sc++;if(len>=20)sc++;var cols=["#ff4757","#ff6348","#ffa502","#2ed573","#00c48c"];var lbls=["Very Weak","Weak","Fair","Strong","Very Strong"];var bar=document.getElementById("strBar"),lbl=document.getElementById("strLbl");bar.style.width=((sc+1)*20)+"%";bar.style.background=cols[sc];bar.classList.add("show");lbl.textContent="Strength: "+lbls[sc];lbl.style.display="block";lbl.style.color=cols[sc];}
+function copyPass(){navigator.clipboard.writeText(document.getElementById("passText").textContent).then(function(){showToast("Password Copied!");});}
+document.getElementById("wordTxt").addEventListener("input",function(){countWords();});
+function countWords(){var t=document.getElementById("wordTxt").value;var words=t.trim()===""?0:t.trim().split(/\s+/).length;var sentences=t.split(/[.!?]+/).filter(function(s){return s.trim().length>0;}).length;var paras=t.split(/\n+/).filter(function(p){return p.trim().length>0;}).length;document.getElementById("wcW").textContent=words;document.getElementById("wcC").textContent=t.length;document.getElementById("wcN").textContent=t.replace(/\s/g,"").length;document.getElementById("wcS").textContent=sentences;document.getElementById("wcP").textContent=paras||0;document.getElementById("wcR").textContent=Math.max(1,Math.ceil(words/200));}
+function clearWord(){document.getElementById("wordTxt").value="";countWords();}
+function copyTxt(){navigator.clipboard.writeText(document.getElementById("wordTxt").value).then(function(){showToast("Copied!");});}
+document.getElementById("dobIn").max=new Date().toISOString().split("T")[0];
+function calcAge(){var val=document.getElementById("dobIn").value;var err=document.getElementById("ageErr");err.classList.remove("show");if(!val){err.textContent="Please select your date of birth!";err.classList.add("show");return;}var dob=new Date(val),today=new Date();if(dob>today){err.textContent="Date cannot be in the future!";err.classList.add("show");return;}var y=today.getFullYear()-dob.getFullYear(),mo=today.getMonth()-dob.getMonth(),d=today.getDate()-dob.getDate();if(d<0){mo--;d+=new Date(today.getFullYear(),today.getMonth(),0).getDate();}if(mo<0){y--;mo+=12;}var totalD=Math.floor((today-dob)/(1000*60*60*24));document.getElementById("ageY").textContent=y;document.getElementById("ageM").textContent=mo;document.getElementById("ageD").textContent=d;document.getElementById("totalD").textContent=totalD.toLocaleString();document.getElementById("ageGrid").classList.add("show");document.getElementById("ageTotal").classList.add("show");}
+function clearAge(){document.getElementById("dobIn").value="";document.getElementById("ageGrid").classList.remove("show");document.getElementById("ageTotal").classList.remove("show");document.getElementById("ageErr").classList.remove("show");}
 </script>
 </body>
 </html>
