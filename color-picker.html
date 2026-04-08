@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Color Picker & Palette Generator Online Free | ToolsAI Pro</title>
+<meta name="description" content="Free advanced color picker with HEX, RGB, HSL, CMYK codes, palette generator, contrast checker and color wheel. Perfect for designers and developers.">
+<meta name="keywords" content="color picker online free, color palette generator, hex to rgb converter, color wheel, brand color picker, contrast checker, CMYK color">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolsaipro.github.io/color-picker.html">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d14;--sur:#16161f;--card:#1c1c28;--bor:#2a2a3a;--a1:#6c63ff;--a2:#ff6584;--a3:#43e97b;--a4:#f7971e;--tx:#e8e8f0;--mu:#6b6b80;--accent:#f59e0b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;min-height:100vh;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 55% 45% at 15% 25%,rgba(245,158,11,0.05) 0%,transparent 60%),radial-gradient(ellipse 45% 35% at 85% 75%,rgba(108,99,255,0.05) 0%,transparent 60%);}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bor);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:62px;}
+.logo{font-size:19px;font-weight:800;color:#fff;text-decoration:none;}
+.logo span{color:var(--a1);}.logo em{color:var(--a2);font-style:normal;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nl{padding:5px 11px;border-radius:16px;font-size:11px;font-weight:600;color:var(--mu);text-decoration:none;border:1px solid transparent;transition:all 0.2s;}
+.nl:hover{color:var(--accent);border-color:rgba(245,158,11,0.3);}
+.page-hero{position:relative;z-index:1;text-align:center;padding:48px 24px 36px;}
+.breadcrumb{font-size:12px;color:var(--mu);margin-bottom:16px;}
+.breadcrumb a{color:var(--accent);text-decoration:none;}
+.tool-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);color:var(--accent);padding:5px 14px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
+.page-hero h1{font-size:clamp(28px,6vw,58px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;}
+.page-hero h1 span{background:linear-gradient(135deg,var(--accent),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.page-hero p{font-size:14px;color:var(--mu);max-width:560px;margin:0 auto;line-height:1.7;}
+.tool-wrap{max-width:900px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.scard{background:rgba(28,28,40,0.85);backdrop-filter:blur(16px);border:1px solid rgba(245,158,11,0.12);border-radius:22px;padding:28px;margin-bottom:16px;box-shadow:0 8px 40px rgba(0,0,0,0.35);}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--bor);}
+.shi{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(255,101,132,0.15));display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:1px solid rgba(245,158,11,0.2);}
+.sht{font-size:20px;font-weight:800;color:#fff;}
+.shs{font-size:12px;color:var(--mu);margin-top:3px;}
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+/* COLOR WHEEL SIDE */
+.wheel-col{}
+.wheel-label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;display:block;}
+
+/* Native color input styled as wheel */
+.color-wheel-wrap{position:relative;width:100%;aspect-ratio:1;max-width:280px;margin:0 auto 16px;}
+.big-color-input{width:100%;height:100%;border-radius:50%;border:3px solid var(--bor);cursor:pointer;padding:4px;background:transparent;outline:none;transition:border-color 0.3s;}
+.big-color-input::-webkit-color-swatch-wrapper{padding:0;border-radius:50%;}
+.big-color-input::-webkit-color-swatch{border-radius:50%;border:none;}
+.color-wheel-wrap:hover .big-color-input{border-color:var(--accent);}
+
+/* Color preview large */
+.color-preview-large{width:100%;height:80px;border-radius:14px;margin-bottom:14px;transition:all 0.3s;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;letter-spacing:2px;font-family:monospace;border:1px solid var(--bor);cursor:pointer;position:relative;overflow:hidden;}
+.color-preview-large::after{content:"Click to copy HEX";position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.5);font-size:11px;font-family:"Plus Jakarta Sans",sans-serif;font-weight:600;letter-spacing:1px;padding:5px;text-align:center;opacity:0;transition:opacity 0.2s;}
+.color-preview-large:hover::after{opacity:1;}
+
+/* Hex input */
+.hex-input-wrap{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.hex-prefix{font-size:18px;font-weight:800;color:var(--mu);}
+.hex-input{flex:1;background:var(--sur);border:1.5px solid var(--bor);border-radius:10px;padding:10px 14px;color:var(--tx);font-family:monospace;font-size:16px;font-weight:700;outline:none;text-transform:uppercase;transition:border-color 0.2s;letter-spacing:2px;}
+.hex-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,158,11,0.1);}
+
+/* RIGHT SIDE */
+.info-col{}
+
+/* Format codes */
+.formats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.fmt-card{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:14px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
+.fmt-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(245,158,11,0.05),transparent);opacity:0;transition:opacity 0.2s;}
+.fmt-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.fmt-card:hover::before{opacity:1;}
+.fmt-card.copied{border-color:var(--a3);animation:pulse 0.4s ease;}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(0.98)}100%{transform:scale(1)}}
+.fmt-label{font-size:10px;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;}
+.fmt-label .copy-hint{font-size:10px;color:var(--mu);opacity:0.6;}
+.fmt-card:hover .copy-hint{color:var(--accent);opacity:1;}
+.fmt-value{font-family:monospace;font-size:13px;font-weight:700;color:#fff;word-break:break-all;}
+
+/* Contrast checker */
+.contrast-box{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:14px;margin-bottom:16px;}
+.contrast-title{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.contrast-preview{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
+.contrast-swatch{border-radius:8px;padding:12px;text-align:center;}
+.contrast-swatch .cs-text{font-size:13px;font-weight:700;margin-bottom:3px;}
+.contrast-swatch .cs-ratio{font-size:10px;opacity:0.8;}
+.contrast-badges{display:flex;gap:6px;flex-wrap:wrap;}
+.cbadge{padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.cbadge.pass{background:rgba(67,233,123,0.15);color:var(--a3);}
+.cbadge.fail{background:rgba(255,101,132,0.15);color:var(--a2);}
+
+/* PALETTE SECTION */
+.palette-section{margin-top:16px;}
+.palette-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
+.ptab{padding:6px 14px;border-radius:8px;border:1.5px solid var(--bor);background:transparent;color:var(--mu);font-family:"Plus Jakarta Sans",sans-serif;font-size:11px;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.ptab.active{background:var(--accent);border-color:var(--accent);color:#0d0d14;}
+.ptab:hover:not(.active){border-color:var(--accent);color:var(--accent);}
+.palette-row{display:flex;gap:6px;flex-wrap:wrap;}
+.pal-swatch{flex:1;min-width:50px;height:64px;border-radius:10px;cursor:pointer;transition:all 0.2s;position:relative;border:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;justify-content:flex-end;padding:5px;overflow:hidden;}
+.pal-swatch:hover{transform:translateY(-4px) scale(1.05);z-index:2;box-shadow:0 8px 20px rgba(0,0,0,0.4);}
+.pal-swatch:hover .ps-hex{opacity:1;}
+.ps-hex{font-size:9px;font-family:monospace;font-weight:700;text-align:center;background:rgba(0,0,0,0.5);border-radius:4px;padding:2px 4px;opacity:0;transition:opacity 0.2s;color:#fff;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#fff;color:#0d0d14;padding:10px 22px;border-radius:28px;font-size:12px;font-weight:700;z-index:9999;transition:transform 0.3s;box-shadow:0 6px 24px rgba(0,0,0,0.25);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* SEO */
+.seo-wrap{max-width:900px;margin:44px auto 0;padding:0 24px;position:relative;z-index:1;}
+.seo-block{background:rgba(28,28,40,0.7);backdrop-filter:blur(12px);border:1px solid var(--bor);border-radius:20px;padding:32px;margin-bottom:14px;}
+.seo-block h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;}
+.seo-block h3{font-size:15px;font-weight:700;color:#fff;margin:18px 0 8px;}
+.seo-block p{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:10px;}
+.seo-block ul{padding-left:20px;margin-bottom:12px;}
+.seo-block li{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:7px;}
+.seo-block li strong{color:#fff;}
+.color-theory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px;}
+.ct-card{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:16px;transition:border-color 0.2s;}
+.ct-card:hover{border-color:rgba(245,158,11,0.3);}
+.ct-icon{font-size:22px;margin-bottom:8px;}
+.ct-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:5px;}
+.ct-desc{font-size:12px;color:var(--mu);line-height:1.6;}
+.compare-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.compare-table th{background:rgba(245,158,11,0.1);color:var(--accent);padding:11px 14px;text-align:left;border:1px solid var(--bor);font-size:12px;}
+.compare-table td{padding:10px 14px;color:var(--mu);border:1px solid var(--bor);}
+.compare-table tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
+.compare-table td.good{color:var(--a3);}
+.compare-table td.mid{color:var(--accent);}
+.brand-steps{counter-reset:step;}
+.brand-step{display:flex;gap:14px;margin-bottom:16px;counter-increment:step;}
+.step-num{width:34px;height:34px;background:linear-gradient(135deg,var(--accent),var(--a2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;margin-top:2px;}
+.step-content h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+.step-content p{font-size:13px;color:var(--mu);line-height:1.7;margin:0;}
+.faq-item{border-bottom:1px solid var(--bor);padding:16px 0;}
+.faq-item:last-child{border-bottom:none;padding-bottom:0;}
+.faq-q{font-size:14px;font-weight:700;color:#fff;margin-bottom:7px;}
+.faq-a{font-size:13px;color:var(--mu);line-height:1.75;}
+.other-tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:14px;}
+.ot-card{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:14px;text-decoration:none;transition:all 0.2s;display:block;text-align:center;}
+.ot-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.ot-icon{font-size:24px;margin-bottom:6px;}
+.ot-name{font-size:11px;font-weight:700;color:#fff;}
+footer{text-align:center;padding:32px 20px 24px;color:var(--mu);font-size:12px;border-top:1px solid var(--bor);margin-top:40px;position:relative;z-index:1;}
+footer strong{color:var(--a1);}
+footer a{color:var(--mu);text-decoration:none;margin:0 7px;}
+footer a:hover{color:var(--a1);}
+@media(max-width:660px){.main-grid{grid-template-columns:1fr;}.formats-grid{grid-template-columns:1fr 1fr;}.color-wheel-wrap{max-width:200px;}nav{padding:0 14px;}.scard{padding:20px 16px;}.seo-block{padding:22px 16px;}}
+</style>
+</head>
+<body>
+<div class="toast" id="toast">Copied!</div>
+
+<nav>
+  <a class="logo" href="index.html">Tools<span>AI</span><em>Pro</em></a>
+  <div class="nav-links">
+    <a class="nl" href="index.html">Home</a>
+    <a class="nl" href="about.html">About</a>
+    <a class="nl" href="contact.html">Contact</a>
+    <a class="nl" href="privacy.html">Privacy</a>
+    <a class="nl" href="blog.html">Blog</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> › Color Picker</div>
+  <div class="tool-badge">🎨 Premium Color Tool</div>
+  <h1>Advanced <span>Color Picker</span><br>& Palette Generator</h1>
+  <p>Pick any color, get instant HEX, RGB, HSL and CMYK codes, generate matching palettes, check contrast ratios — all free, all in one tool.</p>
+</div>
+
+<div class="tool-wrap">
+  <div class="scard">
+    <div class="sh">
+      <div class="shi">🎨</div>
+      <div>
+        <div class="sht">Color Picker & Palette Generator</div>
+        <div class="shs">Click the color wheel to select — all codes update instantly</div>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <!-- LEFT: COLOR WHEEL -->
+      <div class="wheel-col">
+        <span class="wheel-label">Color Wheel</span>
+        <div class="color-wheel-wrap">
+          <input type="color" class="big-color-input" id="mainColorInput" value="#6c63ff">
+        </div>
+
+        <div class="color-preview-large" id="colorPreviewLarge" style="background:#6c63ff;color:#fff;">#6C63FF</div>
+
+        <div class="hex-input-wrap">
+          <span class="hex-prefix">#</span>
+          <input class="hex-input" id="hexInput" value="6C63FF" maxlength="6" placeholder="6C63FF">
+        </div>
+
+        <div class="palette-section">
+          <span class="wheel-label">Color Palette</span>
+          <div class="palette-tabs">
+            <button class="ptab active" id="tabAna">Analogous</button>
+            <button class="ptab" id="tabMono">Monochromatic</button>
+            <button class="ptab" id="tabTri">Triadic</button>
+            <button class="ptab" id="tabComp">Complementary</button>
+          </div>
+          <div class="palette-row" id="paletteRow"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: INFO -->
+      <div class="info-col">
+        <span class="wheel-label">Color Codes — Click to Copy</span>
+        <div class="formats-grid">
+          <div class="fmt-card" id="cardHex" onclick="copyCode('hex')">
+            <div class="fmt-label">HEX <span class="copy-hint">📋 Copy</span></div>
+            <div class="fmt-value" id="fmtHex">#6C63FF</div>
+          </div>
+          <div class="fmt-card" id="cardRgb" onclick="copyCode('rgb')">
+            <div class="fmt-label">RGB <span class="copy-hint">📋 Copy</span></div>
+            <div class="fmt-value" id="fmtRgb">rgb(108, 99, 255)</div>
+          </div>
+          <div class="fmt-card" id="cardHsl" onclick="copyCode('hsl')">
+            <div class="fmt-label">HSL <span class="copy-hint">📋 Copy</span></div>
+            <div class="fmt-value" id="fmtHsl">hsl(243, 100%, 70%)</div>
+          </div>
+          <div class="fmt-card" id="cardCmyk" onclick="copyCode('cmyk')">
+            <div class="fmt-label">CMYK <span class="copy-hint">📋 Copy</span></div>
+            <div class="fmt-value" id="fmtCmyk">cmyk(58%, 61%, 0%, 0%)</div>
+          </div>
+        </div>
+
+        <!-- CONTRAST CHECKER -->
+        <div class="contrast-box">
+          <div class="contrast-title">♿ Contrast Checker — WCAG Accessibility</div>
+          <div class="contrast-preview">
+            <div class="contrast-swatch" id="whiteOnColor">
+              <div class="cs-text" style="color:#fff;font-weight:700;">White Text</div>
+              <div class="cs-ratio" style="color:#fff;" id="whiteRatio">4.5:1</div>
+            </div>
+            <div class="contrast-swatch" id="blackOnColor">
+              <div class="cs-text" style="color:#000;font-weight:700;">Black Text</div>
+              <div class="cs-ratio" style="color:#000;" id="blackRatio">4.5:1</div>
+            </div>
+          </div>
+          <div class="contrast-badges" id="contrastBadges"></div>
+        </div>
+
+        <!-- CSS SNIPPET -->
+        <div style="background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:14px;cursor:pointer;" onclick="copyCss()" id="cssCard">
+          <div style="font-size:10px;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;display:flex;justify-content:space-between;"><span>CSS Variable</span><span style="color:var(--accent);">📋 Copy</span></div>
+          <div style="font-family:monospace;font-size:12px;color:#a3e635;" id="cssSnippet">--primary-color: #6C63FF;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO CONTENT -->
+<div class="seo-wrap">
+
+  <div class="seo-block">
+    <h2>🎨 What is Color Theory? A Complete Guide for Designers</h2>
+    <p>Color theory is the study of how colors interact with each other, how they are perceived by the human eye and how they can be combined to create visually appealing and effective designs. Understanding color theory is fundamental for web designers, graphic designers, UI/UX designers, brand strategists and anyone who creates visual content. The principles of color theory have been developed over centuries, from Isaac Newton's color wheel in 1666 to the modern digital color systems we use today.</p>
+    <p>At the heart of color theory is the color wheel — a circular arrangement of colors showing their relationships to each other. Primary colors (red, blue and yellow in traditional theory, or red, green and blue in digital/additive color) form the foundation. Secondary colors are created by mixing two primary colors, and tertiary colors are created by mixing a primary with an adjacent secondary color. These relationships define how colors harmonize or contrast with each other in a design.</p>
+    <p>Modern digital design uses several different color systems, each suited to different purposes. Understanding these systems is essential for anyone creating digital or print content. Our Advanced Color Picker gives you instant access to all major color formats — HEX, RGB, HSL and CMYK — so you can work seamlessly across different platforms, applications and outputs.</p>
+
+    <h3>The Major Color Harmony Types</h3>
+    <div class="color-theory-grid">
+      <div class="ct-card"><div class="ct-icon">🔵</div><div class="ct-title">Analogous</div><div class="ct-desc">Colors adjacent on the wheel. Creates harmonious, natural-feeling designs. Used in nature photography and organic brands.</div></div>
+      <div class="ct-card"><div class="ct-icon">⚪</div><div class="ct-title">Monochromatic</div><div class="ct-desc">Different shades and tints of one color. Elegant and sophisticated. Common in luxury and minimal brands.</div></div>
+      <div class="ct-card"><div class="ct-icon">🔺</div><div class="ct-title">Triadic</div><div class="ct-desc">Three colors equally spaced on the wheel. Vibrant and balanced. Effective for playful, energetic designs.</div></div>
+      <div class="ct-card"><div class="ct-icon">⭕</div><div class="ct-title">Complementary</div><div class="ct-desc">Colors opposite on the wheel. Maximum contrast and visual impact. Used in sports brands and calls-to-action.</div></div>
+    </div>
+  </div>
+
+  <div class="seo-block">
+    <h2>📊 HEX vs RGB vs HSL vs CMYK — Complete Comparison</h2>
+    <p>Each color format has its own strengths and is best suited to specific use cases. Understanding when to use each format saves time and prevents color mismatches across different mediums:</p>
+    <table class="compare-table">
+      <tr><th>Format</th><th>Example</th><th>Best For</th><th>Range</th><th>Transparency</th></tr>
+      <tr><td><strong style="color:#fff;">HEX</strong></td><td>#6C63FF</td><td class="good">Web CSS, HTML, design tools</td><td>0-9, A-F</td><td class="mid">With # + alpha</td></tr>
+      <tr><td><strong style="color:#fff;">RGB</strong></td><td>rgb(108,99,255)</td><td class="good">CSS, screen displays, programming</td><td>0–255 each</td><td class="good">rgba() supported</td></tr>
+      <tr><td><strong style="color:#fff;">HSL</strong></td><td>hsl(243,100%,70%)</td><td class="good">CSS theming, color adjustments</td><td>H:0-360, S/L:0-100%</td><td class="good">hsla() supported</td></tr>
+      <tr><td><strong style="color:#fff;">CMYK</strong></td><td>cmyk(58,61,0,0)</td><td class="good">Print design, Photoshop, Illustrator</td><td>0–100% each</td><td>Not applicable</td></tr>
+      <tr><td><strong style="color:#fff;">HSV/HSB</strong></td><td>hsv(243,61%,100%)</td><td class="mid">Adobe tools, image editing</td><td>H:0-360, S/V:0-100%</td><td>Not in CSS</td></tr>
+    </table>
+    <p>For web development, HEX and RGB are the most commonly used formats because they are directly supported in CSS. HSL is increasingly popular for CSS theming because it is intuitive — you can easily adjust lightness and saturation without needing a color calculator. CMYK is the standard for professional print production and must be used when preparing files for commercial printing to avoid color shift between screen and print.</p>
+  </div>
+
+  <div class="seo-block">
+    <h2>🏢 How to Choose Brand Colors — A Step by Step Guide</h2>
+    <p>Choosing the right brand colors is one of the most important decisions you will make for your business or project. Colors communicate emotions, values and personality before a single word is read. Studies show that color increases brand recognition by up to 80 percent. Here is a structured approach to selecting effective brand colors:</p>
+    <div class="brand-steps">
+      <div class="brand-step"><div class="step-num">1</div><div class="step-content"><h3>Define Your Brand Personality</h3><p>List 3-5 adjectives that describe your brand — energetic, trustworthy, creative, premium, friendly. These personality traits directly map to color psychology. Blue conveys trust and professionalism, orange conveys energy and friendliness, green conveys nature and health, purple conveys luxury and creativity.</p></div></div>
+      <div class="brand-step"><div class="step-num">2</div><div class="step-content"><h3>Research Your Industry</h3><p>Look at the colors used by successful brands in your industry. While you want to stand out, there are often color conventions that signal trust and credibility in specific sectors — blue in banking and healthcare, green in food and environment, red in food and retail.</p></div></div>
+      <div class="brand-step"><div class="step-num">3</div><div class="step-content"><h3>Choose a Primary Color</h3><p>Select one main brand color that best represents your personality and differentiates you from competitors. Use our Color Picker to explore options and view the color in HEX, RGB and HSL formats for immediate use in your design tools.</p></div></div>
+      <div class="brand-step"><div class="step-num">4</div><div class="step-content"><h3>Build a Color Palette</h3><p>Use the Palette Generator in our tool to create a harmonious set of 4-6 colors. Typically include a primary color, a secondary accent color, a neutral dark, a neutral light and a background color. The Analogous palette creates harmony while the Complementary palette creates dynamic contrast.</p></div></div>
+      <div class="brand-step"><div class="step-num">5</div><div class="step-content"><h3>Check Accessibility and Contrast</h3><p>Use the Contrast Checker in our tool to verify that text on your brand colors meets WCAG 2.1 accessibility standards. A contrast ratio of at least 4.5:1 is required for normal text and 3:1 for large text to ensure your content is readable by people with visual impairments.</p></div></div>
+    </div>
+  </div>
+
+  <div class="seo-block">
+    <h2>❓ Frequently Asked Questions — 12 Expert Answers</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between HEX and RGB color codes?</div>
+      <div class="faq-a">HEX and RGB both describe the same colors using red, green and blue components, but in different notation formats. HEX uses a 6-character hexadecimal string (like #6C63FF) where each pair of characters represents red, green and blue values from 00 to FF. RGB uses three decimal numbers from 0 to 255 (like rgb(108, 99, 255)). They are mathematically equivalent and interchangeable. HEX is more compact and widely used in HTML, while RGB is more readable and easier to manipulate programmatically in JavaScript and CSS.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is HSL and why should designers use it?</div>
+      <div class="faq-a">HSL stands for Hue, Saturation and Lightness. Hue is the actual color (0-360 degrees on the color wheel), Saturation is the intensity or purity of the color (0% is grey, 100% is fully saturated), and Lightness is the brightness (0% is black, 100% is white). HSL is favored by designers because it is intuitive — you can easily create a lighter or darker version of a color by simply adjusting the Lightness value. This makes it perfect for creating consistent color themes in CSS and design systems.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is CMYK and when do I need it?</div>
+      <div class="faq-a">CMYK stands for Cyan, Magenta, Yellow and Key (Black). It is the color model used in commercial printing. Unlike RGB which adds light to create colors (additive), CMYK subtracts light by layering inks (subtractive). You need CMYK values when preparing files for professional printing — business cards, brochures, packaging, banners and any material that will be physically printed. Always convert your screen colors to CMYK and review them in a print-preview before sending to print, as screen RGB colors can appear noticeably different when printed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the WCAG contrast ratio and why does it matter?</div>
+      <div class="faq-a">WCAG (Web Content Accessibility Guidelines) defines minimum contrast ratios for text to be readable by people with visual impairments including colour blindness. The standard requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text (18pt or 14pt bold) for Level AA compliance. Level AAA requires 7:1 for normal text. Our Contrast Checker shows you the ratio and whether it passes these standards. Poor contrast is one of the most common accessibility failures and can make your website unusable for up to 8% of users.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is an analogous color palette?</div>
+      <div class="faq-a">An analogous color palette consists of colors that are adjacent to each other on the color wheel, typically spanning 30 to 60 degrees. Because these colors share a similar hue, they create a harmonious, cohesive and naturally pleasing aesthetic. Analogous palettes are commonly seen in nature — a sunset's progression from orange to pink to purple is analogous. In design, they are used to create calm, comfortable visual experiences in healthcare, wellness, food and lifestyle brands.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I create a monochromatic color scheme?</div>
+      <div class="faq-a">A monochromatic color scheme uses different values (light and dark) and saturations of a single base hue. Start with your primary color, then create lighter tints by mixing with white and darker shades by mixing with black. In HSL, you simply keep the same hue and vary the lightness and saturation values. Monochromatic schemes are elegant, sophisticated and easy to manage. They work exceptionally well for minimal designs, dark mode interfaces and luxury brand identities.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What are brand colors and how many should I have?</div>
+      <div class="faq-a">Brand colors are a defined set of colors that represent your company or product consistently across all touchpoints — website, social media, print materials, packaging and more. A typical brand color system includes a primary brand color, a secondary accent color, a dark neutral (for text), a light neutral (for backgrounds) and sometimes a tertiary highlight color. Most successful brands use 2-4 main colors for visual cohesion. Having too many colors makes a brand appear inconsistent and unprofessional.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is color psychology and how does it affect design?</div>
+      <div class="faq-a">Color psychology studies how colors influence human emotions, perceptions and behavior. Different colors consistently evoke specific associations: red creates urgency and excitement (used by sale banners and fast food), blue conveys trust and calm (used by banks, healthcare and tech companies), yellow signals optimism and creativity, green suggests nature, health and sustainability, purple implies luxury and wisdom. These associations are not universal — they vary across cultures — but they are broadly consistent in Western markets and are important considerations in brand and marketing design.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I convert a HEX color to RGB?</div>
+      <div class="faq-a">To convert HEX to RGB, split the 6-digit HEX code into three pairs and convert each pair from hexadecimal to decimal. For example, #6C63FF: 6C = 108, 63 = 99, FF = 255, giving rgb(108, 99, 255). Our Color Picker does this conversion automatically and displays all formats simultaneously as you select colors. Simply enter any HEX code in the input field and all other format values update instantly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a triadic color scheme?</div>
+      <div class="faq-a">A triadic color scheme uses three colors equally spaced around the color wheel, forming an equilateral triangle. These colors are highly contrasting but maintain balance because they are equidistant. Triadic palettes create vibrant, dynamic and energetic designs. To use a triadic scheme effectively, choose one dominant color and use the other two as accents in smaller quantities. This approach is commonly used in children's products, sports brands, creative agencies and entertainment companies.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use the generated colors and CSS code in commercial projects?</div>
+      <div class="faq-a">Yes, absolutely. All color codes, CSS variables and palettes generated by our Color Picker tool are entirely yours to use in any personal or commercial project without any restrictions. Colors and color codes are not copyrightable — they are mathematical values. The CSS code snippets provided are simple utility code that you can freely copy into any codebase, open source or commercial.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a complementary color scheme and when should I use it?</div>
+      <div class="faq-a">A complementary color scheme uses two colors that are directly opposite each other on the color wheel, such as blue and orange, or red and green. These pairings create the maximum possible contrast and visual tension, making them attention-grabbing and energetic. Complementary schemes are highly effective for calls-to-action buttons, sports teams, warning signs and any design element where you need something to stand out dramatically. However, using large areas of complementary colors together can be visually overwhelming — use them strategically for maximum impact.</div>
+    </div>
+  </div>
+
+  <div class="seo-block">
+    <h2>🛠️ Other Free Tools</h2>
+    <div class="other-tools">
+      <a class="ot-card" href="pdf-merger.html"><div class="ot-icon">📄</div><div class="ot-name">PDF Merger</div></a>
+      <a class="ot-card" href="image-compressor.html"><div class="ot-icon">🗜️</div><div class="ot-name">Image Compressor</div></a>
+      <a class="ot-card" href="webp-to-jpg.html"><div class="ot-icon">🔄</div><div class="ot-name">Image Converter</div></a>
+      <a class="ot-card" href="qr-generator.html"><div class="ot-icon">📲</div><div class="ot-name">QR Generator</div></a>
+      <a class="ot-card" href="password-generator.html"><div class="ot-icon">🔐</div><div class="ot-name">Password Generator</div></a>
+      <a class="ot-card" href="gst-calculator.html"><div class="ot-icon">🧾</div><div class="ot-name">GST Calculator</div></a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>ToolsAI Pro</strong> — Free Online Tools | No Signup | 100% Browser Based<br><br>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="blog.html">Blog</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms</a>
+  <a href="contact.html">Contact</a>
+</footer>
+
+<script>
+var currentHex = "6c63ff";
+var currentPaletteType = "analogous";
+
+function showToast(m) {
+  var t = document.getElementById("toast");
+  t.textContent = m;
+  t.classList.add("show");
+  setTimeout(function() { t.classList.remove("show"); }, 1800);
+}
+
+// HEX to RGB
+function hexToRgb(hex) {
+  hex = hex.replace("#","");
+  if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+  var r = parseInt(hex.slice(0,2),16);
+  var g = parseInt(hex.slice(2,4),16);
+  var b = parseInt(hex.slice(4,6),16);
+  return {r:r, g:g, b:b};
+}
+
+// RGB to HSL
+function rgbToHsl(r,g,b) {
+  r/=255; g/=255; b/=255;
+  var max=Math.max(r,g,b), min=Math.min(r,g,b);
+  var h,s,l=(max+min)/2;
+  if (max===min) { h=s=0; }
+  else {
+    var d=max-min;
+    s=l>0.5?d/(2-max-min):d/(max+min);
+    switch(max){
+      case r: h=(g-b)/d+(g<b?6:0); break;
+      case g: h=(b-r)/d+2; break;
+      case b: h=(r-g)/d+4; break;
+    }
+    h/=6;
+  }
+  return {h:Math.round(h*360), s:Math.round(s*100), l:Math.round(l*100)};
+}
+
+// RGB to CMYK
+function rgbToCmyk(r,g,b) {
+  r/=255; g/=255; b/=255;
+  var k=1-Math.max(r,g,b);
+  if (k===1) return {c:0,m:0,y:0,k:100};
+  var c=(1-r-k)/(1-k);
+  var m=(1-g-k)/(1-k);
+  var y=(1-b-k)/(1-k);
+  return {c:Math.round(c*100),m:Math.round(m*100),y:Math.round(y*100),k:Math.round(k*100)};
+}
+
+// HSL to HEX
+function hslToHex(h,s,l) {
+  s/=100; l/=100;
+  var a=s*Math.min(l,1-l);
+  function f(n) {
+    var k=(n+h/30)%12;
+    var c=l-a*Math.max(Math.min(k-3,9-k,1),-1);
+    return Math.round(255*c).toString(16).padStart(2,'0');
+  }
+  return "#"+f(0)+f(8)+f(4);
+}
+
+// Contrast ratio
+function getLuminance(r,g,b) {
+  var a=[r,g,b].map(function(v) {
+    v/=255;
+    return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);
+  });
+  return a[0]*0.2126+a[1]*0.7152+a[2]*0.0722;
+}
+function getContrast(hex) {
+  var rgb=hexToRgb(hex);
+  var lum=getLuminance(rgb.r,rgb.g,rgb.b);
+  var white=(1+0.05)/(lum+0.05);
+  var black=(lum+0.05)/(0+0.05);
+  return {white:white, black:black};
+}
+
+// Update all displays
+function updateAll(hex) {
+  hex=hex.toLowerCase().replace("#","");
+  if (hex.length!==6) return;
+  currentHex=hex;
+
+  var rgb=hexToRgb(hex);
+  var hsl=rgbToHsl(rgb.r,rgb.g,rgb.b);
+  var cmyk=rgbToCmyk(rgb.r,rgb.g,rgb.b);
+  var fullHex="#"+hex.toUpperCase();
+
+  // Update main input
+  document.getElementById("mainColorInput").value=fullHex;
+  document.getElementById("hexInput").value=hex.toUpperCase();
+
+  // Color preview
+  var bright=(rgb.r*299+rgb.g*587+rgb.b*114)/1000;
+  var textColor=bright>128?"#1a1a2e":"#ffffff";
+  var prev=document.getElementById("colorPreviewLarge");
+  prev.style.background=fullHex;
+  prev.style.color=textColor;
+  prev.textContent=fullHex;
+
+  // Format cards
+  document.getElementById("fmtHex").textContent=fullHex;
+  document.getElementById("fmtRgb").textContent="rgb("+rgb.r+", "+rgb.g+", "+rgb.b+")";
+  document.getElementById("fmtHsl").textContent="hsl("+hsl.h+", "+hsl.s+"%, "+hsl.l+"%)";
+  document.getElementById("fmtCmyk").textContent="cmyk("+cmyk.c+"%, "+cmyk.m+"%, "+cmyk.y+"%, "+cmyk.k+"%)";
+
+  // CSS snippet
+  document.getElementById("cssSnippet").textContent="--primary-color: "+fullHex+";";
+
+  // Contrast checker
+  var cont=getContrast(hex);
+  var ws=document.getElementById("whiteOnColor");
+  var bs=document.getElementById("blackOnColor");
+  ws.style.background=fullHex;
+  bs.style.background=fullHex;
+  document.getElementById("whiteRatio").textContent=cont.white.toFixed(1)+":1";
+  document.getElementById("blackRatio").textContent=cont.black.toFixed(1)+":1";
+
+  var badges="";
+  var wAA=cont.white>=4.5, wAAA=cont.white>=7;
+  var bAA=cont.black>=4.5, bAAA=cont.black>=7;
+  badges+='<span class="cbadge '+(wAA?"pass":"fail")+'">White AA '+(wAA?"✓":"✗")+'</span>';
+  badges+='<span class="cbadge '+(wAAA?"pass":"fail")+'">White AAA '+(wAAA?"✓":"✗")+'</span>';
+  badges+='<span class="cbadge '+(bAA?"pass":"fail")+'">Black AA '+(bAA?"✓":"✗")+'</span>';
+  badges+='<span class="cbadge '+(bAAA?"pass":"fail")+'">Black AAA '+(bAAA?"✓":"✗")+'</span>';
+  document.getElementById("contrastBadges").innerHTML=badges;
+
+  // Palette
+  generatePalette(hsl.h, hsl.s, hsl.l);
+}
+
+// PALETTE GENERATION
+function generatePalette(h,s,l) {
+  var colors=[];
+  if (currentPaletteType==="analogous") {
+    colors=[
+      hslToHex((h-40+360)%360,s,l),
+      hslToHex((h-20+360)%360,s,l),
+      hslToHex(h,s,l),
+      hslToHex((h+20)%360,s,l),
+      hslToHex((h+40)%360,s,l)
+    ];
+  } else if (currentPaletteType==="monochromatic") {
+    colors=[
+      hslToHex(h,s,Math.max(10,l-30)),
+      hslToHex(h,s,Math.max(10,l-15)),
+      hslToHex(h,s,l),
+      hslToHex(h,s,Math.min(90,l+15)),
+      hslToHex(h,s,Math.min(90,l+30))
+    ];
+  } else if (currentPaletteType==="triadic") {
+    colors=[
+      hslToHex(h,s,l),
+      hslToHex(h,Math.max(20,s-20),Math.min(85,l+15)),
+      hslToHex((h+120)%360,s,l),
+      hslToHex((h+120)%360,Math.max(20,s-20),Math.min(85,l+15)),
+      hslToHex((h+240)%360,s,l)
+    ];
+  } else if (currentPaletteType==="complementary") {
+    var comp=(h+180)%360;
+    colors=[
+      hslToHex(h,s,Math.max(20,l-20)),
+      hslToHex(h,s,l),
+      hslToHex(h,s,Math.min(85,l+20)),
+      hslToHex(comp,s,l),
+      hslToHex(comp,s,Math.min(85,l+20))
+    ];
+  }
+
+  var row=document.getElementById("paletteRow");
+  row.innerHTML="";
+  colors.forEach(function(c) {
+    var div=document.createElement("div");
+    div.className="pal-swatch";
+    div.style.background=c;
+    div.title="Click to use: "+c;
+    var span=document.createElement("span");
+    span.className="ps-hex";
+    span.textContent=c.toUpperCase();
+    div.appendChild(span);
+    div.addEventListener("click",function() {
+      updateAll(c.replace("#",""));
+      showToast("Color applied: "+c.toUpperCase());
+    });
+    row.appendChild(div);
+  });
+}
+
+// Palette tab buttons
+document.getElementById("tabAna").addEventListener("click",function(){ setPalTab("analogous",this); });
+document.getElementById("tabMono").addEventListener("click",function(){ setPalTab("monochromatic",this); });
+document.getElementById("tabTri").addEventListener("click",function(){ setPalTab("triadic",this); });
+document.getElementById("tabComp").addEventListener("click",function(){ setPalTab("complementary",this); });
+
+function setPalTab(type,el) {
+  currentPaletteType=type;
+  ["tabAna","tabMono","tabTri","tabComp"].forEach(function(id){ document.getElementById(id).classList.remove("active"); });
+  el.classList.add("active");
+  var rgb=hexToRgb(currentHex);
+  var hsl=rgbToHsl(rgb.r,rgb.g,rgb.b);
+  generatePalette(hsl.h,hsl.s,hsl.l);
+}
+
+// Main color input
+document.getElementById("mainColorInput").addEventListener("input",function() {
+  updateAll(this.value.replace("#",""));
+});
+
+// Hex text input
+document.getElementById("hexInput").addEventListener("input",function() {
+  var val=this.value.replace("#","");
+  if (val.length===6) updateAll(val);
+});
+
+// Preview click = copy hex
+document.getElementById("colorPreviewLarge").addEventListener("click",function() {
+  copyCode("hex");
+});
+
+// Copy code functions
+var codeValues={};
+function copyCode(type) {
+  var txt="";
+  if (type==="hex") txt=document.getElementById("fmtHex").textContent;
+  if (type==="rgb") txt=document.getElementById("fmtRgb").textContent;
+  if (type==="hsl") txt=document.getElementById("fmtHsl").textContent;
+  if (type==="cmyk") txt=document.getElementById("fmtCmyk").textContent;
+  navigator.clipboard.writeText(txt).then(function() {
+    var card=document.getElementById("card"+type.charAt(0).toUpperCase()+type.slice(1));
+    if (card) { card.classList.add("copied"); setTimeout(function(){ card.classList.remove("copied"); },400); }
+    showToast("Copied: "+txt);
+  });
+}
+
+function copyCss() {
+  var txt=document.getElementById("cssSnippet").textContent;
+  navigator.clipboard.writeText(txt).then(function() {
+    showToast("CSS variable copied!");
+  });
+}
+
+// Init
+updateAll("6c63ff");
+</script>
+</body>
+</html>
