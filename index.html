@@ -3,238 +3,444 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ToolsAI Pro - Free Online Tools | PDF, Image, Password, Calculator</title>
-<meta name="description" content="ToolsAI Pro offers 10 free online tools: PDF Merger, Images to PDF, Image Compressor, WebP to JPG, QR Generator, Color Picker, Password Generator, Word Counter, Age Calculator, GST Calculator. No signup needed!">
-<meta name="keywords" content="free online tools, PDF merger, image compressor, password generator, word counter, age calculator, QR generator, GST calculator, WebP to JPG, color picker">
+<title>ToolsAI Pro - Free Online Tools | PDF, Image, Password, QR, GST, BMI Calculator</title>
+<meta name="description" content="ToolsAI Pro offers 12 free online tools: PDF Merger, Image Compressor, QR Generator, Color Picker, Password Generator, GST Calculator, BMI Calculator and more. No signup needed.">
+<meta name="keywords" content="free online tools, PDF merger, image compressor, QR code generator, password generator, GST calculator, BMI calculator, color picker, word counter, age calculator">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://toolsaipro.github.io/">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d0d14;--sur:#16161f;--card:#1c1c28;--bor:#2a2a3a;--a1:#6c63ff;--a2:#ff6584;--a3:#43e97b;--a4:#f7971e;--a5:#00c9ff;--a6:#ff4757;--a7:#a855f7;--a8:#06b6d4;--a9:#10b981;--a10:#f59e0b;--tx:#e8e8f0;--mu:#6b6b80;}
+:root{
+  --bg:#0d0d14;--sur:#16161f;--card:#1a1a26;--bor:#252535;
+  --a1:#6c63ff;--a2:#ff6584;--a3:#43e97b;--a4:#f7971e;--a5:#00c9ff;--a6:#ff4757;--a7:#a855f7;--a8:#06b6d4;--a9:#10b981;--a10:#f59e0b;
+  --tx:#e8e8f0;--mu:#6b6b82;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;min-height:100vh;}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 40% at 20% 20%,rgba(108,99,255,0.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(255,101,132,0.05) 0%,transparent 60%);}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;min-height:100vh;overflow-x:hidden;}
 
-nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--bor);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:62px;}
-.logo{font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+/* BG GLOW */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 10%,rgba(108,99,255,0.07) 0%,transparent 55%),
+    radial-gradient(ellipse 55% 40% at 88% 85%,rgba(255,101,132,0.06) 0%,transparent 55%),
+    radial-gradient(ellipse 40% 35% at 50% 50%,rgba(247,151,30,0.03) 0%,transparent 60%);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:64px;}
+.logo{font-size:20px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.5px;}
 .logo span{color:var(--a1);}.logo em{color:var(--a2);font-style:normal;}
-.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
-.nl{padding:5px 12px;border-radius:16px;font-size:11px;font-weight:600;color:var(--mu);text-decoration:none;border:1px solid transparent;transition:all 0.2s;}
-.nl:hover,.nl.act{color:var(--a1);border-color:rgba(108,99,255,0.3);}
+.nav-links{display:flex;gap:2px;flex-wrap:wrap;}
+.nl{padding:6px 13px;border-radius:20px;font-size:11px;font-weight:700;color:var(--mu);text-decoration:none;border:1px solid transparent;transition:all 0.2s;letter-spacing:0.3px;}
+.nl:hover,.nl.act{color:#fff;background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);}
 
-.hero{position:relative;z-index:1;text-align:center;padding:56px 24px 40px;}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);color:var(--a1);padding:5px 14px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
-.hero h1{font-size:clamp(34px,7vw,70px);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:14px;color:#fff;}
-.g1{color:var(--a1);}.g2{color:var(--a2);}
-.hero p{color:var(--mu);font-size:15px;max-width:520px;margin:0 auto;line-height:1.65;}
+/* HERO */
+.hero{position:relative;z-index:1;text-align:center;padding:70px 24px 48px;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.22);color:var(--a1);padding:6px 16px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:22px;}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--a3);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{font-size:clamp(36px,7vw,76px);font-weight:900;line-height:1.04;letter-spacing:-2.5px;margin-bottom:16px;color:#fff;}
+.h1-line1{display:block;}
+.h1-g1{background:linear-gradient(135deg,var(--a1),var(--a5));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.h1-g2{background:linear-gradient(135deg,var(--a2),var(--a4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:15px;color:var(--mu);max-width:560px;margin:0 auto 36px;line-height:1.7;}
+.hero-sub strong{color:var(--tx);}
 
-.tools-section{position:relative;z-index:1;max-width:1040px;margin:36px auto 0;padding:0 20px;}
-.section-label{font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;}
+/* SEARCH BAR */
+.search-wrap{max-width:560px;margin:0 auto;position:relative;}
+.search-glass{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(255,255,255,0.1);border-radius:16px;padding:5px 5px 5px 20px;transition:all 0.3s;box-shadow:0 8px 32px rgba(0,0,0,0.3);}
+.search-glass:focus-within{border-color:rgba(108,99,255,0.5);box-shadow:0 8px 32px rgba(108,99,255,0.15);}
+.search-icon{font-size:16px;opacity:0.5;flex-shrink:0;}
+.search-inp{flex:1;background:transparent;border:none;outline:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:14px;color:#fff;placeholder-color:var(--mu);}
+.search-inp::placeholder{color:var(--mu);}
+.search-btn{background:linear-gradient(135deg,var(--a1),#5a52e0);color:#fff;border:none;padding:10px 20px;border-radius:11px;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
+.search-btn:hover{transform:scale(1.04);}
+.no-results{text-align:center;padding:40px 20px;color:var(--mu);font-size:14px;display:none;}
+.no-results span{font-size:32px;display:block;margin-bottom:10px;}
 
-.tc{background:var(--card);border:1.5px solid var(--bor);border-radius:18px;padding:22px 20px;cursor:pointer;transition:all 0.25s;text-align:left;display:flex;flex-direction:column;gap:10px;text-decoration:none;}
-.tc:hover{transform:translateY(-4px);}
-.tc.c1:hover{border-color:var(--a1);box-shadow:0 10px 32px rgba(108,99,255,0.15);}
-.tc.c2:hover{border-color:var(--a7);box-shadow:0 10px 32px rgba(168,85,247,0.15);}
-.tc.c3:hover{border-color:var(--a2);box-shadow:0 10px 32px rgba(255,101,132,0.15);}
-.tc.c4:hover{border-color:var(--a8);box-shadow:0 10px 32px rgba(6,182,212,0.15);}
-.tc.c5:hover{border-color:var(--a3);box-shadow:0 10px 32px rgba(16,185,129,0.15);}
-.tc.c6:hover{border-color:var(--a4);box-shadow:0 10px 32px rgba(247,151,30,0.15);}
-.tc.c7:hover{border-color:var(--a5);box-shadow:0 10px 32px rgba(0,201,255,0.15);}
-.tc.c8:hover{border-color:var(--a6);box-shadow:0 10px 32px rgba(255,71,87,0.15);}
-.tc.c9:hover{border-color:var(--a9);box-shadow:0 10px 32px rgba(16,185,129,0.15);}
-.tc.c10:hover{border-color:var(--a10);box-shadow:0 10px 32px rgba(245,158,11,0.15);}
+/* STATS */
+.stats-row{display:flex;justify-content:center;align-items:center;gap:0;margin:40px auto 0;max-width:600px;background:rgba(255,255,255,0.02);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.06);border-radius:18px;overflow:hidden;}
+.stat-item{flex:1;text-align:center;padding:18px 12px;position:relative;}
+.stat-item:not(:last-child)::after{content:"";position:absolute;right:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,0.07);}
+.stat-n{font-size:22px;font-weight:900;color:#fff;display:block;letter-spacing:-0.5px;}
+.stat-n span{background:linear-gradient(135deg,var(--a4),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-l{font-size:11px;color:var(--mu);margin-top:2px;font-weight:600;letter-spacing:0.3px;}
 
-.tc-top{display:flex;align-items:center;justify-content:space-between;}
-.ti{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;}
-.i1{background:rgba(108,99,255,0.15);}
-.i2{background:rgba(168,85,247,0.15);}
-.i3{background:rgba(255,101,132,0.15);}
-.i4{background:rgba(6,182,212,0.15);}
-.i5{background:rgba(16,185,129,0.15);}
-.i6{background:rgba(247,151,30,0.15);}
-.i7{background:rgba(0,201,255,0.15);}
-.i8{background:rgba(255,71,87,0.15);}
-.i9{background:rgba(16,185,129,0.15);}
-.i10{background:rgba(245,158,11,0.15);}
+/* TOOLS SECTION */
+.tools-section{position:relative;z-index:1;max-width:1100px;margin:52px auto 0;padding:0 24px;}
+.sec-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.sec-title{font-size:13px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:2px;}
+.sec-count{font-size:12px;color:var(--mu);background:rgba(255,255,255,0.05);padding:4px 10px;border-radius:10px;}
 
-.new-tag{background:rgba(255,101,132,0.15);color:var(--a2);padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;}
-.tt{font-size:14px;font-weight:700;color:#fff;line-height:1.3;}
-.td{font-size:12px;color:var(--mu);line-height:1.5;}
-.tg{display:inline-block;padding:3px 9px;border-radius:7px;font-size:10px;font-weight:700;margin-top:2px;}
-.tg1{background:rgba(108,99,255,0.15);color:var(--a1);}
-.tg2{background:rgba(168,85,247,0.15);color:var(--a7);}
-.tg3{background:rgba(255,101,132,0.15);color:var(--a2);}
-.tg4{background:rgba(6,182,212,0.15);color:var(--a8);}
-.tg5{background:rgba(16,185,129,0.15);color:var(--a3);}
-.tg6{background:rgba(247,151,30,0.15);color:var(--a4);}
-.tg7{background:rgba(0,201,255,0.15);color:var(--a5);}
-.tg8{background:rgba(255,71,87,0.15);color:var(--a6);}
-.tg9{background:rgba(16,185,129,0.15);color:var(--a9);}
-.tg10{background:rgba(245,158,11,0.15);color:var(--a10);}
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
 
-.arrow{font-size:16px;color:var(--mu);transition:all 0.2s;}
-.tc:hover .arrow{color:#fff;transform:translateX(3px);}
+/* TOOL CARD */
+.tc{background:rgba(26,26,38,0.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.06);border-radius:20px;padding:22px 20px 18px;cursor:pointer;transition:all 0.28s;text-align:left;display:flex;flex-direction:column;gap:10px;text-decoration:none;position:relative;overflow:hidden;}
+.tc::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity 0.3s;border-radius:18px;}
 
-.stats{display:flex;justify-content:center;gap:36px;padding:28px 20px;position:relative;z-index:1;flex-wrap:wrap;}
-.si{text-align:center;}
-.sn{font-size:26px;font-weight:800;color:#fff;}
-.sl{font-size:11px;color:var(--mu);margin-top:2px;}
+/* Per-card glow colors */
+.tc.c1::before{background:radial-gradient(circle at 30% 30%,rgba(108,99,255,0.12),transparent 65%);}
+.tc.c2::before{background:radial-gradient(circle at 30% 30%,rgba(168,85,247,0.12),transparent 65%);}
+.tc.c3::before{background:radial-gradient(circle at 30% 30%,rgba(255,101,132,0.12),transparent 65%);}
+.tc.c4::before{background:radial-gradient(circle at 30% 30%,rgba(6,182,212,0.12),transparent 65%);}
+.tc.c5::before{background:radial-gradient(circle at 30% 30%,rgba(16,185,129,0.12),transparent 65%);}
+.tc.c6::before{background:radial-gradient(circle at 30% 30%,rgba(245,158,11,0.12),transparent 65%);}
+.tc.c7::before{background:radial-gradient(circle at 30% 30%,rgba(0,201,255,0.12),transparent 65%);}
+.tc.c8::before{background:radial-gradient(circle at 30% 30%,rgba(255,71,87,0.12),transparent 65%);}
+.tc.c9::before{background:radial-gradient(circle at 30% 30%,rgba(16,185,129,0.12),transparent 65%);}
+.tc.c10::before{background:radial-gradient(circle at 30% 30%,rgba(247,151,30,0.14),transparent 65%);}
+.tc.c11::before{background:radial-gradient(circle at 30% 30%,rgba(255,101,132,0.12),transparent 65%);}
+.tc.c12::before{background:radial-gradient(circle at 30% 30%,rgba(108,99,255,0.12),transparent 65%);}
 
-.why-section{max-width:1040px;margin:40px auto 0;padding:0 20px;position:relative;z-index:1;}
-.why-title{font-size:22px;font-weight:800;color:#fff;text-align:center;margin-bottom:8px;}
-.why-sub{font-size:14px;color:var(--mu);text-align:center;max-width:480px;margin:0 auto 24px;}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
-.why-card{background:var(--card);border:1px solid var(--bor);border-radius:16px;padding:22px;text-align:center;}
-.why-icon{font-size:30px;margin-bottom:10px;}
-.why-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
-.why-desc{font-size:12px;color:var(--mu);line-height:1.65;}
+.tc:hover{transform:translateY(-5px);}
+.tc:hover::before{opacity:1;}
+.tc.c1:hover{border-color:rgba(108,99,255,0.35);box-shadow:0 12px 36px rgba(108,99,255,0.14);}
+.tc.c2:hover{border-color:rgba(168,85,247,0.35);box-shadow:0 12px 36px rgba(168,85,247,0.14);}
+.tc.c3:hover{border-color:rgba(255,101,132,0.35);box-shadow:0 12px 36px rgba(255,101,132,0.14);}
+.tc.c4:hover{border-color:rgba(6,182,212,0.35);box-shadow:0 12px 36px rgba(6,182,212,0.14);}
+.tc.c5:hover{border-color:rgba(16,185,129,0.35);box-shadow:0 12px 36px rgba(16,185,129,0.14);}
+.tc.c6:hover{border-color:rgba(245,158,11,0.35);box-shadow:0 12px 36px rgba(245,158,11,0.14);}
+.tc.c7:hover{border-color:rgba(0,201,255,0.35);box-shadow:0 12px 36px rgba(0,201,255,0.14);}
+.tc.c8:hover{border-color:rgba(255,71,87,0.35);box-shadow:0 12px 36px rgba(255,71,87,0.14);}
+.tc.c9:hover{border-color:rgba(16,185,129,0.35);box-shadow:0 12px 36px rgba(16,185,129,0.14);}
+.tc.c10:hover{border-color:rgba(247,151,30,0.4);box-shadow:0 12px 36px rgba(247,151,30,0.16);}
+.tc.c11:hover{border-color:rgba(255,101,132,0.35);box-shadow:0 12px 36px rgba(255,101,132,0.14);}
+.tc.c12:hover{border-color:rgba(108,99,255,0.35);box-shadow:0 12px 36px rgba(108,99,255,0.14);}
 
-.about-section{max-width:1040px;margin:40px auto 0;padding:0 20px;position:relative;z-index:1;}
-.about-card{background:var(--card);border:1px solid var(--bor);border-radius:18px;padding:32px;}
-.about-card h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;}
+.tc-top{display:flex;align-items:flex-start;justify-content:space-between;position:relative;z-index:1;}
+.ti{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.i1{background:rgba(108,99,255,0.15);}.i2{background:rgba(168,85,247,0.15);}
+.i3{background:rgba(255,101,132,0.15);}.i4{background:rgba(6,182,212,0.15);}
+.i5{background:rgba(16,185,129,0.15);}.i6{background:rgba(245,158,11,0.15);}
+.i7{background:rgba(0,201,255,0.15);}.i8{background:rgba(255,71,87,0.15);}
+.i9{background:rgba(16,185,129,0.15);}.i10{background:rgba(247,151,30,0.15);}
+.i11{background:rgba(255,101,132,0.15);}.i12{background:rgba(108,99,255,0.15);}
+
+.arrow{font-size:14px;color:rgba(255,255,255,0.2);transition:all 0.25s;margin-top:4px;}
+.tc:hover .arrow{color:rgba(255,255,255,0.7);transform:translate(2px,-2px);}
+
+.tc-body{position:relative;z-index:1;flex:1;}
+.tt{font-size:13px;font-weight:800;color:#fff;line-height:1.35;margin-bottom:5px;}
+.td{font-size:11px;color:var(--mu);line-height:1.55;}
+
+.tc-foot{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:8px;font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;}
+.badge-free{background:rgba(67,233,123,0.12);color:#43e97b;border:1px solid rgba(67,233,123,0.2);}
+.badge-pro{background:rgba(247,151,30,0.12);color:#f7971e;border:1px solid rgba(247,151,30,0.2);}
+.badge-new{background:rgba(255,101,132,0.12);color:#ff6584;border:1px solid rgba(255,101,132,0.2);}
+.badge::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;animation:blink 2s infinite;}
+
+/* WHY SECTION */
+.why-section{position:relative;z-index:1;max-width:1100px;margin:56px auto 0;padding:0 24px;}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.why-card{background:rgba(26,26,38,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.06);border-radius:18px;padding:22px;text-align:center;transition:border-color 0.25s;}
+.why-card:hover{border-color:rgba(255,255,255,0.12);}
+.wi{font-size:32px;margin-bottom:12px;}
+.wn{font-size:14px;font-weight:800;color:#fff;margin-bottom:6px;}
+.wd{font-size:12px;color:var(--mu);line-height:1.65;}
+
+/* ABOUT SECTION */
+.about-section{position:relative;z-index:1;max-width:1100px;margin:40px auto 0;padding:0 24px;}
+.about-card{background:rgba(26,26,38,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:36px;}
+.about-card h2{font-size:22px;font-weight:800;color:#fff;margin-bottom:14px;}
 .about-card p{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:10px;}
 .about-card p:last-child{margin-bottom:0;}
 
-footer{text-align:center;padding:36px 20px 24px;color:var(--mu);font-size:12px;border-top:1px solid var(--bor);margin-top:50px;position:relative;z-index:1;}
-footer strong{color:var(--a1);}
-footer a{color:var(--mu);text-decoration:none;margin:0 7px;}
-footer a:hover{color:var(--a1);}
-@media(max-width:600px){nav{padding:0 14px;}.nl{font-size:10px;padding:4px 8px;}.stats{gap:18px;}}
+/* FOOTER */
+footer{position:relative;z-index:1;margin-top:56px;border-top:1px solid rgba(255,255,255,0.06);padding:40px 28px 28px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+.footer-brand{}
+.footer-logo{font-size:20px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.5px;display:block;margin-bottom:10px;}
+.footer-logo span{color:var(--a1);}.footer-logo em{color:var(--a2);font-style:normal;}
+.footer-desc{font-size:12px;color:var(--mu);line-height:1.7;max-width:260px;}
+.footer-col-title{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:12px;color:var(--mu);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:6px;}
+.footer-links a:hover{color:#fff;}
+.footer-links a .fl-icon{font-size:13px;opacity:0.6;}
+.footer-bottom{padding-top:20px;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-copy{font-size:11px;color:var(--mu);}
+.footer-copy strong{color:var(--a1);}
+.footer-pages{display:flex;gap:16px;}
+.footer-pages a{font-size:11px;color:var(--mu);text-decoration:none;transition:color 0.2s;}
+.footer-pages a:hover{color:#fff;}
+
+/* RESPONSIVE */
+@media(max-width:1000px){.tools-grid{grid-template-columns:repeat(3,1fr);}.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:700px){.tools-grid{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr;gap:24px;}.why-grid{grid-template-columns:repeat(2,1fr);}nav{padding:0 16px;}.stats-row{flex-direction:row;}.hero{padding:50px 20px 36px;}}
+@media(max-width:480px){.tools-grid{grid-template-columns:1fr;}.why-grid{grid-template-columns:1fr;}.hero h1{letter-spacing:-1.5px;}}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a class="logo" href="index.html">Tools<span>AI</span><em>Pro</em></a>
   <div class="nav-links">
     <a class="nl act" href="index.html">Home</a>
     <a class="nl" href="about.html">About</a>
+    <a class="nl" href="blog.html">Blog</a>
     <a class="nl" href="contact.html">Contact</a>
     <a class="nl" href="privacy.html">Privacy</a>
-    <a class="nl" href="blog.html">Blog</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="badge">⚡ 10 Free Tools — No Signup Required</div>
-  <h1><span class="g1">Smart</span> Tools<br>for <span class="g2">Everyone</span></h1>
-  <p>Free online tools for PDF, images, passwords, calculators and more. No account needed, works directly in your browser — fast, secure and completely free.</p>
+  <div class="hero-badge"><span class="dot"></span> 12 Free Tools — No Signup Required</div>
+  <h1>
+    <span class="h1-line1"><span class="h1-g1">Smart Tools</span> for</span>
+    <span class="h1-line1"><span class="h1-g2">Everyone</span></span>
+  </h1>
+  <p class="hero-sub">PDF, Images, Passwords, QR Codes, Colors, GST, BMI and more.<br><strong>Free forever. No account. Works in your browser.</strong></p>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <div class="search-glass">
+      <span class="search-icon">🔍</span>
+      <input class="search-inp" id="searchInp" type="text" placeholder="Search tools... PDF, QR, GST, BMI...">
+      <button class="search-btn" onclick="document.getElementById('searchInp').focus()">Search</button>
+    </div>
+  </div>
 </div>
 
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-item"><span class="stat-n"><span>12+</span></span><div class="stat-l">Free Tools</div></div>
+  <div class="stat-item"><span class="stat-n"><span>₹0</span></span><div class="stat-l">Cost Forever</div></div>
+  <div class="stat-item"><span class="stat-n"><span>0</span></span><div class="stat-l">Signup Needed</div></div>
+  <div class="stat-item"><span class="stat-n"><span>100%</span></span><div class="stat-l">Browser Based</div></div>
+  <div class="stat-item"><span class="stat-n"><span>🔒</span></span><div class="stat-l">Private & Secure</div></div>
+</div>
+
+<!-- TOOLS GRID -->
 <div class="tools-section">
-  <div class="section-label">All Tools</div>
-  <div class="grid">
+  <div class="sec-header">
+    <span class="sec-title">All Tools</span>
+    <span class="sec-count" id="toolCount">12 tools</span>
+  </div>
+  <div class="no-results" id="noResults"><span>🔍</span>No tools found for "<span id="searchQuery"></span>"</div>
+  <div class="tools-grid" id="toolsGrid">
 
-    <a class="tc c1" href="pdf-merger.html">
-      <div class="tc-top"><div class="ti i1">📄</div><span class="arrow">→</span></div>
-      <div class="tt">PDF Merger</div>
-      <div class="td">Combine multiple PDF files into one single document instantly.</div>
-      <span class="tg tg1">Free</span>
+    <a class="tc c1" href="pdf-merger.html" data-name="free pdf merger online combine pdf files">
+      <div class="tc-top"><div class="ti i1">📄</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Free PDF Merger Online</div>
+        <div class="td">Combine multiple PDF files into one document instantly.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-free">Free</span></div>
     </a>
 
-    <a class="tc c2" href="images-to-pdf.html">
-      <div class="tc-top"><div class="ti i2">🖼️</div><span class="arrow">→</span></div>
-      <div class="tt">Images to PDF</div>
-      <div class="td">Convert JPG, PNG and WebP images into a PDF document.</div>
-      <span class="tg tg2">Free</span>
+    <a class="tc c2" href="images-to-pdf.html" data-name="free images to pdf converter online jpg png">
+      <div class="tc-top"><div class="ti i2">🖼️</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Free Images to PDF Converter Online</div>
+        <div class="td">Convert JPG, PNG and WebP images into a PDF file.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-free">Free</span></div>
     </a>
 
-    <a class="tc c3" href="image-compressor.html">
-      <div class="tc-top"><div class="ti i3">🗜️</div><span class="arrow">→</span></div>
-      <div class="tt">Image Compressor</div>
-      <div class="td">Reduce image file size without losing visible quality.</div>
-      <span class="tg tg3">Free</span>
+    <a class="tc c3" href="image-compressor.html" data-name="free image compressor online reduce image size">
+      <div class="tc-top"><div class="ti i3">🗜️</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Free Image Compressor Online</div>
+        <div class="td">Reduce image file size without losing visible quality.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-free">Free</span></div>
     </a>
 
-    <a class="tc c4" href="webp-to-jpg.html">
-      <div class="tc-top"><div class="ti i4">🔄</div><div class="new-tag">New</div><span class="arrow">→</span></div>
-      <div class="tt">WebP to JPG</div>
-      <div class="td">Convert WebP images to JPG or PNG format instantly.</div>
-      <span class="tg tg4">New</span>
+    <a class="tc c4" href="webp-to-jpg.html" data-name="free all in one image converter webp avif jpg png">
+      <div class="tc-top"><div class="ti i4">🔄</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Free All-in-One Image Converter</div>
+        <div class="td">Convert WebP, AVIF, JPG and PNG to any format.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-new">New</span></div>
     </a>
 
-    <a class="tc c5" href="qr-generator.html">
-      <div class="tc-top"><div class="ti i5">📲</div><div class="new-tag">New</div><span class="arrow">→</span></div>
-      <div class="tt">QR Code Generator</div>
-      <div class="td">Generate QR codes for any URL, text or phone number.</div>
-      <span class="tg tg5">New</span>
+    <a class="tc c5" href="qr-generator.html" data-name="free universal qr code generator url whatsapp vcard">
+      <div class="tc-top"><div class="ti i5">📲</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Free Universal QR Code Generator</div>
+        <div class="td">Create QR codes for URLs, WhatsApp, Phone and vCard.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-free">Free</span></div>
     </a>
 
-    <a class="tc c6" href="color-picker.html">
-      <div class="tc-top"><div class="ti i6">🎨</div><span class="arrow">→</span></div>
-      <div class="tt">Color Picker</div>
-      <div class="td">Pick any color and get HEX, RGB and HSL values instantly.</div>
-      <span class="tg tg6">Free</span>
+    <a class="tc c6" href="color-picker.html" data-name="advanced color picker palette generator hex rgb hsl">
+      <div class="tc-top"><div class="ti i6">🎨</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Advanced Color Picker & Palette Generator</div>
+        <div class="td">Get HEX, RGB, HSL, CMYK codes and generate palettes.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-free">Free</span></div>
     </a>
 
-    <a class="tc c7" href="password-generator.html">
-      <div class="tc-top"><div class="ti i7">🔐</div><span class="arrow">→</span></div>
-      <div class="tt">Password Generator</div>
-      <div class="td">Generate strong, secure random passwords for any account.</div>
-      <span class="tg tg7">Free</span>
+    <a class="tc c7" href="password-generator.html" data-name="ultra secure password generator strong random">
+      <div class="tc-top"><div class="ti i7">🔐</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Ultra-Secure Password Generator</div>
+        <div class="td">Generate cryptographically strong passwords up to 50 chars.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-free">Free</span></div>
     </a>
 
-    <a class="tc c8" href="word-counter.html">
-      <div class="tc-top"><div class="ti i8">📝</div><span class="arrow">→</span></div>
-      <div class="tt">Word Counter</div>
-      <div class="td">Count words, characters, sentences and reading time instantly.</div>
-      <span class="tg tg8">Free</span>
+    <a class="tc c8" href="word-counter.html" data-name="pro word character counter online reading time">
+      <div class="tc-top"><div class="ti i8">📝</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Pro Word & Character Counter</div>
+        <div class="td">Count words, characters, sentences and reading time live.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-pro">Pro</span></div>
     </a>
 
-    <a class="tc c9" href="age-calculator.html">
-      <div class="tc-top"><div class="ti i9">🎂</div><span class="arrow">→</span></div>
-      <div class="tt">Age Calculator</div>
-      <div class="td">Calculate your exact age in years, months and days.</div>
-      <span class="tg tg9">Free</span>
+    <a class="tc c9" href="age-calculator.html" data-name="pro age calculator online exact years months days">
+      <div class="tc-top"><div class="ti i9">🎂</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Pro Age Calculator Online</div>
+        <div class="td">Calculate your exact age in years, months and days.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-pro">Pro</span></div>
     </a>
 
-    <a class="tc c10" href="gst-calculator.html">
-      <div class="tc-top"><div class="ti i10">🧾</div><div class="new-tag">New</div><span class="arrow">→</span></div>
-      <div class="tt">GST Calculator</div>
-      <div class="td">Calculate GST amount, inclusive and exclusive prices instantly.</div>
-      <span class="tg tg10">New</span>
+    <a class="tc c10" href="gst-calculator.html" data-name="pro gst calculator online free cgst sgst igst india">
+      <div class="tc-top"><div class="ti i10">🧾</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Pro GST Calculator Online Free</div>
+        <div class="td">Add/Remove GST with CGST, SGST and IGST breakdown.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-pro">Pro</span></div>
+    </a>
+
+    <a class="tc c11" href="bmi-calculator.html" data-name="pro bmi calculator online free body mass index">
+      <div class="tc-top"><div class="ti i11">⚖️</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">Pro BMI Calculator Online Free</div>
+        <div class="td">Calculate Body Mass Index with health category results.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-pro">Pro</span></div>
+    </a>
+
+    <a class="tc c12" href="unit-converter.html" data-name="all in one unit converter pro online length weight temperature">
+      <div class="tc-top"><div class="ti i12">📐</div><span class="arrow">↗</span></div>
+      <div class="tc-body">
+        <div class="tt">All-in-One Unit Converter Pro Online</div>
+        <div class="td">Convert length, weight, temperature, speed and more.</div>
+      </div>
+      <div class="tc-foot"><span class="badge badge-pro">Pro</span></div>
     </a>
 
   </div>
 </div>
 
-<div class="stats">
-  <div class="si"><div class="sn">10</div><div class="sl">Free Tools</div></div>
-  <div class="si"><div class="sn">₹0</div><div class="sl">Cost</div></div>
-  <div class="si"><div class="sn">0</div><div class="sl">Signup</div></div>
-  <div class="si"><div class="sn">100%</div><div class="sl">Browser Based</div></div>
-</div>
-
+<!-- WHY SECTION -->
 <div class="why-section">
-  <div class="why-title">Why Choose ToolsAI Pro?</div>
-  <div class="why-sub">Built for everyone — powerful tools that are completely free, private and easy to use on any device.</div>
+  <div class="sec-header" style="margin-bottom:16px;">
+    <span class="sec-title">Why ToolsAI Pro?</span>
+  </div>
   <div class="why-grid">
-    <div class="why-card"><div class="why-icon">🔒</div><div class="why-name">100% Private and Secure</div><div class="why-desc">All processing happens locally in your browser. Your files never leave your device and are never uploaded to any server.</div></div>
-    <div class="why-card"><div class="why-icon">⚡</div><div class="why-name">Instant Results</div><div class="why-desc">All tools deliver instant results directly in your browser without any server round trips or waiting time.</div></div>
-    <div class="why-card"><div class="why-icon">📱</div><div class="why-name">Works on All Devices</div><div class="why-desc">Fully optimised for Android phones, iPhones, tablets and desktop computers in any modern web browser.</div></div>
-    <div class="why-card"><div class="why-icon">🆓</div><div class="why-name">Always Free</div><div class="why-desc">Every tool is completely free with no subscription fees, no premium plans and no hidden charges — ever.</div></div>
+    <div class="why-card"><div class="wi">🔒</div><div class="wn">100% Private</div><div class="wd">All processing happens in your browser. Files never leave your device or reach any server.</div></div>
+    <div class="why-card"><div class="wi">⚡</div><div class="wn">Instant Results</div><div class="wd">Every tool delivers results in seconds — no loading, no waiting, no server delays.</div></div>
+    <div class="why-card"><div class="wi">📱</div><div class="wn">Works Everywhere</div><div class="wd">Fully optimised for Android, iPhone, tablet and desktop in any modern browser.</div></div>
+    <div class="why-card"><div class="wi">🆓</div><div class="wn">Free Forever</div><div class="wd">No subscription, no hidden fees, no premium tiers. Every tool is free for everyone always.</div></div>
   </div>
 </div>
 
+<!-- ABOUT SECTION -->
 <div class="about-section">
   <div class="about-card">
     <h2>About ToolsAI Pro</h2>
-    <p>ToolsAI Pro is a free online tools platform designed to make everyday digital tasks simple and accessible for everyone. Whether you need to merge PDF files, compress images, convert file formats, generate secure passwords, create QR codes, calculate GST or count words — we have a tool for every need.</p>
-    <p>All of our tools work entirely within your web browser using modern JavaScript technologies. This means your files are never uploaded to any server, your data is never stored and your privacy is always protected. We believe that powerful digital tools should be available to everyone without barriers — no accounts, no payments and no complicated software to install.</p>
-    <p>Our platform is continuously growing. We regularly add new tools based on user feedback and common needs. If you have a suggestion for a new tool, we would love to hear from you through our Contact page.</p>
+    <p>ToolsAI Pro is a free online tools platform built to make everyday digital tasks simple, fast and accessible to everyone. Whether you need to merge PDF documents, compress images for your website, generate secure passwords, create QR codes for your business, calculate GST for invoices, check your BMI or convert between units — we have built a dedicated tool for every need.</p>
+    <p>Every tool on ToolsAI Pro runs entirely within your web browser. This means your files, data and personal information never leave your device. We never upload your files to any server, we never store your data and we never share anything with third parties. Our commitment to privacy is absolute and unconditional.</p>
+    <p>ToolsAI Pro is continuously growing. We regularly add new tools based on what users need most. All tools are tested on both desktop and mobile to ensure they work perfectly on every device. If you have a suggestion for a new tool, we would love to hear from you via our Contact page.</p>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <strong>ToolsAI Pro</strong> — Free Online Tools | No Signup Required | 100% Browser Based<br><br>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="blog.html">Blog</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms</a>
-  <a href="contact.html">Contact</a>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">Tools<span>AI</span><em>Pro</em></a>
+        <p class="footer-desc">12 free online tools for PDF, images, security, calculators and more. No signup, no cost, 100% browser-based and private.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">PDF & Image Tools</div>
+        <div class="footer-links">
+          <a href="pdf-merger.html"><span class="fl-icon">📄</span> Free PDF Merger Online</a>
+          <a href="images-to-pdf.html"><span class="fl-icon">🖼️</span> Images to PDF Converter</a>
+          <a href="image-compressor.html"><span class="fl-icon">🗜️</span> Image Compressor</a>
+          <a href="webp-to-jpg.html"><span class="fl-icon">🔄</span> All-in-One Image Converter</a>
+          <a href="qr-generator.html"><span class="fl-icon">📲</span> QR Code Generator</a>
+          <a href="color-picker.html"><span class="fl-icon">🎨</span> Color Picker & Palette</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Pro Calculators & Tools</div>
+        <div class="footer-links">
+          <a href="password-generator.html"><span class="fl-icon">🔐</span> Password Generator</a>
+          <a href="word-counter.html"><span class="fl-icon">📝</span> Word & Character Counter</a>
+          <a href="age-calculator.html"><span class="fl-icon">🎂</span> Age Calculator</a>
+          <a href="gst-calculator.html"><span class="fl-icon">🧾</span> GST Calculator</a>
+          <a href="bmi-calculator.html"><span class="fl-icon">⚖️</span> BMI Calculator</a>
+          <a href="unit-converter.html"><span class="fl-icon">📐</span> Unit Converter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy"><strong>ToolsAI Pro</strong> — Free Online Tools | No Signup | 100% Private</div>
+      <div class="footer-pages">
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
+<script>
+// LIVE SEARCH
+var searchInp = document.getElementById("searchInp");
+var cards = document.querySelectorAll(".tc");
+var noResults = document.getElementById("noResults");
+var toolCount = document.getElementById("toolCount");
+var searchQuery = document.getElementById("searchQuery");
+
+searchInp.addEventListener("input", function() {
+  var q = this.value.toLowerCase().trim();
+  var visible = 0;
+  cards.forEach(function(card) {
+    var name = (card.getAttribute("data-name") || "").toLowerCase();
+    var title = (card.querySelector(".tt") || {}).textContent || "";
+    var desc = (card.querySelector(".td") || {}).textContent || "";
+    var hay = name + " " + title.toLowerCase() + " " + desc.toLowerCase();
+    if (!q || hay.indexOf(q) !== -1) {
+      card.style.display = "";
+      visible++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+  if (visible === 0) {
+    noResults.style.display = "block";
+    searchQuery.textContent = this.value;
+    toolCount.textContent = "0 tools";
+  } else {
+    noResults.style.display = "none";
+    toolCount.textContent = visible + (q ? " result" + (visible > 1 ? "s" : "") : " tools");
+  }
+});
+
+// Clear search on Escape
+searchInp.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    this.value = "";
+    this.dispatchEvent(new Event("input"));
+  }
+});
+</script>
 </body>
 </html>
