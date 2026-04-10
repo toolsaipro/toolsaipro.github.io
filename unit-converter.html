@@ -438,18 +438,378 @@ footer a:hover{color:var(--a1);}
     </div>
   </div>
 
-  <div class="seo-block">
-    <h2>🛠️ Other Free Tools</h2>
-    <div class="other-tools">
-      <a class="ot-card" href="bmi-calculator.html"><div class="ot-icon">💪</div><div class="ot-name">BMI Calculator</div></a>
-      <a class="ot-card" href="age-calculator.html"><div class="ot-icon">🎂</div><div class="ot-name">Age Calculator</div></a>
-      <a class="ot-card" href="gst-calculator.html"><div class="ot-icon">🧾</div><div class="ot-name">GST Calculator</div></a>
-      <a class="ot-card" href="password-generator.html"><div class="ot-icon">🔐</div><div class="ot-name">Password Generator</div></a>
-      <a class="ot-card" href="word-counter.html"><div class="ot-icon">📝</div><div class="ot-name">Word Counter</div></a>
-      <a class="ot-card" href="webp-to-jpg.html"><div class="ot-icon">🖼️</div><div class="ot-name">Image Converter</div></a>
+ <!--
+=======================================================
+  TOOLSAI PRO — MASTER "OTHER FREE TOOLS" SECTION
+  Full tool names version — paste into all 12 pages.
+  Replace existing "Other Free Tools" section entirely.
+=======================================================
+-->
+
+<style>
+/* ─────────────────────────────────────────
+   OTHER FREE TOOLS — MASTER STYLES
+───────────────────────────────────────── */
+.oft-section {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+.oft-card-wrap {
+  background: rgba(28,28,40,0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 22px;
+  padding: 28px 24px 22px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+}
+.oft-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.oft-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.oft-sub {
+  font-size: 12px;
+  color: #6b6b80;
+  margin-bottom: 20px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.5;
+}
+
+/* ── GRID: 3 columns desktop, 2 mobile ── */
+.oft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ── CARD ── */
+.oft-tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 16px 10px 14px;
+  background: rgba(22,22,31,0.88);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.34,1.2,0.64,1);
+  position: relative;
+  overflow: hidden;
+}
+.oft-tool-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.oft-tool-card:hover {
+  transform: translateY(-3px);
+}
+.oft-tool-card:hover::before { opacity: 1; }
+
+/* Category hover colours */
+.oft-tool-card.pdf:hover    { border-color:rgba(255,101,132,0.5); box-shadow:0 8px 24px rgba(255,101,132,0.18),0 0 0 1px rgba(255,101,132,0.15); }
+.oft-tool-card.pdf::before  { background:radial-gradient(ellipse at 50% 0%,rgba(255,101,132,0.13),transparent 70%); }
+.oft-tool-card.img:hover    { border-color:rgba(6,182,212,0.5);   box-shadow:0 8px 24px rgba(6,182,212,0.18),  0 0 0 1px rgba(6,182,212,0.15); }
+.oft-tool-card.img::before  { background:radial-gradient(ellipse at 50% 0%,rgba(6,182,212,0.13),  transparent 70%); }
+.oft-tool-card.tool:hover   { border-color:rgba(108,99,255,0.5);  box-shadow:0 8px 24px rgba(108,99,255,0.18), 0 0 0 1px rgba(108,99,255,0.15); }
+.oft-tool-card.tool::before { background:radial-gradient(ellipse at 50% 0%,rgba(108,99,255,0.13), transparent 70%); }
+.oft-tool-card.calc:hover   { border-color:rgba(67,233,123,0.5);  box-shadow:0 8px 24px rgba(67,233,123,0.18), 0 0 0 1px rgba(67,233,123,0.15); }
+.oft-tool-card.calc::before { background:radial-gradient(ellipse at 50% 0%,rgba(67,233,123,0.13), transparent 70%); }
+.oft-tool-card.hlth:hover   { border-color:rgba(247,151,30,0.5);  box-shadow:0 8px 24px rgba(247,151,30,0.18), 0 0 0 1px rgba(247,151,30,0.15); }
+.oft-tool-card.hlth::before { background:radial-gradient(ellipse at 50% 0%,rgba(247,151,30,0.13), transparent 70%); }
+
+/* ── ICON WRAP ── */
+.oft-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.oft-tool-card:hover .oft-icon-wrap { transform: scale(1.1); }
+.oft-icon-wrap.c-pdf  { background:rgba(255,101,132,0.14); border:1px solid rgba(255,101,132,0.25); }
+.oft-icon-wrap.c-img  { background:rgba(6,182,212,0.14);   border:1px solid rgba(6,182,212,0.25); }
+.oft-icon-wrap.c-tool { background:rgba(108,99,255,0.14);  border:1px solid rgba(108,99,255,0.25); }
+.oft-icon-wrap.c-calc { background:rgba(67,233,123,0.14);  border:1px solid rgba(67,233,123,0.25); }
+.oft-icon-wrap.c-hlth { background:rgba(247,151,30,0.14);  border:1px solid rgba(247,151,30,0.25); }
+.oft-icon-wrap svg { width: 22px; height: 22px; }
+
+/* ── FULL TOOL NAME ── */
+.oft-tool-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: #c4c4d4;
+  text-align: center;
+  line-height: 1.45;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: color 0.2s;
+  word-break: break-word;
+}
+.oft-tool-card:hover .oft-tool-name { color: #fff; }
+
+/* ── BADGE ── */
+.oft-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.oft-badge.free { background:rgba(67,233,123,0.12); color:#43e97b; border:1px solid rgba(67,233,123,0.22); }
+.oft-badge.new  { background:rgba(247,151,30,0.12);  color:#f7971e; border:1px solid rgba(247,151,30,0.22); }
+.oft-badge.pro  { background:rgba(108,99,255,0.12);  color:#8b83ff; border:1px solid rgba(108,99,255,0.22); }
+
+/* ── VIEW ALL ── */
+.oft-footer {
+  text-align: center;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.oft-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #06b6d4;
+  text-decoration: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: gap 0.2s, color 0.2s;
+}
+.oft-view-all:hover { color: #fff; gap: 10px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .oft-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+  .oft-section { padding: 0 14px; }
+  .oft-card-wrap { padding: 20px 14px 18px; }
+  .oft-icon-wrap { width: 40px; height: 40px; border-radius: 10px; }
+  .oft-icon-wrap svg { width: 20px; height: 20px; }
+  .oft-tool-name { font-size: 10.5px; }
+}
+</style>
+
+<!-- ═══════════════════════════════════════════
+     OTHER FREE TOOLS — PASTE THIS FULL BLOCK
+═══════════════════════════════════════════ -->
+<div class="oft-section">
+  <div class="oft-card-wrap">
+
+    <div class="oft-header">
+      <span style="font-size:22px;">🛠️</span>
+      <span class="oft-title">Other Free Tools</span>
     </div>
-  </div>
-</div>
+    <p class="oft-sub">All 12 tools — no signup required, no files uploaded, 100% private &amp; browser-based.</p>
+
+    <div class="oft-grid">
+
+      <!-- 01 ─ Free PDF Merger Online -->
+      <a class="oft-tool-card pdf" href="pdf-merger.html">
+        <div class="oft-icon-wrap c-pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff6584" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/>
+            <line x1="9"  y1="15" x2="15" y2="15"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Free PDF Merger Online</span>
+        <span class="oft-badge free">Free</span>
+      </a>
+
+      <!-- 02 ─ Free Images to PDF Converter Online -->
+      <a class="oft-tool-card pdf" href="images-to-pdf.html">
+        <div class="oft-icon-wrap c-pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff6584" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Free Images to PDF Converter Online</span>
+        <span class="oft-badge free">Free</span>
+      </a>
+
+      <!-- 03 ─ Free Image Compressor Online -->
+      <a class="oft-tool-card img" href="image-compressor.html">
+        <div class="oft-icon-wrap c-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 14 10 14 10 20"/>
+            <polyline points="20 10 14 10 14 4"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+            <line x1="3"  y1="21" x2="14" y2="10"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Free Image Compressor Online</span>
+        <span class="oft-badge free">Free</span>
+      </a>
+
+      <!-- 04 ─ Free All-in-One Image Converter -->
+      <a class="oft-tool-card img" href="webp-to-jpg.html">
+        <div class="oft-icon-wrap c-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"/>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <polyline points="7 23 3 19 7 15"/>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Free All-in-One Image Converter</span>
+        <span class="oft-badge free">Free</span>
+      </a>
+
+      <!-- 05 ─ Free Universal QR Code Generator -->
+      <a class="oft-tool-card img" href="qr-generator.html">
+        <div class="oft-icon-wrap c-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3"  y="3"  width="7" height="7" rx="1"/>
+            <rect x="14" y="3"  width="7" height="7" rx="1"/>
+            <rect x="3"  y="14" width="7" height="7" rx="1"/>
+            <rect x="5"  y="5"  width="3" height="3" fill="#06b6d4" stroke="none"/>
+            <rect x="16" y="5"  width="3" height="3" fill="#06b6d4" stroke="none"/>
+            <rect x="5"  y="16" width="3" height="3" fill="#06b6d4" stroke="none"/>
+            <line x1="14" y1="14" x2="14" y2="14"/>
+            <line x1="17" y1="14" x2="21" y2="14"/>
+            <line x1="14" y1="17" x2="17" y2="17"/>
+            <line x1="17" y1="17" x2="17" y2="21"/>
+            <line x1="21" y1="17" x2="21" y2="21"/>
+            <line x1="14" y1="21" x2="14" y2="21"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Free Universal QR Code Generator</span>
+        <span class="oft-badge free">Free</span>
+      </a>
+
+      <!-- 06 ─ Advanced Color Picker & Palette Generator -->
+      <a class="oft-tool-card tool" href="color-picker.html">
+        <div class="oft-icon-wrap c-tool">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5"  r="1.5" fill="#ff6584" stroke="none"/>
+            <circle cx="17.5" cy="10.5" r="1.5" fill="#f7971e" stroke="none"/>
+            <circle cx="8.5"  cy="7.5"  r="1.5" fill="#06b6d4" stroke="none"/>
+            <circle cx="6.5"  cy="12.5" r="1.5" fill="#43e97b" stroke="none"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Advanced Color Picker &amp; Palette Generator</span>
+        <span class="oft-badge pro">Pro</span>
+      </a>
+
+      <!-- 07 ─ Ultra-Secure Password Generator -->
+      <a class="oft-tool-card tool" href="password-generator.html">
+        <div class="oft-icon-wrap c-tool">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            <circle cx="12" cy="16" r="1" fill="#6c63ff" stroke="none"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Ultra-Secure Password Generator</span>
+        <span class="oft-badge pro">Pro</span>
+      </a>
+
+      <!-- 08 ─ Pro Word & Character Counter -->
+      <a class="oft-tool-card tool" href="word-counter.html">
+        <div class="oft-icon-wrap c-tool">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Pro Word &amp; Character Counter</span>
+        <span class="oft-badge pro">Pro</span>
+      </a>
+
+      <!-- 09 ─ Pro Age Calculator Online -->
+      <a class="oft-tool-card calc" href="age-calculator.html">
+        <div class="oft-icon-wrap c-calc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#43e97b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2"  x2="16" y2="6"/>
+            <line x1="8"  y1="2"  x2="8"  y2="6"/>
+            <line x1="3"  y1="10" x2="21" y2="10"/>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Pro Age Calculator Online</span>
+        <span class="oft-badge pro">Pro</span>
+      </a>
+
+      <!-- 10 ─ Pro GST Calculator Online Free -->
+      <a class="oft-tool-card calc" href="gst-calculator.html">
+        <div class="oft-icon-wrap c-calc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#43e97b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1"  x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Pro GST Calculator Online Free</span>
+        <span class="oft-badge pro">Pro</span>
+      </a>
+
+      <!-- 11 ─ Pro BMI Calculator Online Free -->
+      <a class="oft-tool-card hlth" href="bmi-calculator.html">
+        <div class="oft-icon-wrap c-hlth">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f7971e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">Pro BMI Calculator Online Free</span>
+        <span class="oft-badge new">New</span>
+      </a>
+
+      <!-- 12 ─ All-in-One Unit Converter Pro Online -->
+      <a class="oft-tool-card hlth" href="unit-converter.html">
+        <div class="oft-icon-wrap c-hlth">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f7971e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"/>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <polyline points="7 23 3 19 7 15"/>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+        </div>
+        <span class="oft-tool-name">All-in-One Unit Converter Pro Online</span>
+        <span class="oft-badge new">New</span>
+      </a>
+
+    </div><!-- /oft-grid -->
+
+    <div class="oft-footer">
+      <a class="oft-view-all" href="index.html">View All 12 Free Tools &nbsp;→</a>
+    </div>
+
+  </div><!-- /oft-card-wrap -->
+</div><!-- /oft-section -->
+<!--
+=======================================================
+  END OF MASTER "OTHER FREE TOOLS" SECTION
+=======================================================
+-->
+
 
 <footer>
   <strong>ToolsAI Pro</strong> — Free Online Tools | No Signup | 100% Browser Based<br><br>
