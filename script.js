@@ -4,13 +4,13 @@
  * Auto-detects page type → renders correct cards + footer.
  *
  * Page types detected:
- *   "home"  → index.html  → simple .tc cards (4-col grid)
- *   "hub"   → tools-hub.html / blog.html / tools-hub.html → .tool-card with "Use Tool" button
- *   "tool"  → any other page  → oft-grid (Other Free Tools section)
+ * "home"  → index.html  → simple .tc cards (4-col grid)
+ * "hub"   → tools-hub.html / blog.html / tools-hub.html → .tool-card with "Use Tool" button
+ * "tool"  → any other page  → oft-grid (Other Free Tools section)
  *
  * Include in every page AFTER tools-data.js:
- *   <script src="/tools-data.js"></script>
- *   <script src="/script.js"></script>
+ * <script src="/tools-data.js"></script>
+ * <script src="/script.js"></script>
  */
 
 (function () {
@@ -67,7 +67,7 @@
 
   /* ── 3b. HUB card (.tool-card with Use Tool btn) ── */
   function hubCard(tool) {
-    var btnClass = "btn-" + (tool.cat === "pdf" ? "pdf" : tool.cat === "img" ? "img" : tool.cat === "tool" ? "tool" : tool.cat === "calc" ? "calc" : tool.cat === "hlth" ? "hlth" : "ai");
+    var btnClass = "btn-" + (tool.cat === "pdf" ? "pdf" : tool.cat === "img" ? "img" : tool.cat === "tool" ? "tool" : tool.cat === "calc" ? "calc" : tool.cat === "hlth" ? "hlth" : tool.cat === "yt" ? "yt" : "ai");
     return (
       '<div class="tool-card ' + tool.cat + '" data-cat="' + tool.cat + '" data-name="' + tool.title.toLowerCase() + ' ' + tool.desc.toLowerCase() + '">' +
         '<div class="card-top">' +
@@ -97,7 +97,7 @@
   }
 
   function catLabel(cat) {
-    var labels = { pdf: "PDF Tool", img: "Image Tool", tool: "Utility", calc: "Calculator", hlth: "Health Tool", ai: "AI Tool" };
+    var labels = { pdf: "PDF Tool", img: "Image Tool", tool: "Utility", calc: "Calculator", hlth: "Health Tool", ai: "AI Tool", yt: "YouTube Tool" };
     return labels[cat] || "Tool";
   }
 
@@ -111,12 +111,9 @@
     if (PAGE === "home") {
       var grid = document.getElementById("toolsGrid");
       if (!grid) return;
-      /* Exclude the current tool (if on tool page — not applicable on home) */
       grid.innerHTML = tools.map(homeCard).join("");
-      /* Update count badge */
       var cnt = document.getElementById("toolCount");
       if (cnt) cnt.textContent = tools.length + " tools";
-      /* Re-init live search */
       initHomeSearch(tools);
     }
 
@@ -127,7 +124,6 @@
       grid.innerHTML = tools.map(hubCard).join("");
       var cnt = document.getElementById("toolCount");
       if (cnt) cnt.textContent = tools.length + " tools";
-      /* Hub filter buttons already have inline JS — hook them */
       initHubFilter(tools);
     }
 
@@ -135,12 +131,10 @@
     if (PAGE === "tool") {
       var oftGrid = document.getElementById("oftGrid");
       if (!oftGrid) return;
-      /* Exclude the current tool from the list */
       var current = window.location.pathname;
       var others  = tools.filter(function (t) { return t.link !== current && !current.endsWith(t.link.replace("/", "")); });
       oftGrid.innerHTML = others.map(oftCard).join("");
 
-      /* Update "View All" link count */
       var va = document.querySelector(".oft-view-all");
       if (va) va.innerHTML = "View All " + tools.length + " Free Tools &nbsp;→";
     }
@@ -178,8 +172,6 @@
      6. HUB FILTER
   ═══════════════════════════════════════ */
   function initHubFilter(tools) {
-    /* The hub page already has filter functions defined inline.
-       We override applyFilters / filterTools to work with dynamic cards. */
     window._toolsCache = tools;
 
     window.setCategory = function (cat, btn) {
@@ -229,10 +221,9 @@
      7. FOOTER AUTO-INJECT
   ═══════════════════════════════════════ */
   function injectFooter() {
-    /* Look for our marker containers */
     var col1 = document.getElementById("footerCol1");
     var col2 = document.getElementById("footerCol2");
-    if (!col1 && !col2) return; /* Footer not using auto-inject */
+    if (!col1 && !col2) return;
 
     var tools = ACTIVE_TOOLS;
     var half  = Math.ceil(tools.length / 2);
@@ -277,7 +268,13 @@
       ".oft-tool-card.ai::before { background:radial-gradient(ellipse at 50% 0%,rgba(167,139,250,0.13),transparent 70%); }",
       ".oft-icon-wrap.c-ai { background:rgba(167,139,250,0.14); border:1px solid rgba(167,139,250,0.25); }",
       ".btn-ai { background:linear-gradient(135deg,#a78bfa,#06b6d4); color:#fff; box-shadow:0 4px 14px rgba(167,139,250,0.35); }",
-      ".btn-ai:hover { box-shadow:0 6px 22px rgba(167,139,250,0.55); }"
+      ".btn-ai:hover { box-shadow:0 6px 22px rgba(167,139,250,0.55); }",
+      /* YouTube Tool Custom CSS (Added here!) */
+      ".oft-tool-card.yt:hover { border-color:rgba(255,68,68,0.5); box-shadow:0 8px 24px rgba(255,68,68,0.18); }",
+      ".oft-tool-card.yt::before { background:radial-gradient(ellipse at 50% 0%,rgba(255,68,68,0.13),transparent 70%); }",
+      ".oft-icon-wrap.c-yt { background:rgba(255,68,68,0.15); border:1px solid rgba(255,68,68,0.3); }",
+      ".btn-yt { background:linear-gradient(135deg,#ff4444,#cc0000); color:#fff; box-shadow:0 4px 14px rgba(255,68,68,0.35); border:none; border-radius:6px; padding:8px 16px; font-weight:600; }",
+      ".btn-yt:hover { box-shadow:0 6px 22px rgba(255,68,68,0.55); }"
     ].join("\n");
 
     var style = document.createElement("style");
