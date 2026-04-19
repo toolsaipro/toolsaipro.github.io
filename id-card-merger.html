@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJVC95H1FK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HJVC95H1FK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free ID Card & Document Merger Online — Aadhar, PAN Card Merge | ToolsAI Pro</title>
+<link rel="icon" type="image/png" href="1000425998.png">
+<meta name="description" content="Merge Aadhar card, PAN card, or any ID document front and back sides into a single image instantly. Free, secure, and browser-based tool. No signup required.">
+<meta name="keywords" content="ID card merger online, Aadhar card online merge, PAN card front and back join, ID document merger, free secure ID tool, merge ID card images, document merger free">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolsaipro.in/id-card-merger.html">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d14;--sur:#16161f;--card:#1c1c28;--bor:#2a2a3a;
+  --a1:#6c63ff;--a2:#ff6584;--a3:#43e97b;--a4:#f7971e;--a8:#06b6d4;
+  --tx:#e8e8f0;--mu:#6b6b80;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;min-height:100vh;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 55% 45% at 15% 25%,rgba(255,101,132,0.05) 0%,transparent 60%),
+    radial-gradient(ellipse 45% 35% at 85% 75%,rgba(108,99,255,0.05) 0%,transparent 60%),
+    radial-gradient(ellipse 35% 30% at 50% 5%,rgba(6,182,212,0.04) 0%,transparent 60%);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bor);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:62px;}
+.logo{font-size:19px;font-weight:800;color:#fff;text-decoration:none;}
+.logo span{color:var(--a1);}.logo em{color:var(--a2);font-style:normal;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nl{padding:5px 11px;border-radius:16px;font-size:11px;font-weight:600;color:var(--mu);text-decoration:none;border:1px solid transparent;transition:all 0.2s;}
+.nl:hover{color:var(--a4);border-color:rgba(247,151,30,0.3);}
+.nl.act{background:var(--a4);color:#fff;border-color:var(--a4);}
+
+/* HERO */
+.page-hero{position:relative;z-index:1;text-align:center;padding:48px 24px 36px;}
+.breadcrumb{font-size:12px;color:var(--mu);margin-bottom:16px;}
+.breadcrumb a{color:var(--a8);text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.tool-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,101,132,0.1);border:1px solid rgba(255,101,132,0.28);color:var(--a2);padding:5px 14px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
+.page-hero h1{font-size:clamp(26px,5.5vw,54px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;}
+.page-hero h1 span{color:var(--a2);}
+.page-hero p{font-size:14px;color:var(--mu);max-width:560px;margin:0 auto;line-height:1.7;}
+
+/* TOOL WRAP */
+.tool-wrap{max-width:820px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* GLASS CARD */
+.scard{background:rgba(28,28,40,0.85);backdrop-filter:blur(16px);border:1px solid rgba(255,101,132,0.12);border-radius:22px;padding:28px;margin-bottom:16px;box-shadow:0 8px 40px rgba(0,0,0,0.35);}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--bor);}
+.shi{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(255,101,132,0.18),rgba(108,99,255,0.12));display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:1px solid rgba(255,101,132,0.22);}
+.sht{font-size:20px;font-weight:800;color:#fff;}
+.shs{font-size:12px;color:var(--mu);margin-top:3px;}
+
+/* UPLOAD GRID */
+.upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+.upload-zone{border:2px dashed rgba(255,101,132,0.25);border-radius:16px;padding:28px 16px;text-align:center;cursor:pointer;transition:all 0.25s;background:rgba(255,101,132,0.03);position:relative;overflow:hidden;}
+.upload-zone:hover{border-color:rgba(255,101,132,0.5);background:rgba(255,101,132,0.06);}
+.upload-zone.has-img{border-style:solid;border-color:rgba(255,101,132,0.4);background:rgba(255,101,132,0.05);}
+.upload-zone.dragover{border-color:var(--a2);background:rgba(255,101,132,0.1);transform:scale(1.01);}
+.uz-icon{font-size:32px;margin-bottom:10px;display:block;}
+.uz-title{font-size:13px;font-weight:800;color:#fff;margin-bottom:4px;}
+.uz-sub{font-size:11px;color:var(--mu);line-height:1.5;}
+.uz-label{font-size:10px;font-weight:700;color:var(--a2);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;display:block;}
+.file-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.thumb-preview{width:100%;max-height:110px;object-fit:contain;border-radius:8px;margin-top:10px;display:none;}
+.thumb-preview.show{display:block;}
+.uz-filename{font-size:10px;color:var(--a3);margin-top:8px;font-weight:600;display:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.uz-filename.show{display:block;}
+
+/* OPTIONS ROW */
+.options-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px;}
+.opt-group{display:flex;flex-direction:column;gap:8px;}
+.opt-label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;}
+.opt-select{background:rgba(255,101,132,0.04);border:1.5px solid rgba(255,101,132,0.18);border-radius:12px;padding:11px 14px;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:600;color:var(--tx);outline:none;transition:all 0.2s;width:100%;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%236b6b80'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer;background-color:rgba(255,101,132,0.04);}
+.opt-select:focus{border-color:rgba(255,101,132,0.45);box-shadow:0 0 0 3px rgba(255,101,132,0.07);}
+.opt-select option{background:#1c1c28;color:var(--tx);}
+
+/* GAP SLIDER */
+.gap-row{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.gap-label-wrap{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.gap-label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;}
+.gap-val{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;color:var(--a2);}
+.gap-slider{width:100%;appearance:none;height:6px;border-radius:99px;background:var(--bor);outline:none;cursor:pointer;}
+.gap-slider::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--a2),#c0245e);cursor:pointer;box-shadow:0 2px 8px rgba(255,101,132,0.4);}
+.gap-full{flex:1;}
+
+/* MERGE BUTTON */
+.merge-btn{width:100%;padding:15px;border-radius:12px;border:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all 0.25s;background:linear-gradient(135deg,var(--a2),#c0245e);color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px;letter-spacing:0.3px;}
+.merge-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,101,132,0.4);}
+.merge-btn:active{transform:translateY(0);}
+.merge-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;box-shadow:none;}
+
+/* PREVIEW SECTION */
+.preview-section{display:none;}
+.preview-section.show{display:block;animation:slideUp 0.4s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.preview-card{background:rgba(255,101,132,0.05);border:1px solid rgba(255,101,132,0.2);border-radius:16px;padding:20px;margin-bottom:14px;}
+.preview-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
+.preview-title{font-size:13px;font-weight:700;color:var(--a2);display:flex;align-items:center;gap:8px;}
+.preview-meta{font-size:11px;color:var(--mu);font-family:"JetBrains Mono",monospace;}
+.canvas-wrap{width:100%;overflow-x:auto;border-radius:10px;background:rgba(0,0,0,0.3);padding:12px;text-align:center;}
+#mergedCanvas{max-width:100%;border-radius:8px;display:block;margin:0 auto;}
+
+/* DOWNLOAD BUTTONS */
+.dl-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
+.dl-btn{flex:1;min-width:140px;padding:12px 18px;border-radius:11px;border:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-pink{background:linear-gradient(135deg,var(--a2),#c0245e);color:#fff;box-shadow:0 4px 14px rgba(255,101,132,0.3);}
+.btn-pink:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(255,101,132,0.45);}
+.btn-ghost{background:var(--sur);color:var(--tx);border:1px solid var(--bor);}
+.btn-ghost:hover{border-color:var(--a8);color:var(--a8);}
+
+/* PRIVACY BOX */
+.privacy-box{background:rgba(67,233,123,0.05);border:1px solid rgba(67,233,123,0.2);border-radius:12px;padding:13px 18px;display:flex;gap:10px;align-items:center;}
+.privacy-text{font-size:12px;color:rgba(100,230,150,0.85);line-height:1.6;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#fff;color:#0d0d14;padding:10px 22px;border-radius:28px;font-size:12px;font-weight:700;z-index:9999;transition:transform 0.3s;box-shadow:0 6px 24px rgba(0,0,0,0.25);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* SEO */
+.seo-wrap{max-width:820px;margin:44px auto 0;padding:0 24px;position:relative;z-index:1;}
+.seo-block{background:rgba(28,28,40,0.7);backdrop-filter:blur(12px);border:1px solid var(--bor);border-radius:20px;padding:32px;margin-bottom:14px;}
+.seo-block h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;}
+.seo-block h3{font-size:15px;font-weight:700;color:#fff;margin:18px 0 8px;}
+.seo-block p{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:10px;}
+.seo-block ul{padding-left:20px;margin-bottom:12px;}
+.seo-block li{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:7px;}
+.seo-block li strong{color:#fff;}
+.step-list{list-style:none;padding:0;counter-reset:steps;}
+.step-list li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.step-list li:last-child{border-bottom:none;}
+.step-list li::before{content:counter(steps);min-width:28px;height:28px;background:linear-gradient(135deg,var(--a2),#c0245e);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px;}
+.step-content strong{font-size:13px;font-weight:700;color:#fff;display:block;margin-bottom:4px;}
+.step-content span{font-size:12px;color:var(--mu);line-height:1.65;}
+.faq-item{border-bottom:1px solid var(--bor);padding:15px 0;}
+.faq-item:last-child{border-bottom:none;padding-bottom:0;}
+.faq-q{font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;}
+.faq-a{font-size:12px;color:var(--mu);line-height:1.75;}
+.highlight-box{background:rgba(255,101,132,0.06);border:1px solid rgba(255,101,132,0.2);border-radius:12px;padding:16px 18px;margin:14px 0;}
+.highlight-box p{color:rgba(255,180,180,0.9);font-size:13px;margin:0;line-height:1.75;}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px;}
+.feat-item{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:16px;transition:all 0.2s;}
+.feat-item:hover{border-color:rgba(255,101,132,0.25);}
+.feat-icon{font-size:22px;margin-bottom:8px;}
+.feat-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:5px;}
+.feat-desc{font-size:12px;color:var(--mu);line-height:1.6;}
+
+/* OFT SECTION */
+.oft-section{max-width:760px;margin:0 auto 48px;padding:0 24px;position:relative;z-index:1;}
+.oft-card-wrap{background:rgba(28,28,40,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.07);border-radius:22px;padding:28px 24px 22px;box-shadow:0 8px 40px rgba(0,0,0,0.35);}
+.oft-header{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
+.oft-title{font-size:18px;font-weight:800;color:#fff;font-family:"Plus Jakarta Sans",sans-serif;}
+.oft-sub{font-size:12px;color:#6b6b80;margin-bottom:20px;font-family:"Plus Jakarta Sans",sans-serif;line-height:1.5;}
+.oft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.oft-tool-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;padding:16px 10px 14px;background:rgba(22,22,31,0.88);border:1px solid rgba(255,255,255,0.07);border-radius:14px;text-decoration:none;transition:all 0.25s cubic-bezier(0.34,1.2,0.64,1);position:relative;overflow:hidden;}
+.oft-tool-card::before{content:"";position:absolute;inset:0;border-radius:14px;opacity:0;transition:opacity 0.25s;}
+.oft-tool-card:hover{transform:translateY(-3px);}
+.oft-tool-card:hover::before{opacity:1;}
+.oft-tool-card.pdf:hover{border-color:rgba(255,101,132,0.5);box-shadow:0 8px 24px rgba(255,101,132,0.18),0 0 0 1px rgba(255,101,132,0.15);}
+.oft-tool-card.pdf::before{background:radial-gradient(ellipse at 50% 0%,rgba(255,101,132,0.13),transparent 70%);}
+.oft-tool-card.img:hover{border-color:rgba(6,182,212,0.5);box-shadow:0 8px 24px rgba(6,182,212,0.18),0 0 0 1px rgba(6,182,212,0.15);}
+.oft-tool-card.img::before{background:radial-gradient(ellipse at 50% 0%,rgba(6,182,212,0.13),transparent 70%);}
+.oft-tool-card.tool:hover{border-color:rgba(108,99,255,0.5);box-shadow:0 8px 24px rgba(108,99,255,0.18),0 0 0 1px rgba(108,99,255,0.15);}
+.oft-tool-card.tool::before{background:radial-gradient(ellipse at 50% 0%,rgba(108,99,255,0.13),transparent 70%);}
+.oft-tool-card.calc:hover{border-color:rgba(67,233,123,0.5);box-shadow:0 8px 24px rgba(67,233,123,0.18),0 0 0 1px rgba(67,233,123,0.15);}
+.oft-tool-card.calc::before{background:radial-gradient(ellipse at 50% 0%,rgba(67,233,123,0.13),transparent 70%);}
+.oft-tool-card.hlth:hover{border-color:rgba(247,151,30,0.5);box-shadow:0 8px 24px rgba(247,151,30,0.18),0 0 0 1px rgba(247,151,30,0.15);}
+.oft-tool-card.hlth::before{background:radial-gradient(ellipse at 50% 0%,rgba(247,151,30,0.13),transparent 70%);}
+.oft-icon-wrap{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.25s;}
+.oft-tool-card:hover .oft-icon-wrap{transform:scale(1.1);}
+.oft-icon-wrap.c-pdf{background:rgba(255,101,132,0.14);border:1px solid rgba(255,101,132,0.25);}
+.oft-icon-wrap.c-img{background:rgba(6,182,212,0.14);border:1px solid rgba(6,182,212,0.25);}
+.oft-icon-wrap.c-tool{background:rgba(108,99,255,0.14);border:1px solid rgba(108,99,255,0.25);}
+.oft-icon-wrap.c-calc{background:rgba(67,233,123,0.14);border:1px solid rgba(67,233,123,0.25);}
+.oft-icon-wrap.c-hlth{background:rgba(247,151,30,0.14);border:1px solid rgba(247,151,30,0.25);}
+.oft-icon-wrap svg{width:22px;height:22px;}
+.oft-tool-name{font-size:11px;font-weight:700;color:#c4c4d4;text-align:center;line-height:1.45;font-family:"Plus Jakarta Sans",sans-serif;transition:color 0.2s;word-break:break-word;}
+.oft-tool-card:hover .oft-tool-name{color:#fff;}
+.oft-badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:2px 8px;border-radius:20px;}
+.oft-badge.free{background:rgba(67,233,123,0.12);color:#43e97b;border:1px solid rgba(67,233,123,0.22);}
+.oft-badge.new{background:rgba(247,151,30,0.12);color:#f7971e;border:1px solid rgba(247,151,30,0.22);}
+.oft-badge.pro{background:rgba(108,99,255,0.12);color:#8b83ff;border:1px solid rgba(108,99,255,0.22);}
+.oft-footer{text-align:center;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);}
+.oft-view-all{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#06b6d4;text-decoration:none;font-family:"Plus Jakarta Sans",sans-serif;transition:gap 0.2s,color 0.2s;}
+.oft-view-all:hover{color:#fff;gap:10px;}
+
+/* FOOTER */
+footer{text-align:center;padding:32px 20px 24px;color:var(--mu);font-size:12px;border-top:1px solid var(--bor);margin-top:40px;position:relative;z-index:1;}
+footer strong{color:var(--a1);}
+footer a{color:var(--mu);text-decoration:none;margin:0 7px;}
+footer a:hover{color:var(--a1);}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  nav{padding:0 14px;}
+  .scard{padding:20px 16px;}
+  .seo-block{padding:22px 16px;}
+  .upload-grid{grid-template-columns:1fr;}
+  .options-row{grid-template-columns:1fr;}
+  .dl-row{flex-direction:column;}
+  .oft-grid{grid-template-columns:repeat(2,1fr);gap:9px;}
+  .oft-section{padding:0 14px;}
+  .oft-card-wrap{padding:20px 14px 18px;}
+  .oft-icon-wrap{width:40px;height:40px;border-radius:10px;}
+  .oft-icon-wrap svg{width:20px;height:20px;}
+  .oft-tool-name{font-size:10.5px;}
+}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="/">Tools<span>AI</span><em>Pro</em></a>
+  <div class="nav-links">
+    <a class="nl" href="/">Home</a>
+    <a class="nl" href="/about.html">About</a>
+    <a class="nl act" href="/tools-hub.html">Tools Hub</a>
+    <a class="nl" href="/contact.html">Contact</a>
+    <a class="nl" href="/privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> › ID Card Merger</div>
+  <div class="tool-badge">🪪 Free Document Tool</div>
+  <h1>Free <span>ID Card & Document</span><br>Merger Online</h1>
+  <p>Merge Aadhar card, PAN card or any ID document front and back into a single image — instantly, privately and completely free. No upload to any server.</p>
+</div>
+
+<!-- TOOL -->
+<div class="tool-wrap">
+<div class="scard">
+  <div class="sh">
+    <div class="shi">🪪</div>
+    <div>
+      <div class="sht">ID Card & Document Merger</div>
+      <div class="shs">Upload Front + Back → Merge → Download</div>
+    </div>
+  </div>
+
+  <!-- UPLOAD GRID -->
+  <div class="upload-grid">
+
+    <!-- FRONT -->
+    <div class="upload-zone" id="frontZone">
+      <span class="uz-label">Front Side</span>
+      <span class="uz-icon">⬆️</span>
+      <div class="uz-title">Upload Front Side</div>
+      <div class="uz-sub">Click or drag & drop<br>JPG, PNG, WebP</div>
+      <img id="frontPreview" class="thumb-preview" alt="Front preview">
+      <div class="uz-filename" id="frontName"></div>
+      <input type="file" class="file-input" id="frontInput" accept="image/*">
+    </div>
+
+    <!-- BACK -->
+    <div class="upload-zone" id="backZone">
+      <span class="uz-label">Back Side</span>
+      <span class="uz-icon">⬆️</span>
+      <div class="uz-title">Upload Back Side</div>
+      <div class="uz-sub">Click or drag & drop<br>JPG, PNG, WebP</div>
+      <img id="backPreview" class="thumb-preview" alt="Back preview">
+      <div class="uz-filename" id="backName"></div>
+      <input type="file" class="file-input" id="backInput" accept="image/*">
+    </div>
+
+  </div><!-- /upload-grid -->
+
+  <!-- OPTIONS -->
+  <div class="options-row">
+    <div class="opt-group">
+      <label class="opt-label">Merge Direction</label>
+      <select class="opt-select" id="dirSelect">
+        <option value="horizontal">↔️ Horizontal (Side by Side)</option>
+        <option value="vertical">↕️ Vertical (Top & Bottom)</option>
+      </select>
+    </div>
+    <div class="opt-group">
+      <label class="opt-label">Download Format</label>
+      <select class="opt-select" id="fmtSelect">
+        <option value="jpeg">JPEG (Smaller Size)</option>
+        <option value="png">PNG (Best Quality)</option>
+        <option value="webp">WebP (Modern Format)</option>
+      </select>
+    </div>
+    <div class="opt-group">
+      <label class="opt-label">Output Canvas Size</label>
+      <select class="opt-select" id="sizeSelect">
+        <option value="auto">📐 Auto-Fit (Default)</option>
+        <option value="a4">🖨️ A4 Sheet (Print Ready)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- GAP SLIDER -->
+  <div class="gap-full" style="margin-bottom:20px;">
+    <div class="gap-label-wrap">
+      <span class="gap-label">Gap Between Images</span>
+      <span class="gap-val" id="gapVal">20 px</span>
+    </div>
+    <input type="range" class="gap-slider" id="gapSlider" min="0" max="80" value="20" oninput="updateGap(this.value)">
+  </div>
+
+  <!-- MERGE BUTTON -->
+  <button class="merge-btn" id="mergeBtn" onclick="mergeImages()" disabled>
+    🔗 Merge & Preview
+  </button>
+
+  <!-- PREVIEW -->
+  <div class="preview-section" id="previewSection">
+    <div class="preview-card">
+      <div class="preview-header">
+        <span class="preview-title">✅ Merged Document Preview</span>
+        <span class="preview-meta" id="canvasMeta">—</span>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="mergedCanvas"></canvas>
+      </div>
+    </div>
+
+    <div class="dl-row">
+      <button class="dl-btn btn-pink" onclick="downloadMerged()">⬇️ Download Merged Image</button>
+      <button class="dl-btn btn-ghost" onclick="resetTool()">↺ Reset & Start Over</button>
+    </div>
+
+    <div class="privacy-box">
+      <span style="font-size:18px;">🔒</span>
+      <div class="privacy-text">100% Private — Your images are never uploaded to any server. All processing happens locally in your browser using Canvas API.</div>
+    </div>
+  </div>
+
+</div><!-- /scard -->
+</div><!-- /tool-wrap -->
+
+<!-- SEO CONTENT -->
+<div class="seo-wrap">
+
+  <!-- HOW TO USE -->
+  <div class="seo-block">
+    <h2>📋 How to Use ID Card Merger?</h2>
+    <ol class="step-list">
+      <li>
+        <div class="step-content">
+          <strong>Upload Front Side</strong>
+          <span>Click the "Upload Front Side" box and select the front image of your ID card (Aadhar front, PAN card front, or any document). You can also drag & drop the image directly.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <strong>Upload Back Side</strong>
+          <span>Click the "Upload Back Side" box and select the back image of your ID. Both images can be in JPG, PNG or WebP format.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <strong>Choose Options & Click Merge</strong>
+          <span>Select horizontal or vertical merge direction, set the gap between images and choose your preferred download format. Then click "Merge & Preview" to see the result instantly.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <strong>Download Your Merged Image</strong>
+          <span>Check the preview to confirm it looks correct, then click "Download Merged Image" to save the combined document to your device. Done!</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- WHY USE -->
+  <div class="seo-block">
+    <h2>✅ Why Use Our ID Card & Document Merger Tool?</h2>
+    <p>In today's digital India, uploading identity documents is a daily necessity — whether you are applying for a job, submitting KYC documents, opening a bank account or uploading forms on government portals. Most platforms ask for a single image containing both the front and back of your Aadhar card, PAN card, driving licence or passport. Taking a printout, scanning, and then re-uploading is slow and frustrating. Our free <strong>ID Card Merger</strong> eliminates all of that friction.</p>
+
+    <p>Our tool lets you <strong>merge Aadhar card front and back</strong> into one image in seconds — no software, no registration, no waiting. The same tool works for <strong>PAN card front and back join</strong>, voter ID, driving licence, employee ID, college ID and any other ID document. Simply upload both sides, select your merge direction and download the combined image instantly.</p>
+
+    <div class="highlight-box">
+      <p>🔒 <strong>Privacy First:</strong> Unlike most online tools, our <strong>free secure ID tool</strong> processes everything locally in your browser using the HTML5 Canvas API. Your sensitive identity documents are never transmitted over the internet, never stored on a server and never seen by anyone except you. This is our absolute commitment to your privacy.</p>
+    </div>
+
+    <h3>Key Features of Our ID Document Merger</h3>
+    <div class="feat-grid">
+      <div class="feat-item"><div class="feat-icon">↔️</div><div class="feat-title">Horizontal & Vertical Merge</div><div class="feat-desc">Choose side-by-side layout or top-bottom stacking depending on the portal's requirement.</div></div>
+      <div class="feat-item"><div class="feat-icon">📐</div><div class="feat-title">Auto Height Adjustment</div><div class="feat-desc">If front and back images have different heights, the canvas automatically adjusts for a clean, proportional result.</div></div>
+      <div class="feat-item"><div class="feat-icon">📏</div><div class="feat-title">Adjustable Gap</div><div class="feat-desc">Control the spacing between the two images with a smooth slider — from 0px to 80px.</div></div>
+      <div class="feat-item"><div class="feat-icon">💾</div><div class="feat-title">Multiple Formats</div><div class="feat-desc">Download as JPEG (smaller file), PNG (best quality) or WebP (modern web format).</div></div>
+      <div class="feat-item"><div class="feat-icon">🔒</div><div class="feat-title">100% Private</div><div class="feat-desc">Zero server upload. All merging happens inside your browser. Safe for sensitive documents like Aadhar and PAN.</div></div>
+      <div class="feat-item"><div class="feat-icon">📱</div><div class="feat-title">Works on All Devices</div><div class="feat-desc">Fully optimised for mobile, tablet and desktop. No app download needed.</div></div>
+    </div>
+
+    <h3>Common Use Cases</h3>
+    <ul>
+      <li><strong>Aadhar Card Online Merge:</strong> Combine front and back of Aadhar card for KYC, loan applications, bank account opening and government portals.</li>
+      <li><strong>PAN Card Front and Back Join:</strong> Most income tax and financial platforms require a single image of PAN card — our tool makes it instant.</li>
+      <li><strong>ID Document Merger for Job Applications:</strong> Many HR portals and job application forms ask for a single ID document image.</li>
+      <li><strong>Driving Licence:</strong> Combine both sides for insurance, traffic forms and rental services.</li>
+      <li><strong>Student & Employee ID:</strong> Submit single-image ID for college verifications and office registrations.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="seo-block">
+    <h2>❓ Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Is this ID card merger tool free?</div>
+      <div class="faq-a">Yes, completely free. No account, no subscription, no hidden fees. All features including HD download are available to everyone at no cost.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are my ID documents safe? Will they be uploaded to a server?</div>
+      <div class="faq-a">Your documents are 100% safe. The entire merging process happens locally in your browser using the HTML5 Canvas API. Your images are never uploaded to any server, never stored, and never transmitted over the internet. When you close the page, all image data is cleared automatically from your browser memory.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What image formats are supported?</div>
+      <div class="faq-a">You can upload JPG, JPEG, PNG, WebP and most other common image formats. The merged output can be downloaded in JPEG, PNG or WebP format.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if my front and back images have different sizes?</div>
+      <div class="faq-a">No problem. The tool automatically handles different image sizes. For horizontal merge, the canvas height is set to the taller of the two images, and both images are centered vertically. For vertical merge, the canvas width is set to the wider image with centering applied. No distortion, no cropping.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I merge documents other than Aadhar and PAN cards?</div>
+      <div class="faq-a">Absolutely. This is a general-purpose ID card and document merger. It works for any two images — driving licence, voter ID, passport, employee ID, student card, insurance documents or any other two-sided document.</div>
+    </div>
+  </div>
+
+</div><!-- /seo-wrap -->
+
+<!-- OTHER FREE TOOLS -->
+<div class="oft-section">
+  <div class="oft-card-wrap">
+    <div class="oft-header">
+      <span style="font-size:22px;">🛠️</span>
+      <span class="oft-title">Other Free Tools</span>
+    </div>
+    <p class="oft-sub">All tools — no signup required, no files uploaded, 100% private &amp; browser-based.</p>
+    <div class="oft-grid" id="oftGrid"></div>
+    <div class="oft-footer">
+      <a class="oft-view-all" href="index.html">View All Free Tools &nbsp;→</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>ToolsAI Pro</strong> — Free Online Tools | No Signup | 100% Browser Based<br><br>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="tools-hub.html">Tools Hub</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms</a>
+  <a href="contact.html">Contact</a>
+</footer>
+
+<!-- CANVAS hidden for processing -->
+<canvas id="mergedCanvas" style="display:none;"></canvas>
+
+<script>
+/* ── STATE ── */
+var frontImg = null;
+var backImg  = null;
+
+/* ── FILE INPUT HANDLERS ── */
+function setupUpload(inputId, zoneId, previewId, nameId, side) {
+  var input   = document.getElementById(inputId);
+  var zone    = document.getElementById(zoneId);
+  var preview = document.getElementById(previewId);
+  var nameEl  = document.getElementById(nameId);
+
+  input.addEventListener("change", function () {
+    var file = input.files[0];
+    if (!file) return;
+    loadImage(file, side, zone, preview, nameEl);
+  });
+
+  /* Drag & drop */
+  zone.addEventListener("dragover", function (e) {
+    e.preventDefault(); zone.classList.add("dragover");
+  });
+  zone.addEventListener("dragleave", function () {
+    zone.classList.remove("dragover");
+  });
+  zone.addEventListener("drop", function (e) {
+    e.preventDefault(); zone.classList.remove("dragover");
+    var file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith("image/")) {
+      loadImage(file, side, zone, preview, nameEl);
+    }
+  });
+}
+
+function loadImage(file, side, zone, preview, nameEl) {
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    var img = new Image();
+    img.onload = function () {
+      if (side === "front") { frontImg = img; }
+      else                  { backImg  = img; }
+      preview.src = e.target.result;
+      preview.classList.add("show");
+      nameEl.textContent = file.name;
+      nameEl.classList.add("show");
+      zone.classList.add("has-img");
+      checkReady();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function checkReady() {
+  var btn = document.getElementById("mergeBtn");
+  if (frontImg && backImg) {
+    btn.disabled = false;
+    btn.style.opacity = "1";
+  }
+}
+
+/* ── GAP SLIDER ── */
+function updateGap(v) {
+  document.getElementById("gapVal").textContent = v + " px";
+}
+
+/* ── MERGE ── */
+function mergeImages() {
+  if (!frontImg || !backImg) { showToast("Please upload both front and back images!"); return; }
+
+  var direction = document.getElementById("dirSelect").value;
+  var gap       = parseInt(document.getElementById("gapSlider").value, 10);
+  var sizeMode  = document.getElementById("sizeSelect").value;
+  var canvas    = document.getElementById("mergedCanvas");
+  var ctx       = canvas.getContext("2d");
+
+  var fw = frontImg.naturalWidth,  fh = frontImg.naturalHeight;
+  var bw = backImg.naturalWidth,   bh = backImg.naturalHeight;
+
+  /* ── Step 1: Build merged image on temp canvas ── */
+  var tmpCanvas = document.createElement("canvas");
+  var tmpCtx    = tmpCanvas.getContext("2d");
+
+  if (direction === "horizontal") {
+    tmpCanvas.width  = fw + gap + bw;
+    tmpCanvas.height = Math.max(fh, bh);
+    var frontY = Math.round((tmpCanvas.height - fh) / 2);
+    var backY  = Math.round((tmpCanvas.height - bh) / 2);
+    tmpCtx.drawImage(frontImg, 0, frontY, fw, fh);
+    tmpCtx.drawImage(backImg,  fw + gap, backY, bw, bh);
+  } else {
+    tmpCanvas.width  = Math.max(fw, bw);
+    tmpCanvas.height = fh + gap + bh;
+    var frontX = Math.round((tmpCanvas.width - fw) / 2);
+    var backX  = Math.round((tmpCanvas.width - bw) / 2);
+    tmpCtx.drawImage(frontImg, frontX, 0, fw, fh);
+    tmpCtx.drawImage(backImg,  backX,  fh + gap, bw, bh);
+  }
+
+  /* ── Step 2: Place on final canvas ── */
+  if (sizeMode === "a4") {
+    /* A4 at 300 DPI = 2480 × 3508 px */
+    var A4W = 2480, A4H = 3508, padding = 80;
+    canvas.width  = A4W;
+    canvas.height = A4H;
+
+    /* White background */
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, A4W, A4H);
+
+    /* Scale merged image to fit A4 width with padding */
+    var maxW   = A4W - padding * 2;
+    var scale  = Math.min(1, maxW / tmpCanvas.width);
+    var drawW  = Math.round(tmpCanvas.width  * scale);
+    var drawH  = Math.round(tmpCanvas.height * scale);
+    var drawX  = Math.round((A4W - drawW) / 2);
+    var drawY  = Math.round((A4H - drawH) / 2);
+
+    ctx.drawImage(tmpCanvas, drawX, drawY, drawW, drawH);
+    document.getElementById("canvasMeta").textContent =
+      A4W + " × " + A4H + " px  |  A4 Print Ready";
+  } else {
+    /* Auto-Fit */
+    canvas.width  = tmpCanvas.width;
+    canvas.height = tmpCanvas.height;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(tmpCanvas, 0, 0);
+    document.getElementById("canvasMeta").textContent =
+      canvas.width + " × " + canvas.height + " px";
+  }
+
+  canvas.style.display = "block";
+
+  var sec = document.getElementById("previewSection");
+  sec.style.display = "block";
+  sec.classList.remove("show");
+  void sec.offsetWidth;
+  sec.classList.add("show");
+
+  showToast("✅ Merged successfully! Check preview below.");
+  sec.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+/* ── DOWNLOAD ── */
+function downloadMerged() {
+  var canvas = document.getElementById("mergedCanvas");
+  var fmt    = document.getElementById("fmtSelect").value;
+  var mimeMap = { jpeg:"image/jpeg", png:"image/png", webp:"image/webp" };
+  var extMap  = { jpeg:"jpg",        png:"png",       webp:"webp" };
+  var mime    = mimeMap[fmt] || "image/jpeg";
+  var ext     = extMap[fmt]  || "jpg";
+  var quality = fmt === "jpeg" ? 0.92 : undefined;
+
+  var dataUrl = canvas.toDataURL(mime, quality);
+  var a = document.createElement("a");
+  a.href     = dataUrl;
+  a.download = "merged-id-card." + ext;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast("⬇️ Download started!");
+}
+
+/* ── RESET ── */
+function resetTool() {
+  frontImg = null; backImg = null;
+
+  ["frontInput","backInput"].forEach(function (id) {
+    document.getElementById(id).value = "";
+  });
+  ["frontPreview","backPreview"].forEach(function (id) {
+    var el = document.getElementById(id);
+    el.src = ""; el.classList.remove("show");
+  });
+  ["frontName","backName"].forEach(function (id) {
+    var el = document.getElementById(id);
+    el.textContent = ""; el.classList.remove("show");
+  });
+  ["frontZone","backZone"].forEach(function (id) {
+    document.getElementById(id).classList.remove("has-img");
+  });
+
+  var canvas = document.getElementById("mergedCanvas");
+  var ctx    = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  canvas.style.display = "none";
+
+  var sec = document.getElementById("previewSection");
+  sec.style.display = "none";
+  sec.classList.remove("show");
+
+  document.getElementById("mergeBtn").disabled = true;
+  showToast("Reset done.");
+}
+
+/* ── TOAST ── */
+function showToast(msg) {
+  var t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._tid);
+  t._tid = setTimeout(function () { t.classList.remove("show"); }, 2600);
+}
+
+/* ── INIT ── */
+setupUpload("frontInput", "frontZone", "frontPreview", "frontName", "front");
+setupUpload("backInput",  "backZone",  "backPreview",  "backName",  "back");
+</script>
+
+<!-- Auto tools grid -->
+<script src="tools-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
