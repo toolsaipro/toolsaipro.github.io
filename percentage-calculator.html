@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJVC95H1FK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HJVC95H1FK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Percentage Calculator — Calculate Percent Instantly | ToolsAI Pro</title>
+<link rel="icon" type="image/png" href="1000425998.png">
+<meta name="description" content="Calculate percentages instantly with our free online percentage calculator. Find percentage increase/decrease, calculate parts of a whole, and solve math problems easily.">
+<meta name="keywords" content="percentage calculator, calculate percent, find percentage of number, percentage decrease calculator, math tool online, percent increase calculator, percentage formula">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolsaipro.in/percentage-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d14;--sur:#16161f;--card:#1c1c28;--bor:#2a2a3a;
+  --a1:#6c63ff;--a2:#ff6584;--a3:#43e97b;--a4:#f7971e;--a8:#06b6d4;
+  --tx:#e8e8f0;--mu:#6b6b80;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--tx);font-family:"Plus Jakarta Sans",sans-serif;min-height:100vh;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 55% 45% at 10% 20%,rgba(255,101,132,0.06) 0%,transparent 60%),
+    radial-gradient(ellipse 45% 35% at 90% 80%,rgba(108,99,255,0.05) 0%,transparent 60%),
+    radial-gradient(ellipse 35% 30% at 50% 50%,rgba(67,233,123,0.03) 0%,transparent 60%);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bor);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:62px;}
+.logo{font-size:19px;font-weight:800;color:#fff;text-decoration:none;}
+.logo span{color:var(--a1);}.logo em{color:var(--a2);font-style:normal;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nl{padding:5px 11px;border-radius:16px;font-size:11px;font-weight:600;color:var(--mu);text-decoration:none;border:1px solid transparent;transition:all 0.2s;}
+.nl:hover{color:var(--a4);border-color:rgba(247,151,30,0.3);}
+.nl.act{background:var(--a4);color:#fff;border-color:var(--a4);}
+
+/* HERO */
+.page-hero{position:relative;z-index:1;text-align:center;padding:48px 24px 36px;}
+.breadcrumb{font-size:12px;color:var(--mu);margin-bottom:14px;}
+.breadcrumb a{color:var(--a8);text-decoration:none;}
+.tool-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,101,132,0.1);border:1px solid rgba(255,101,132,0.28);color:var(--a2);padding:5px 14px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
+.page-hero h1{font-size:clamp(24px,5vw,54px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;}
+.page-hero h1 span{color:var(--a2);}
+.page-hero p{font-size:14px;color:var(--mu);max-width:560px;margin:0 auto;line-height:1.7;}
+
+/* TOOL WRAP */
+.tool-wrap{max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* GLASS CARD */
+.scard{background:rgba(28,28,40,0.85);backdrop-filter:blur(16px);border:1px solid rgba(255,101,132,0.12);border-radius:22px;padding:28px;margin-bottom:14px;box-shadow:0 8px 40px rgba(0,0,0,0.35);}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--bor);}
+.shi{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(255,101,132,0.18),rgba(108,99,255,0.12));display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:1px solid rgba(255,101,132,0.22);}
+.sht{font-size:20px;font-weight:800;color:#fff;}
+.shs{font-size:12px;color:var(--mu);margin-top:2px;}
+
+/* CALCULATOR TABS */
+.calc-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px;}
+.calc-tab{padding:14px 10px;border-radius:14px;border:1.5px solid var(--bor);background:var(--sur);cursor:pointer;transition:all 0.22s;text-align:center;}
+.calc-tab:hover{border-color:rgba(255,101,132,0.4);}
+.calc-tab.active{border-color:var(--a2);background:rgba(255,101,132,0.08);box-shadow:0 0 0 2px rgba(255,101,132,0.1);}
+.ct-icon{font-size:24px;display:block;margin-bottom:6px;}
+.ct-title{font-size:12px;font-weight:800;color:#fff;display:block;margin-bottom:2px;}
+.ct-sub{font-size:10px;color:var(--mu);}
+.calc-tab.active .ct-title{color:var(--a2);}
+
+/* CALC PANELS */
+.calc-panel{display:none;}
+.calc-panel.active{display:block;animation:panelIn 0.3s ease;}
+@keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* FORMULA BANNER */
+.formula-banner{background:rgba(108,99,255,0.07);border:1px solid rgba(108,99,255,0.18);border-radius:12px;padding:11px 16px;margin-bottom:20px;font-size:13px;color:rgba(180,175,255,0.9);font-family:"JetBrains Mono",monospace;text-align:center;}
+.formula-banner span{color:#fff;font-weight:700;}
+
+/* INPUT GRID */
+.inp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.inp-grid.single{grid-template-columns:1fr 1fr;} /* keep 2 col */
+.inp-group{display:flex;flex-direction:column;gap:7px;}
+.inp-label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;}
+.inp-wrap{position:relative;}
+.calc-inp{width:100%;padding:13px 16px;background:rgba(255,101,132,0.04);border:1.5px solid rgba(255,101,132,0.18);border-radius:12px;font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:700;color:var(--tx);outline:none;transition:all 0.2s;}
+.calc-inp:focus{border-color:rgba(255,101,132,0.5);box-shadow:0 0 0 3px rgba(255,101,132,0.07);}
+.calc-inp::placeholder{color:var(--mu);font-size:14px;font-weight:400;}
+.inp-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:var(--mu);pointer-events:none;}
+
+/* CALC BUTTON */
+.calc-btn{width:100%;padding:14px;border-radius:12px;border:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all 0.25s;background:linear-gradient(135deg,var(--a2),#c0245e);color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,101,132,0.4);}
+.calc-btn:active{transform:translateY(0);}
+
+/* RESULT BOX */
+.result-box{display:none;border-radius:16px;padding:22px;margin-bottom:14px;position:relative;overflow:hidden;}
+.result-box.show{display:block;animation:resultIn 0.45s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes resultIn{from{opacity:0;transform:scale(0.95) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.result-box.pos{background:linear-gradient(135deg,rgba(67,233,123,0.1),rgba(6,182,212,0.07));border:1px solid rgba(67,233,123,0.28);}
+.result-box.neg{background:linear-gradient(135deg,rgba(255,101,132,0.1),rgba(247,151,30,0.07));border:1px solid rgba(255,101,132,0.28);}
+.result-box.neu{background:linear-gradient(135deg,rgba(108,99,255,0.1),rgba(6,182,212,0.07));border:1px solid rgba(108,99,255,0.28);}
+.res-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;}
+.res-value{font-family:"JetBrains Mono",monospace;font-size:clamp(28px,6vw,48px);font-weight:700;line-height:1;margin-bottom:8px;}
+.res-value.green{color:var(--a3);}
+.res-value.red  {color:var(--a2);}
+.res-value.blue {color:var(--a8);}
+.res-value.purple{color:#a78bfa;}
+.res-explain{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.65;}
+.res-explain strong{color:#fff;}
+.res-copy{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.08);border:none;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;color:var(--mu);cursor:pointer;transition:all 0.2s;}
+.res-copy:hover{background:rgba(255,255,255,0.14);color:#fff;}
+
+/* CLEAR BTN */
+.clear-btn{background:none;border:1.5px solid var(--bor);border-radius:10px;padding:8px 18px;font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;font-weight:700;color:var(--mu);cursor:pointer;transition:all 0.2s;}
+.clear-btn:hover{border-color:var(--a2);color:var(--a2);}
+
+/* FORMULA CARDS */
+.formula-section{margin-top:8px;}
+.formula-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.f-card{background:var(--sur);border:1px solid var(--bor);border-radius:14px;padding:16px;text-align:center;transition:all 0.2s;}
+.f-card:hover{border-color:rgba(255,101,132,0.25);transform:translateY(-2px);}
+.f-icon{font-size:22px;margin-bottom:8px;}
+.f-title{font-size:12px;font-weight:800;color:#fff;margin-bottom:6px;}
+.f-formula{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--a2);background:rgba(255,101,132,0.07);padding:6px 8px;border-radius:7px;line-height:1.6;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#fff;color:#0d0d14;padding:10px 22px;border-radius:28px;font-size:12px;font-weight:700;z-index:9999;transition:transform 0.3s;box-shadow:0 6px 24px rgba(0,0,0,0.25);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* SEO */
+.seo-wrap{max-width:860px;margin:44px auto 0;padding:0 24px;position:relative;z-index:1;}
+.seo-block{background:rgba(28,28,40,0.7);backdrop-filter:blur(12px);border:1px solid var(--bor);border-radius:20px;padding:32px;margin-bottom:14px;}
+.seo-block h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;}
+.seo-block h3{font-size:15px;font-weight:700;color:#fff;margin:18px 0 8px;}
+.seo-block p{font-size:13px;color:var(--mu);line-height:1.9;margin-bottom:10px;}
+.seo-block ul{padding-left:20px;margin-bottom:12px;}
+.seo-block li{font-size:13px;color:var(--mu);line-height:1.85;margin-bottom:7px;}
+.seo-block li strong{color:#fff;}
+.step-list{list-style:none;padding:0;counter-reset:steps;}
+.step-list li{counter-increment:steps;display:flex;gap:13px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.step-list li:last-child{border-bottom:none;}
+.step-list li::before{content:counter(steps);min-width:26px;height:26px;background:linear-gradient(135deg,var(--a2),#c0245e);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;margin-top:2px;}
+.step-content strong{font-size:13px;font-weight:700;color:#fff;display:block;margin-bottom:3px;}
+.step-content span{font-size:12px;color:var(--mu);line-height:1.65;}
+.hl-box{background:rgba(255,101,132,0.06);border:1px solid rgba(255,101,132,0.2);border-radius:12px;padding:16px 18px;margin:14px 0;}
+.hl-box p{color:rgba(255,175,175,0.9);font-size:13px;margin:0;line-height:1.8;}
+.example-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.example-table th{background:rgba(255,101,132,0.08);color:var(--a2);padding:10px 14px;text-align:left;border:1px solid var(--bor);font-size:12px;}
+.example-table td{padding:9px 14px;color:var(--mu);border:1px solid var(--bor);}
+.example-table tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
+.example-table td.hl{color:#fff;font-weight:700;font-family:"JetBrains Mono",monospace;}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px;}
+.use-item{background:var(--sur);border:1px solid var(--bor);border-radius:12px;padding:14px;transition:all 0.2s;}
+.use-item:hover{border-color:rgba(255,101,132,0.25);}
+.use-icon{font-size:20px;margin-bottom:6px;}
+.use-title{font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;}
+.use-desc{font-size:11px;color:var(--mu);line-height:1.55;}
+.faq-item{border-bottom:1px solid var(--bor);padding:15px 0;}
+.faq-item:last-child{border-bottom:none;padding-bottom:0;}
+.faq-q{font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;}
+.faq-a{font-size:12px;color:var(--mu);line-height:1.78;}
+
+/* OFT */
+.oft-section{max-width:760px;margin:0 auto 48px;padding:0 24px;position:relative;z-index:1;}
+.oft-card-wrap{background:rgba(28,28,40,0.82);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.07);border-radius:22px;padding:26px 22px 20px;box-shadow:0 8px 40px rgba(0,0,0,0.35);}
+.oft-header{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
+.oft-title-txt{font-size:17px;font-weight:800;color:#fff;}
+.oft-sub{font-size:12px;color:#6b6b80;margin-bottom:18px;line-height:1.5;}
+.oft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.oft-tool-card{display:flex;flex-direction:column;align-items:center;gap:7px;padding:14px 10px 12px;background:rgba(22,22,31,0.88);border:1px solid rgba(255,255,255,0.07);border-radius:13px;text-decoration:none;transition:all 0.25s cubic-bezier(0.34,1.2,0.64,1);position:relative;overflow:hidden;}
+.oft-tool-card::before{content:"";position:absolute;inset:0;border-radius:13px;opacity:0;transition:opacity 0.25s;}
+.oft-tool-card:hover{transform:translateY(-3px);}
+.oft-tool-card:hover::before{opacity:1;}
+.oft-tool-card.pdf:hover{border-color:rgba(255,101,132,0.5);box-shadow:0 8px 24px rgba(255,101,132,0.15);}
+.oft-tool-card.pdf::before{background:radial-gradient(ellipse at 50% 0%,rgba(255,101,132,0.12),transparent 70%);}
+.oft-tool-card.img:hover{border-color:rgba(6,182,212,0.5);box-shadow:0 8px 24px rgba(6,182,212,0.15);}
+.oft-tool-card.img::before{background:radial-gradient(ellipse at 50% 0%,rgba(6,182,212,0.12),transparent 70%);}
+.oft-tool-card.tool:hover{border-color:rgba(108,99,255,0.5);box-shadow:0 8px 24px rgba(108,99,255,0.15);}
+.oft-tool-card.tool::before{background:radial-gradient(ellipse at 50% 0%,rgba(108,99,255,0.12),transparent 70%);}
+.oft-tool-card.calc:hover{border-color:rgba(67,233,123,0.5);box-shadow:0 8px 24px rgba(67,233,123,0.15);}
+.oft-tool-card.calc::before{background:radial-gradient(ellipse at 50% 0%,rgba(67,233,123,0.12),transparent 70%);}
+.oft-tool-card.hlth:hover{border-color:rgba(247,151,30,0.5);box-shadow:0 8px 24px rgba(247,151,30,0.15);}
+.oft-tool-card.hlth::before{background:radial-gradient(ellipse at 50% 0%,rgba(247,151,30,0.12),transparent 70%);}
+.oft-icon-wrap{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;transition:transform 0.25s;}
+.oft-tool-card:hover .oft-icon-wrap{transform:scale(1.1);}
+.oft-icon-wrap.c-pdf{background:rgba(255,101,132,0.14);border:1px solid rgba(255,101,132,0.25);}
+.oft-icon-wrap.c-img{background:rgba(6,182,212,0.14);border:1px solid rgba(6,182,212,0.25);}
+.oft-icon-wrap.c-tool{background:rgba(108,99,255,0.14);border:1px solid rgba(108,99,255,0.25);}
+.oft-icon-wrap.c-calc{background:rgba(67,233,123,0.14);border:1px solid rgba(67,233,123,0.25);}
+.oft-icon-wrap.c-hlth{background:rgba(247,151,30,0.14);border:1px solid rgba(247,151,30,0.25);}
+.oft-icon-wrap svg{width:20px;height:20px;}
+.oft-tool-name{font-size:10.5px;font-weight:700;color:#c4c4d4;text-align:center;line-height:1.4;transition:color 0.2s;word-break:break-word;}
+.oft-tool-card:hover .oft-tool-name{color:#fff;}
+.oft-badge{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:2px 7px;border-radius:20px;}
+.oft-badge.free{background:rgba(67,233,123,0.12);color:#43e97b;border:1px solid rgba(67,233,123,0.22);}
+.oft-badge.new{background:rgba(247,151,30,0.12);color:#f7971e;border:1px solid rgba(247,151,30,0.22);}
+.oft-badge.pro{background:rgba(108,99,255,0.12);color:#8b83ff;border:1px solid rgba(108,99,255,0.22);}
+.oft-footer{text-align:center;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);}
+.oft-view-all{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#06b6d4;text-decoration:none;transition:gap 0.2s,color 0.2s;}
+.oft-view-all:hover{color:#fff;gap:10px;}
+
+footer{text-align:center;padding:28px 20px 20px;color:var(--mu);font-size:12px;border-top:1px solid var(--bor);margin-top:40px;position:relative;z-index:1;}
+footer strong{color:var(--a1);}
+footer a{color:var(--mu);text-decoration:none;margin:0 7px;}
+footer a:hover{color:var(--a1);}
+
+@media(max-width:640px){
+  nav{padding:0 14px;}
+  .scard{padding:18px 14px;}
+  .calc-tabs{grid-template-columns:1fr;}
+  .inp-grid{grid-template-columns:1fr;}
+  .formula-grid{grid-template-columns:1fr;}
+  .seo-block{padding:20px 14px;}
+  .oft-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+  .oft-section{padding:0 14px;}
+}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="/">Tools<span>AI</span><em>Pro</em></a>
+  <div class="nav-links">
+    <a class="nl" href="/">Home</a>
+    <a class="nl" href="/about.html">About</a>
+    <a class="nl act" href="/tools-hub.html">Tools Hub</a>
+    <a class="nl" href="/contact.html">Contact</a>
+    <a class="nl" href="/privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> › Percentage Calculator</div>
+  <div class="tool-badge">🔢 Free Math Tool</div>
+  <h1>Free Online <span>Percentage Calculator</span></h1>
+  <p>Calculate percentages instantly — find X% of a number, calculate increase or decrease, or find what percentage one number is of another. Accurate, fast and completely free.</p>
+</div>
+
+<!-- TOOL -->
+<div class="tool-wrap">
+<div class="scard">
+  <div class="sh">
+    <div class="shi">%</div>
+    <div>
+      <div class="sht">Percentage Calculator</div>
+      <div class="shs">3 calculators in one — select your mode below</div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="calc-tabs">
+    <div class="calc-tab active" onclick="setCalc('pct',this)">
+      <span class="ct-icon">🎯</span>
+      <span class="ct-title">Calculate %</span>
+      <span class="ct-sub">What is X% of Y?</span>
+    </div>
+    <div class="calc-tab" onclick="setCalc('change',this)">
+      <span class="ct-icon">📈</span>
+      <span class="ct-title">% Increase / Decrease</span>
+      <span class="ct-sub">Change between 2 values</span>
+    </div>
+    <div class="calc-tab" onclick="setCalc('find',this)">
+      <span class="ct-icon">🔍</span>
+      <span class="ct-title">Find %</span>
+      <span class="ct-sub">X is what % of Y?</span>
+    </div>
+  </div>
+
+  <!-- PANEL 1: What is X% of Y -->
+  <div class="calc-panel active" id="panel-pct">
+    <div class="formula-banner">Formula: <span>Result = (Percentage ÷ 100) × Total</span></div>
+    <div class="inp-grid">
+      <div class="inp-group">
+        <label class="inp-label">Percentage (%)</label>
+        <div class="inp-wrap">
+          <input type="number" class="calc-inp" id="pct-x" placeholder="e.g. 20" min="0" oninput="calcPct()">
+          <span class="inp-suffix">%</span>
+        </div>
+      </div>
+      <div class="inp-group">
+        <label class="inp-label">Of Number</label>
+        <div class="inp-wrap">
+          <input type="number" class="calc-inp" id="pct-y" placeholder="e.g. 500" oninput="calcPct()">
+        </div>
+      </div>
+    </div>
+    <div class="result-box neu" id="res-pct">
+      <button class="res-copy" onclick="copyResult('res-pct-val')">Copy</button>
+      <div class="res-label">Result</div>
+      <div class="res-value blue" id="res-pct-val">—</div>
+      <div class="res-explain" id="res-pct-exp"></div>
+    </div>
+    <button class="clear-btn" onclick="clearCalc('pct')">↺ Clear</button>
+  </div>
+
+  <!-- PANEL 2: % Increase / Decrease -->
+  <div class="calc-panel" id="panel-change">
+    <div class="formula-banner">Formula: <span>Change% = ((New − Old) ÷ Old) × 100</span></div>
+    <div class="inp-grid">
+      <div class="inp-group">
+        <label class="inp-label">Original Value</label>
+        <div class="inp-wrap">
+          <input type="number" class="calc-inp" id="chg-old" placeholder="e.g. 200" oninput="calcChange()">
+        </div>
+      </div>
+      <div class="inp-group">
+        <label class="inp-label">New Value</label>
+        <div class="inp-wrap">
+          <input type="number" class="calc-inp" id="chg-new" placeholder="e.g. 250" oninput="calcChange()">
+        </div>
+      </div>
+    </div>
+    <div class="result-box neu" id="res-change">
+      <button class="res-copy" onclick="copyResult('res-change-val')">Copy</button>
+      <div class="res-label" id="res-change-label">Change</div>
+      <div class="res-value green" id="res-change-val">—</div>
+      <div class="res-explain" id="res-change-exp"></div>
+    </div>
+    <button class="clear-btn" onclick="clearCalc('change')">↺ Clear</button>
+  </div>
+
+  <!-- PANEL 3: What % is X of Y -->
+  <div class="calc-panel" id="panel-find">
+    <div class="formula-banner">Formula: <span>Percentage = (Part ÷ Total) × 100</span></div>
+    <div class="inp-grid">
+      <div class="inp-group">
+        <label class="inp-label">Part (X)</label>
+        <div class="inp-wrap">
+          <input type="number" class="calc-inp" id="find-x" placeholder="e.g. 45" oninput="calcFind()">
+        </div>
+      </div>
+      <div class="inp-group">
+        <label class="inp-label">Total (Y)</label>
+        <div class="inp-wrap">
+          <input type="number" class="calc-inp" id="find-y" placeholder="e.g. 300" oninput="calcFind()">
+        </div>
+      </div>
+    </div>
+    <div class="result-box neu" id="res-find">
+      <button class="res-copy" onclick="copyResult('res-find-val')">Copy</button>
+      <div class="res-label">Percentage</div>
+      <div class="res-value purple" id="res-find-val">—</div>
+      <div class="res-explain" id="res-find-exp"></div>
+    </div>
+    <button class="clear-btn" onclick="clearCalc('find')">↺ Clear</button>
+  </div>
+
+  <!-- FORMULA QUICK REF -->
+  <div class="formula-section" style="margin-top:22px;padding-top:18px;border-top:1px solid var(--bor);">
+    <span style="font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:12px;">Quick Formula Reference</span>
+    <div class="formula-grid">
+      <div class="f-card">
+        <div class="f-icon">🎯</div>
+        <div class="f-title">X% of Y</div>
+        <div class="f-formula">Result = (X ÷ 100) × Y</div>
+      </div>
+      <div class="f-card">
+        <div class="f-icon">📈</div>
+        <div class="f-title">% Change</div>
+        <div class="f-formula">((New − Old) ÷ Old) × 100</div>
+      </div>
+      <div class="f-card">
+        <div class="f-icon">🔍</div>
+        <div class="f-title">Find %</div>
+        <div class="f-formula">(Part ÷ Total) × 100</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /scard -->
+</div><!-- /tool-wrap -->
+
+<!-- SEO CONTENT -->
+<div class="seo-wrap">
+
+  <!-- HOW TO USE -->
+  <div class="seo-block">
+    <h2>📋 How to Use Our Percentage Calculator — Step by Step Guide</h2>
+    <p>Our <strong>percentage calculator</strong> combines three of the most common percentage calculation needs into a single, clean interface. Here's how to use each mode effectively:</p>
+    <ol class="step-list">
+      <li><div class="step-content"><strong>Select Your Calculator Mode</strong><span>Choose from the three tabs at the top: "Calculate %" to find what X% of a number is, "% Increase/Decrease" to calculate change between two values, or "Find %" to find what percentage one number is of another.</span></div></li>
+      <li><div class="step-content"><strong>Enter Your Numbers</strong><span>Type the required numbers into the input fields. For example, to find 15% of 800, enter 15 in the first field and 800 in the second. The calculator works with any positive number — whole numbers, decimals, large values all supported.</span></div></li>
+      <li><div class="step-content"><strong>See Instant Results</strong><span>Results appear automatically as you type — no "Calculate" button needed. The answer animates into view with a smooth fade-in effect, accompanied by a plain-English explanation of the calculation so you can verify the logic.</span></div></li>
+      <li><div class="step-content"><strong>Copy Your Result</strong><span>Click the "Copy" button in the top right of the result box to copy the calculated value to your clipboard. Useful for pasting into spreadsheets, documents or messages.</span></div></li>
+      <li><div class="step-content"><strong>Clear and Recalculate</strong><span>Click "↺ Clear" to reset the inputs and start a fresh calculation. The calculator remembers your selected mode so you can run multiple calculations of the same type without switching tabs.</span></div></li>
+    </ol>
+    <div class="hl-box">
+      <p>💡 <strong>Quick Tip:</strong> For percentage increase/decrease, enter the original value first (left field) and the new value second (right field). If the result shows a negative percentage, it means the value decreased. A positive percentage means it increased.</p>
+    </div>
+  </div>
+
+  <!-- FORMULAS -->
+  <div class="seo-block">
+    <h2>📐 Understanding Percentage Formulas — A Guide for Students</h2>
+    <p>A percentage is simply a number expressed as a fraction of 100. The word "percent" comes from the Latin "per centum" meaning "by the hundred." Understanding the three core percentage formulas will help you solve virtually any percentage problem you encounter — in school, at work, or in daily life.</p>
+
+    <h3>Formula 1: Finding X% of a Number</h3>
+    <p>This is the most common percentage calculation. If you want to find what 20% of 500 is, the formula is:</p>
+    <p style="font-family:'JetBrains Mono',monospace;color:var(--a2);font-size:14px;padding:10px;background:rgba(255,101,132,0.06);border-radius:8px;text-align:center;">Result = (Percentage ÷ 100) × Total</p>
+    <p>So 20% of 500 = (20 ÷ 100) × 500 = 0.20 × 500 = <strong style="color:#fff;">100</strong>. This formula is used for calculating discounts, tax amounts, tips, commission and any situation where you need a specific portion of a whole.</p>
+
+    <h3>Formula 2: Percentage Increase and Decrease</h3>
+    <p>This formula calculates the relative change between an original value and a new value:</p>
+    <p style="font-family:'JetBrains Mono',monospace;color:var(--a8);font-size:14px;padding:10px;background:rgba(6,182,212,0.06);border-radius:8px;text-align:center;">Change% = ((New Value − Old Value) ÷ Old Value) × 100</p>
+    <p>If a product's price increases from ₹200 to ₹250, the percentage increase is: ((250 − 200) ÷ 200) × 100 = (50 ÷ 200) × 100 = <strong style="color:#fff;">25% increase</strong>. If the price drops from ₹250 to ₹200, the result is a 20% decrease. Our <strong>percentage decrease calculator</strong> handles both automatically — a negative result indicates a decrease.</p>
+
+    <h3>Formula 3: Finding What Percentage X is of Y</h3>
+    <p>Use this when you know two numbers and need to express the relationship as a percentage:</p>
+    <p style="font-family:'JetBrains Mono',monospace;color:#a78bfa;font-size:14px;padding:10px;background:rgba(167,139,250,0.06);border-radius:8px;text-align:center;">Percentage = (Part ÷ Total) × 100</p>
+    <p>Example: A student scores 72 marks out of 90. Their percentage is (72 ÷ 90) × 100 = <strong style="color:#fff;">80%</strong>. This formula is essential for calculating exam scores, conversion rates, market share, efficiency ratios and any comparison between a part and a whole.</p>
+
+    <h3>Common Percentage Calculation Examples</h3>
+    <table class="example-table">
+      <tr><th>Problem</th><th>Formula Used</th><th>Answer</th></tr>
+      <tr><td>18% GST on ₹1,000</td><td>X% of Y</td><td class="hl">₹180</td></tr>
+      <tr><td>30% discount on ₹800</td><td>X% of Y</td><td class="hl">₹240 off</td></tr>
+      <tr><td>Salary raised from ₹50,000 to ₹60,000</td><td>% Increase</td><td class="hl">+20%</td></tr>
+      <tr><td>Score: 85 out of 100 marks</td><td>Find %</td><td class="hl">85%</td></tr>
+      <tr><td>Stock fell from ₹500 to ₹425</td><td>% Decrease</td><td class="hl">−15%</td></tr>
+      <tr><td>10% tip on ₹1,500 bill</td><td>X% of Y</td><td class="hl">₹150</td></tr>
+    </table>
+  </div>
+
+  <!-- REAL-LIFE APPLICATIONS -->
+  <div class="seo-block">
+    <h2>🌍 Real-Life Applications of Percentages</h2>
+    <p>Percentages are one of the most universally useful mathematical concepts in everyday life. Once you understand how to <strong>calculate percent</strong> confidently, you'll notice how often this skill comes up — from shopping and banking to school and business.</p>
+    <div class="use-grid">
+      <div class="use-item"><div class="use-icon">🛍️</div><div class="use-title">Shopping Discounts</div><div class="use-desc">Calculate the actual discount amount and final price after a 30%, 40% or 50% sale instantly.</div></div>
+      <div class="use-item"><div class="use-icon">🧾</div><div class="use-title">GST & Tax</div><div class="use-desc">Compute GST at 5%, 12%, 18% or 28% on any product or service amount in seconds.</div></div>
+      <div class="use-item"><div class="use-icon">🎓</div><div class="use-title">Exam Marks</div><div class="use-desc">Convert raw scores to percentages for any subject, board exam or competitive test.</div></div>
+      <div class="use-item"><div class="use-icon">📊</div><div class="use-title">Business Growth</div><div class="use-desc">Track monthly or yearly revenue growth, customer retention rates and conversion percentages.</div></div>
+      <div class="use-item"><div class="use-icon">🏦</div><div class="use-title">Bank Interest</div><div class="use-desc">Calculate simple interest amounts, EMI percentages and investment returns quickly.</div></div>
+      <div class="use-item"><div class="use-icon">⚖️</div><div class="use-title">Nutrition & Health</div><div class="use-desc">Find the percentage of daily calories, nutrients or macros in your diet plan.</div></div>
+    </div>
+
+    <h3>Percentage in Competitive Exams</h3>
+    <p>For students preparing for competitive exams like CAT, SSC, UPSC, banking exams and NEET, percentage problems are among the most frequently tested topics. Our <strong>math tool online</strong> allows you to instantly verify your answers while practising, or quickly <strong>find percentage of number</strong> during timed practice sessions. The three calculators together cover every standard percentage question format found in aptitude tests.</p>
+
+    <h3>Percentage in Finance and Investment</h3>
+    <p>In personal finance, understanding percentages is non-negotiable. Whether you are calculating the real return on a mutual fund after inflation, understanding what percentage of your salary goes to taxes and provident fund, working out the down payment percentage on a home loan, or comparing the growth rate of different investments — percentage calculations are at the core of every financial decision. Our <strong>percentage decrease calculator</strong> is especially useful for tracking market corrections and understanding how much a stock or asset needs to recover to break even after a loss.</p>
+  </div>
+
+  <!-- WHY TOOLSAI PRO -->
+  <div class="seo-block">
+    <h2>⚡ Why Choose ToolsAI Pro for Percentage Calculations?</h2>
+    <p>While basic percentage calculations can be done on any smartphone calculator, our dedicated <strong>percentage calculator</strong> offers several significant advantages that make it the preferred choice for students, professionals and daily users.</p>
+
+    <h3>Instant Real-Time Results</h3>
+    <p>Unlike tools that require you to fill in all fields and click a "Calculate" button, ToolsAI Pro's percentage calculator updates results in real time as you type. There is zero latency — the answer appears immediately with each keystroke, making it dramatically faster for comparing multiple values or checking different scenarios.</p>
+
+    <h3>Plain-English Explanations</h3>
+    <p>Every result includes a detailed explanation written in plain language — not just the number, but the full sentence interpretation. For example, instead of just showing "25", the result reads "25% of 200 is 50". This explanation format is particularly helpful for students learning percentage concepts and for professionals who need to communicate results clearly.</p>
+
+    <h3>Three Calculators in One Interface</h3>
+    <p>Most online percentage tools offer only one type of calculation. ToolsAI Pro combines all three essential percentage calculations — <strong>calculate percent</strong> of a value, percentage change between values, and finding what percentage one number is of another — in a single tabbed interface. No switching between tools, no wasted time.</p>
+
+    <h3>Privacy and Speed</h3>
+    <p>All calculations run entirely in your browser using JavaScript. There are no network requests, no server processing and no data collection. Your numbers are never sent anywhere. The tool also works completely offline — once the page is loaded, you can disconnect from the internet and continue calculating.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="seo-block">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">Can I use this to calculate GST or income tax?</div>
+      <div class="faq-a">Yes. Use the "Calculate %" tab — enter the GST rate (e.g. 18) in the first field and the base amount in the second field. The result is the GST amount. To find the total price, add the result to the base amount. For income tax, if your taxable income falls in the 20% slab, enter 20 and your taxable income to find the tax amount. Our GST Calculator tool on ToolsAI Pro also offers dedicated tax slab calculations with CGST/SGST breakdowns.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this percentage calculator accurate for decimal values?</div>
+      <div class="faq-a">Yes. The calculator handles decimal inputs with full precision using JavaScript's floating-point arithmetic. Results are rounded to 4 decimal places for display but the internal calculation maintains full precision. For financial calculations, the results are accurate to the precision typically required (2 decimal places for currency). If you notice any floating-point quirks for very large or very small numbers, this is a standard characteristic of all digital calculators.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does the percentage calculator work offline?</div>
+      <div class="faq-a">Yes. Once the page has loaded in your browser, all calculations run entirely in JavaScript on your device. There are no server calls, no API requests and no internet dependency for the calculations themselves. If your browser caches the page, you may even be able to use it without an internet connection on future visits. This makes it ideal for use in areas with poor connectivity.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I calculate percentage decrease?</div>
+      <div class="faq-a">Use the "% Increase / Decrease" tab. Enter the original (higher) value in the "Original Value" field and the new (lower) value in the "New Value" field. The calculator will automatically show a negative percentage, indicating a decrease. For example, if a price drops from ₹1,000 to ₹750, the result will be −25%, meaning a 25% decrease. The result card colour also changes to indicate whether the change is an increase (green) or a decrease (red).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I calculate what percentage my exam score is?</div>
+      <div class="faq-a">Absolutely. Use the "Find %" tab. Enter your marks obtained in the "Part (X)" field and the total marks in the "Total (Y)" field. The calculator instantly shows your percentage score. For example, if you scored 378 out of 500, enter 378 and 500 — the result is 75.6%. This works for any scoring system regardless of the total marks — 100, 200, 500, or any custom total.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- OFT -->
+<div class="oft-section">
+  <div class="oft-card-wrap">
+    <div class="oft-header"><span style="font-size:20px;">🛠️</span><span class="oft-title-txt">Other Free Tools</span></div>
+    <p class="oft-sub">All tools — no signup, no uploads, 100% private & browser-based.</p>
+    <div class="oft-grid" id="oftGrid"></div>
+    <div class="oft-footer"><a class="oft-view-all" href="index.html">View All Free Tools &nbsp;→</a></div>
+  </div>
+</div>
+
+<footer>
+  <strong>ToolsAI Pro</strong> — Free Online Tools | No Signup | 100% Browser Based<br><br>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="tools-hub.html">Tools Hub</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms</a>
+  <a href="contact.html">Contact</a>
+</footer>
+
+<script>
+/* ═══════════════════════════
+   TAB SWITCHING
+═══════════════════════════ */
+var currentCalc = "pct";
+
+function setCalc(mode, el){
+  currentCalc = mode;
+  document.querySelectorAll(".calc-tab").forEach(function(t){ t.classList.remove("active"); });
+  el.classList.add("active");
+  document.querySelectorAll(".calc-panel").forEach(function(p){ p.classList.remove("active"); });
+  document.getElementById("panel-"+mode).classList.add("active");
+}
+
+/* ═══════════════════════════
+   HELPERS
+═══════════════════════════ */
+function fmt(n){
+  /* Up to 4 decimal places, trailing zeros removed */
+  var s = parseFloat(n.toFixed(4)).toString();
+  return s;
+}
+function showResult(boxId, valueId, expId, value, explain, type){
+  var box  = document.getElementById(boxId);
+  var valEl = document.getElementById(valueId);
+  var expEl = document.getElementById(expId);
+  valEl.textContent = value;
+  expEl.innerHTML   = explain;
+  /* Type colours */
+  box.className = "result-box show " + (type || "neu");
+}
+function hideResult(boxId){
+  document.getElementById(boxId).classList.remove("show");
+  document.getElementById(boxId).className = "result-box neu";
+}
+
+/* ═══════════════════════════
+   CALCULATOR 1 — X% of Y
+═══════════════════════════ */
+function calcPct(){
+  var x = parseFloat(document.getElementById("pct-x").value);
+  var y = parseFloat(document.getElementById("pct-y").value);
+  if(isNaN(x) || isNaN(y)){ hideResult("res-pct"); return; }
+  var result = (x / 100) * y;
+  var val    = fmt(result);
+  var exp    = "<strong>" + fmt(x) + "%</strong> of <strong>" + fmt(y) + "</strong> = <strong>" + val + "</strong>";
+  /* Set value color */
+  document.getElementById("res-pct-val").className = "res-value blue";
+  showResult("res-pct","res-pct-val","res-pct-exp", val, exp, "neu");
+}
+
+/* ═══════════════════════════
+   CALCULATOR 2 — % Change
+═══════════════════════════ */
+function calcChange(){
+  var old_ = parseFloat(document.getElementById("chg-old").value);
+  var new_ = parseFloat(document.getElementById("chg-new").value);
+  if(isNaN(old_) || isNaN(new_) || old_ === 0){ hideResult("res-change"); return; }
+
+  var change = ((new_ - old_) / Math.abs(old_)) * 100;
+  var isInc  = change >= 0;
+  var sign   = isInc ? "+" : "";
+  var val    = sign + fmt(change) + "%";
+  var label  = isInc ? "Percentage Increase" : "Percentage Decrease";
+  var exp    = "From <strong>" + fmt(old_) + "</strong> to <strong>" + fmt(new_) + "</strong> is a <strong>" + Math.abs(parseFloat(fmt(change))) + "% " + (isInc ? "increase" : "decrease") + "</strong>.";
+  var diff   = new_ - old_;
+  exp       += " (Difference: " + (diff >= 0 ? "+" : "") + fmt(diff) + ")";
+
+  document.getElementById("res-change-label").textContent = label;
+  var valEl = document.getElementById("res-change-val");
+  valEl.className = "res-value " + (isInc ? "green" : "red");
+
+  showResult("res-change","res-change-val","res-change-exp", val, exp, isInc ? "pos" : "neg");
+}
+
+/* ═══════════════════════════
+   CALCULATOR 3 — Find %
+═══════════════════════════ */
+function calcFind(){
+  var x = parseFloat(document.getElementById("find-x").value);
+  var y = parseFloat(document.getElementById("find-y").value);
+  if(isNaN(x) || isNaN(y) || y === 0){ hideResult("res-find"); return; }
+  var result = (x / y) * 100;
+  var val    = fmt(result) + "%";
+  var exp    = "<strong>" + fmt(x) + "</strong> is <strong>" + fmt(result) + "%</strong> of <strong>" + fmt(y) + "</strong>.";
+  document.getElementById("res-find-val").className = "res-value purple";
+  showResult("res-find","res-find-val","res-find-exp", val, exp, "neu");
+}
+
+/* ═══════════════════════════
+   CLEAR
+═══════════════════════════ */
+function clearCalc(mode){
+  if(mode === "pct"){
+    document.getElementById("pct-x").value = "";
+    document.getElementById("pct-y").value = "";
+    hideResult("res-pct");
+  } else if(mode === "change"){
+    document.getElementById("chg-old").value = "";
+    document.getElementById("chg-new").value = "";
+    hideResult("res-change");
+  } else {
+    document.getElementById("find-x").value = "";
+    document.getElementById("find-y").value = "";
+    hideResult("res-find");
+  }
+}
+
+/* ═══════════════════════════
+   COPY RESULT
+═══════════════════════════ */
+function copyResult(elId){
+  var txt = document.getElementById(elId).textContent;
+  if(!txt || txt === "—"){ showToast("Nothing to copy yet!"); return; }
+  navigator.clipboard.writeText(txt).then(function(){
+    showToast("Copied: " + txt);
+  }).catch(function(){
+    showToast("Copy failed — please select manually.");
+  });
+}
+
+/* ═══════════════════════════
+   ENTER KEY SUPPORT
+═══════════════════════════ */
+document.querySelectorAll(".calc-inp").forEach(function(inp){
+  inp.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+      if(currentCalc === "pct")    calcPct();
+      else if(currentCalc === "change") calcChange();
+      else                         calcFind();
+    }
+  });
+});
+
+/* ═══════════════════════════
+   TOAST
+═══════════════════════════ */
+function showToast(msg){
+  var t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._t);
+  t._t = setTimeout(function(){ t.classList.remove("show"); }, 2600);
+}
+</script>
+
+<script src="tools-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
