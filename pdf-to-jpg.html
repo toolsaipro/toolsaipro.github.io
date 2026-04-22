@@ -542,7 +542,7 @@ async function runConvert(){
 
   try {
     /* Load with pdf.js */
-    var loadTask = pdfjsLib.getDocument({ data: pdfFileBytes });
+    var loadTask = pdfjsLib.getDocument({ data: new Uint8Array(pdfFileBytes) });
     var pdfDoc   = await loadTask.promise;
     var numPages = pdfDoc.numPages;
 
@@ -550,7 +550,7 @@ async function runConvert(){
       var pct = 5 + Math.round(((i - 1) / numPages) * 90);
       setProg(pct, "Converting page " + i + " of " + numPages + "...");
 
-      var page     = await pdfDoc.getPage(i);
+      var page = await pdfDoc.getPage(i);
       var viewport = page.getViewport({ scale: scale });
 
       /* Offscreen canvas */
