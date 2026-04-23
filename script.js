@@ -86,12 +86,7 @@
 
   /* ── 3c. OFT card (Other Free Tools grid) ── */
   function oftCard(tool) {
-    // Agar icon missing hai, toh ek default circle icon de do taaki script crash na ho
-    var defaultIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
-    var rawIcon = tool.icon || defaultIcon; 
-    
-    var iconColoured = rawIcon.replace('stroke="currentColor"', 'stroke="' + tool.color + '"').replace('fill="currentColor"', 'fill="' + tool.color + '"');
-    
+    var iconColoured = tool.icon.replace('stroke="currentColor"', 'stroke="' + tool.color + '"').replace('fill="currentColor"', 'fill="' + tool.color + '"');
     return (
       '<a class="oft-tool-card ' + tool.cat + '" href="' + tool.link + '">' +
         '<div class="oft-icon-wrap c-' + tool.cat + '">' + iconColoured + '</div>' +
@@ -303,8 +298,7 @@
     injectCSS();
     injectCards();
     injectFooter();
-  
-    }
+  }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
