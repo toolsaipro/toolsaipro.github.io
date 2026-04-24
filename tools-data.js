@@ -245,7 +245,7 @@ var TOOLS_DATA = [
     id: 18,
     title: "Free PDF Compressor Online",
     desc: "Compress your PDFs instantly without losing quality.",
-    desclong: "Reduce the file size of your PDF documents while maintaining high quality, completely free and private.",
+    descLong: "Reduce the file size of your PDF documents while maintaining high quality, completely free and private.",
     link: "/pdf-compressor.html",
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="12 12 12 18"/><polyline points="9 15 12 18 15 15"/></svg>`,
     emoji: "🗜️",
@@ -261,17 +261,18 @@ var TOOLS_DATA = [
     descLong: "Extract every page of your PDF and save them as individual high-resolution JPG images directly in your browser. No signup, no server uploads.",
     link: "/pdf-to-jpg.html",
     cat: "pdf",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`,
     emoji: "🖼️",
     badge: "new",
     color: "#3b82f6",
     status: "active"
- },
-  {
+   },
+   {
     id: 20,
     title: "Free PDF Unlocker",
     desc: "Remove password protection from PDF files instantly.",
     descLong: "Securely unlock protected PDFs and remove printing/editing restrictions directly in your browser without uploading files to any server.",
-    link: "pdf-unlock.html",
+    link: "/pdf-unlock.html",
     cat: "pdf",
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>',
     emoji: "🔓",
@@ -280,6 +281,7 @@ var TOOLS_DATA = [
     status: "active"
   }
 ];
+
 /* ─────────────────────────────────────
    HELPER — only active tools
 ───────────────────────────────────── */
