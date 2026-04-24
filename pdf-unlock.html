@@ -10,18 +10,15 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Free PDF Unlock Tool Online – Remove PDF Password Easily</title>
+  <title>Free PDF Unlock Tool Online – Remove PDF Password Easily | ToolsAI Pro</title>
   <meta name="description" content="Unlock PDF files online instantly for free. Remove PDF password protection securely in your browser. No signup or server uploads required.">
   <meta name="keywords" content="PDF unlocker, remove password from PDF, unlock PDF online, free PDF tool, ToolsAI Pro">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://toolsaipro.in/pdf-unlock.html">
-  
   <link rel="icon" type="image/png" href="1000425998.png">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-  
+
   <style>
     :root {
       --bg: #0d0d14; --sur: #16161f; --card: #1c1c28; --bor: #2a2a3a;
@@ -43,7 +40,6 @@
     .page-hero { text-align: center; padding: 44px 24px 32px; }
     .breadcrumb { font-size: 12px; color: var(--mu); margin-bottom: 16px; }
     .breadcrumb a { color: var(--a1); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
     .tool-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.25); color: var(--a1); padding: 5px 14px; border-radius: 30px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
     .page-hero h1 { font-size: clamp(28px, 6vw, 56px); font-weight: 800; color: #fff; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 12px; }
     .page-hero h1 span { color: var(--a2); }
@@ -65,12 +61,12 @@
     .uzt { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
     .uzs { font-size: 12px; color: var(--mu); }
 
-    /* PREMIUM PASSWORD BOX */
-    .pwd-wrap { display: none; margin-top: 18px; padding: 18px; background: linear-gradient(145deg, rgba(255,101,132,0.08), rgba(108,99,255,0.05)); border: 1px solid rgba(255,101,132,0.3); border-radius: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    /* PASSWORD BOX */
+    .pwd-wrap { display: none; margin-top: 18px; padding: 18px; background: linear-gradient(145deg, rgba(255,101,132,0.08), rgba(108,99,255,0.05)); border: 1px solid rgba(255,101,132,0.3); border-radius: 14px; }
     .pwd-wrap.show { display: block; animation: fadeIn 0.3s ease; }
     .pwd-input { width: 100%; padding: 14px 45px 14px 16px; border-radius: 10px; border: 1px solid rgba(108,99,255,0.4); background: rgba(13,13,20,0.8); color: #fff; font-size: 14px; outline: none; transition: border-color 0.3s; }
     .pwd-input:focus { border-color: var(--a1); }
-    
+
     /* BUTTONS & PROGRESS */
     .btn { padding: 12px 24px; border-radius: 10px; border: none; font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 16px; }
     .bp1 { background: linear-gradient(135deg, var(--a1), #4f46e5); color: #fff; }
@@ -78,7 +74,7 @@
     .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
     .bgbtn { background: var(--a3); color: #0d0d14; }
     .bgbtn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(67,233,123,0.35); }
-    
+
     .pw { margin-top: 16px; display: none; }
     .pw.show { display: block; }
     .pb { height: 6px; background: var(--bor); border-radius: 3px; overflow: hidden; }
@@ -90,37 +86,107 @@
     .ra.show { display: block; animation: fu 0.3s ease; }
     .ra.error { border-color: rgba(255,101,132,0.4); background: rgba(255,101,132,0.05); }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fu { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
+    @keyframes fu { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     /* TOAST */
     .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: #fff; color: #0d0d14; padding: 10px 22px; border-radius: 28px; font-size: 12px; font-weight: 700; z-index: 9999; transition: transform 0.3s; box-shadow: 0 6px 24px rgba(0,0,0,0.25); }
     .toast.show { transform: translateX(-50%) translateY(0); }
 
-    /* SEO SECTION */
+    /* SEO */
     .seo-wrap { max-width: 760px; margin: 40px auto 0; padding: 0 24px; }
     .seo-block { background: var(--card); border: 1px solid var(--bor); border-radius: 20px; padding: 32px; margin-bottom: 16px; }
-    .seo-block h2 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .seo-block h2 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 14px; }
     .seo-block h3 { font-size: 16px; font-weight: 700; color: #fff; margin: 20px 0 10px; }
     .seo-block p { font-size: 14px; color: var(--mu); line-height: 1.8; margin-bottom: 12px; }
-    .seo-block ul, .seo-block ol { padding-left: 20px; margin-bottom: 12px; color: var(--mu); font-size: 14px; line-height: 1.8; }
+    .seo-block ul { padding-left: 20px; margin-bottom: 12px; color: var(--mu); font-size: 14px; line-height: 1.8; }
     .seo-block li { margin-bottom: 8px; }
     .seo-block li strong { color: #fff; }
-    
     .privacy-box { background: rgba(67,233,123,0.06); border: 1px solid rgba(67,233,123,0.2); border-radius: 12px; padding: 18px; margin: 16px 0; }
     .privacy-box p { color: var(--a3); font-size: 13px; margin: 0; line-height: 1.7; font-weight: 600; }
-    
     .faq-item { border-bottom: 1px solid var(--bor); padding: 16px 0; }
     .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
     .faq-q { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
     .faq-a { font-size: 14px; color: var(--mu); line-height: 1.75; }
+
+    /* ═══════════════════════════════════════
+       OFT SECTION — COMPLETE CSS (THIS WAS MISSING)
+       Without these styles, SVGs render as huge
+       unsized elements causing the pink blob bug.
+    ═══════════════════════════════════════ */
+    .oft-section { max-width: 760px; margin: 0 auto 48px; padding: 0 24px; }
+    .oft-card-wrap { background: rgba(28,28,40,0.82); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.07); border-radius: 22px; padding: 26px 22px 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.35); }
+    .oft-header { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .oft-title { font-size: 17px; font-weight: 800; color: #fff; }
+    .oft-sub { font-size: 12px; color: #6b6b80; margin-bottom: 18px; line-height: 1.5; }
+
+    /* GRID */
+    .oft-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    @media(max-width: 600px) { .oft-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
+
+    /* CARD */
+    .oft-tool-card { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 14px 10px 12px; background: rgba(22,22,31,0.88); border: 1px solid rgba(255,255,255,0.07); border-radius: 13px; text-decoration: none; transition: all 0.25s cubic-bezier(0.34,1.2,0.64,1); position: relative; overflow: hidden; }
+    .oft-tool-card::before { content: ""; position: absolute; inset: 0; border-radius: 13px; opacity: 0; transition: opacity 0.25s; }
+    .oft-tool-card:hover { transform: translateY(-3px); }
+    .oft-tool-card:hover::before { opacity: 1; }
+
+    /* CATEGORY HOVER COLOURS */
+    .oft-tool-card.pdf:hover  { border-color: rgba(255,101,132,0.5); box-shadow: 0 8px 24px rgba(255,101,132,0.15); }
+    .oft-tool-card.pdf::before { background: radial-gradient(ellipse at 50% 0%, rgba(255,101,132,0.12), transparent 70%); }
+    .oft-tool-card.img:hover  { border-color: rgba(6,182,212,0.5); box-shadow: 0 8px 24px rgba(6,182,212,0.15); }
+    .oft-tool-card.img::before { background: radial-gradient(ellipse at 50% 0%, rgba(6,182,212,0.12), transparent 70%); }
+    .oft-tool-card.tool:hover { border-color: rgba(108,99,255,0.5); box-shadow: 0 8px 24px rgba(108,99,255,0.15); }
+    .oft-tool-card.tool::before { background: radial-gradient(ellipse at 50% 0%, rgba(108,99,255,0.12), transparent 70%); }
+    .oft-tool-card.calc:hover { border-color: rgba(67,233,123,0.5); box-shadow: 0 8px 24px rgba(67,233,123,0.15); }
+    .oft-tool-card.calc::before { background: radial-gradient(ellipse at 50% 0%, rgba(67,233,123,0.12), transparent 70%); }
+    .oft-tool-card.hlth:hover { border-color: rgba(247,151,30,0.5); box-shadow: 0 8px 24px rgba(247,151,30,0.15); }
+    .oft-tool-card.hlth::before { background: radial-gradient(ellipse at 50% 0%, rgba(247,151,30,0.12), transparent 70%); }
+    .oft-tool-card.ai:hover   { border-color: rgba(167,139,250,0.5); box-shadow: 0 8px 24px rgba(167,139,250,0.15); }
+    .oft-tool-card.ai::before  { background: radial-gradient(ellipse at 50% 0%, rgba(167,139,250,0.12), transparent 70%); }
+    .oft-tool-card.yt:hover   { border-color: rgba(255,68,68,0.5); box-shadow: 0 8px 24px rgba(255,68,68,0.15); }
+    .oft-tool-card.yt::before  { background: radial-gradient(ellipse at 50% 0%, rgba(255,68,68,0.12), transparent 70%); }
+
+    /* ICON WRAP — THIS IS THE KEY FIX: gives SVGs a fixed 40×40 box */
+    .oft-icon-wrap { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.25s; }
+    .oft-tool-card:hover .oft-icon-wrap { transform: scale(1.1); }
+    /* SVG inside icon wrap — MUST have fixed size */
+    .oft-icon-wrap svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* ICON WRAP BACKGROUND COLOURS */
+    .oft-icon-wrap.c-pdf  { background: rgba(255,101,132,0.14); border: 1px solid rgba(255,101,132,0.25); }
+    .oft-icon-wrap.c-img  { background: rgba(6,182,212,0.14);   border: 1px solid rgba(6,182,212,0.25); }
+    .oft-icon-wrap.c-tool { background: rgba(108,99,255,0.14);  border: 1px solid rgba(108,99,255,0.25); }
+    .oft-icon-wrap.c-calc { background: rgba(67,233,123,0.14);  border: 1px solid rgba(67,233,123,0.25); }
+    .oft-icon-wrap.c-hlth { background: rgba(247,151,30,0.14);  border: 1px solid rgba(247,151,30,0.25); }
+    .oft-icon-wrap.c-ai   { background: rgba(167,139,250,0.14); border: 1px solid rgba(167,139,250,0.25); }
+    .oft-icon-wrap.c-yt   { background: rgba(255,68,68,0.15);   border: 1px solid rgba(255,68,68,0.3); }
+
+    /* TOOL NAME & BADGE */
+    .oft-tool-name { font-size: 10.5px; font-weight: 700; color: #c4c4d4; text-align: center; line-height: 1.4; transition: color 0.2s; word-break: break-word; }
+    .oft-tool-card:hover .oft-tool-name { color: #fff; }
+    .oft-badge { font-size: 8.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 7px; border-radius: 20px; }
+    .oft-badge.free { background: rgba(67,233,123,0.12);  color: #43e97b; border: 1px solid rgba(67,233,123,0.22); }
+    .oft-badge.new  { background: rgba(247,151,30,0.12);  color: #f7971e; border: 1px solid rgba(247,151,30,0.22); }
+    .oft-badge.pro  { background: rgba(108,99,255,0.12);  color: #8b83ff; border: 1px solid rgba(108,99,255,0.22); }
+    .oft-badge.ai   { background: rgba(167,139,250,0.15); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
+
+    /* OFT FOOTER */
+    .oft-footer { text-align: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .oft-view-all { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #06b6d4; text-decoration: none; transition: gap 0.2s, color 0.2s; }
+    .oft-view-all:hover { color: #fff; gap: 10px; }
 
     /* FOOTER */
     footer { text-align: center; padding: 32px 20px 24px; color: var(--mu); font-size: 12px; border-top: 1px solid var(--bor); margin-top: 40px; }
     footer strong { color: var(--a1); }
     footer a { color: var(--mu); text-decoration: none; margin: 0 7px; }
     footer a:hover { color: var(--a1); }
-    
-    @media(max-width: 580px) { nav { padding: 0 14px; } .nl { font-size: 10px; padding: 4px 8px; } .scard { padding: 20px 16px; } .seo-block { padding: 24px 16px; } }
+
+    @media(max-width: 580px) {
+      nav { padding: 0 14px; }
+      .nl { font-size: 10px; padding: 4px 8px; }
+      .scard { padding: 20px 16px; }
+      .seo-block { padding: 24px 16px; }
+      .oft-section { padding: 0 14px; }
+    }
   </style>
 </head>
 <body>
@@ -151,29 +217,28 @@
       <div class="shi">🔓</div>
       <div><div class="sht">PDF Unlocker</div><div class="shs">Upload securely → Enter Password → Download Unlocked</div></div>
     </div>
-    
+
     <div class="uz" id="uzPdf">
       <div class="uzi">🔐</div>
       <div class="uzt" id="uzTitle">Drag & Drop your locked PDF here</div>
       <div class="uzs" id="uzSub">or click to browse — 100% Private</div>
     </div>
     <input type="file" id="pdfInput" accept=".pdf" style="display:none">
-    
+
     <div class="pwd-wrap" id="pwdWrap">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
         <span style="font-size:18px;">🔒</span>
-        <label style="font-size: 14px; font-weight: 800; color: var(--a2); margin:0;">Password Protected</label>
+        <label style="font-size:14px;font-weight:800;color:var(--a2);margin:0;">Password Protected</label>
       </div>
-      <p style="font-size:12px; color:var(--mu); margin-bottom:14px; padding-left:26px;">— Enter the PDF password below to unlock.</p>
-      
+      <p style="font-size:12px;color:var(--mu);margin-bottom:14px;padding-left:26px;">Enter the PDF password below to unlock.</p>
       <div style="position:relative;">
         <input type="password" id="pdfPassword" class="pwd-input" placeholder="Enter PDF password...">
-        <button type="button" id="toggleEye" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--mu); cursor:pointer; font-size:16px; padding:4px;" title="Show/Hide Password">👁️</button>
+        <button type="button" id="toggleEye" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--mu);cursor:pointer;font-size:16px;padding:4px;" title="Show/Hide Password">👁️</button>
       </div>
     </div>
 
     <button class="btn bp1" id="unlockBtn" disabled>🔓 Unlock PDF Now</button>
-    <button class="btn" style="background:var(--sur); color:var(--tx); border:1px solid var(--bor); display:none;" id="resetBtn">🔄 Choose Another File</button>
+    <button class="btn" style="background:var(--sur);color:var(--tx);border:1px solid var(--bor);display:none;" id="resetBtn">🔄 Choose Another File</button>
 
     <div class="pw" id="pdfProg">
       <div class="pb"><div class="pf" id="pdfFill"></div></div>
@@ -183,87 +248,98 @@
     <div class="ra" id="pdfResult">
       <div style="font-weight:800;color:var(--a3);font-size:16px;margin-bottom:8px;" id="resTitle">✅ PDF Unlocked Successfully!</div>
       <p style="font-size:13px;color:var(--mu);margin-bottom:16px;" id="resDesc">Password and restrictions have been removed. Ready to edit and print.</p>
-      <button class="btn bgbtn" id="dlBtn" style="color: #0d0d14; font-weight: 800;">⬇️ Download Unlocked PDF</button>
+      <button class="btn bgbtn" id="dlBtn" style="color:#0d0d14;font-weight:800;">⬇️ Download Unlocked PDF</button>
     </div>
   </div>
 </div>
 
+<!-- SEO CONTENT -->
 <div class="seo-wrap">
-  
-  <div class="privacy-box" style="border-color: rgba(247,151,30,0.3); background: rgba(247,151,30,0.05);">
-    <p style="color: #f7971e; font-size: 13px; margin: 0; line-height: 1.7; font-weight: 600;">
-      ⚠️ <strong>Note on Aadhaar Cards & High-Security PDFs:</strong> To guarantee your absolute privacy, our tool processes files 100% locally within your browser. Because we never upload your files to external servers, this tool cannot decrypt military-grade <strong>AES-256 encryption</strong> found in Indian Aadhaar Cards and some modern Bank Statements. 
+
+  <div style="background:rgba(247,151,30,0.07);border:1px solid rgba(247,151,30,0.25);border-radius:12px;padding:16px 18px;margin-bottom:16px;">
+    <p style="color:#f7971e;font-size:13px;margin:0;line-height:1.7;font-weight:600;">
+      ⚠️ <strong>Note on Aadhaar Cards & High-Security PDFs:</strong> Our tool processes files 100% locally in your browser. It cannot decrypt military-grade <strong>AES-256 encryption</strong> found in Indian Aadhaar Cards and some modern bank statements — because we refuse to upload your sensitive documents to a remote server. Standard owner-restriction PDFs and most bank statements unlock instantly.
     </p>
   </div>
 
   <div class="seo-block">
-    <h2>📋 How to Remove Password from PDF (3 Easy Steps)</h2>
-    <p>Dealing with a locked PDF document can be frustrating, especially when you need to edit, print, or share it urgently. The <strong>ToolsAI Pro PDF Unlocker</strong> is designed to remove PDF passwords and owner restrictions instantly.</p>
+    <h2>📋 How to Remove Password from PDF — 3 Easy Steps</h2>
+    <p>Dealing with a locked PDF document can be frustrating, especially when you need to edit, print, or share it urgently. The <strong>ToolsAI Pro PDF Unlocker</strong> is designed to remove PDF passwords and owner restrictions instantly — completely in your browser.</p>
     <h3>Step 1: Upload Your Locked PDF</h3>
-    <p>Click on the designated upload area or drag and drop your protected PDF file directly into the box. The tool uses advanced client-side architecture to load the file instantly into your browser's local memory.</p>
+    <p>Click the upload area or drag and drop your protected PDF file directly into the box. The file is loaded instantly into your browser's local memory. The tool automatically detects whether the PDF is password-protected and shows the appropriate input — no guessing required.</p>
     <h3>Step 2: Enter the Password (If Prompted)</h3>
-    <p>If the PDF has an "Owner Password", our tool will unlock it automatically. If it has a "User Password", a secure password input field will appear. Simply type the correct password you use to open the file.</p>
+    <p>If the PDF has an "Owner Password" or only printing/editing restrictions, our tool may unlock it automatically. If it has a "User Password" (required to open), a secure password input field appears automatically. Type the password you use to open the file.</p>
     <h3>Step 3: Click Unlock and Download</h3>
-    <p>Hit the "Unlock PDF Now" button. Our script will decrypt the file locally. Within seconds, a fully unlocked version of your PDF will be ready for download.</p>
+    <p>Hit the "Unlock PDF Now" button and watch the real-time progress bar. Within seconds, a fully unlocked PDF — free of all passwords and restrictions — is ready for download. Click "Download Unlocked PDF" to save it to your device.</p>
   </div>
 
   <div class="seo-block">
-    <h2>🚀 Benefits of Unlocking Your PDF Online</h2>
+    <h2>✅ Benefits of Unlocking Your PDF Online</h2>
     <ul>
-      <li><strong>Enable Full Editing:</strong> Unlocking the document removes barriers, allowing full compatibility with PDF editors.</li>
-      <li><strong>Hassle-Free Printing:</strong> Unlocking the PDF restores your ability to print high-quality hard copies.</li>
-      <li><strong>Seamless Sharing:</strong> Share a clean, accessible version with colleagues or family without giving them a password.</li>
-      <li><strong>Format Conversion:</strong> Unlocking it first ensures smooth format conversion to Word or JPG.</li>
+      <li><strong>Enable Full Editing:</strong> Remove restrictions that block editing in PDF editors like Adobe Acrobat, Foxit and online tools.</li>
+      <li><strong>Hassle-Free Printing:</strong> Many PDFs have printing disabled. Unlocking restores full print access for hard copies.</li>
+      <li><strong>Seamless Sharing:</strong> Share a clean, accessible version with colleagues or family without handing over a password.</li>
+      <li><strong>Format Conversion:</strong> PDF-to-Word and PDF-to-JPG conversions require an unlocked file. Unlock first, then convert freely.</li>
+      <li><strong>Long-Term Access:</strong> Remove passwords from important documents so you can always access them without remembering credentials.</li>
     </ul>
   </div>
 
   <div class="seo-block">
-    <h2>🔒 Client-Side Processing: Your Data Never Leaves Your Device</h2>
-    <p>Most online PDF unlockers require you to upload your highly sensitive documents to their remote servers. This poses a security risk.</p>
+    <h2>🔒 Client-Side Processing — Your Data Never Leaves Your Device</h2>
+    <p>Most online PDF unlockers require you to upload highly sensitive documents to their remote servers — a serious privacy risk. ToolsAI Pro works completely differently.</p>
     <div class="privacy-box">
-      <p>🛡️ ToolsAI Pro Guarantee: We utilize 100% Client-Side Processing. The entire unlocking process happens locally within your web browser.</p>
+      <p>🛡️ ToolsAI Pro Guarantee: 100% Client-Side Processing. The entire unlocking process happens locally within your web browser using the pdf-lib JavaScript library. Zero file upload. Zero server contact. Zero data retention.</p>
     </div>
-    <p>We have zero server-side code for this tool. No files are uploaded, no passwords are logged, and no data is stored.</p>
+    <p>We have no server-side code for this tool. No files are uploaded, no passwords are logged, and no data is stored anywhere. When you close the tab, all file data is automatically cleared from your browser's memory.</p>
   </div>
 
   <div class="seo-block">
-    <h2>❓ Frequently Asked Questions (FAQs)</h2>
-    
+    <h2>❓ Frequently Asked Questions</h2>
+
     <div class="faq-item">
       <div class="faq-q">Is this PDF unlocker safe to use?</div>
-      <div class="faq-a">Absolutely. Because ToolsAI Pro uses client-side processing, your PDF files are never uploaded to any server. The unlocking process happens offline within your browser.</div>
+      <div class="faq-a">Absolutely. Because ToolsAI Pro uses 100% client-side processing, your PDF files are never uploaded to any server. The unlocking process — including the password you enter — happens entirely within your browser's local memory. No data is transmitted or stored anywhere.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Can I unlock my Aadhaar Card or highly secure Bank Statements here?</div>
-      <div class="faq-a">It depends on the encryption type. Standard bank statements unlock instantly. However, highly sensitive documents like Indian Aadhaar Cards use military-grade <strong>AES-256 encryption</strong>. Because we refuse to upload your sensitive documents to a remote server, our browser-based tool cannot decrypt AES-256 files. We prioritize your data privacy over server-based hacking methods.</div>
+      <div class="faq-q">Can I unlock my Aadhaar Card or bank statement PDF?</div>
+      <div class="faq-a">Standard bank statements and government forms unlock instantly. However, Indian Aadhaar Cards and some newer bank documents use military-grade <strong>AES-256 encryption</strong>. Because we refuse to upload your documents to a remote server, our browser-based tool cannot decrypt AES-256 files. We prioritise your data privacy above all else.</div>
     </div>
-    
+
     <div class="faq-item">
-      <div class="faq-q">Is the tool completely free?</div>
-      <div class="faq-a">Yes! The ToolsAI Pro PDF Unlocker is 100% free to use with no daily limits or watermarks.</div>
+      <div class="faq-q">Is this tool completely free?</div>
+      <div class="faq-a">Yes — 100% free with no restrictions. No daily limits, no file size caps, no signup required, no watermarks added to the unlocked PDF. ToolsAI Pro is committed to keeping all tools permanently free for everyone.</div>
     </div>
-    
+
     <div class="faq-item">
-      <div class="faq-q">What if I forgot the password to my PDF?</div>
-      <div class="faq-a">If the PDF is secured with a "User Password" (required to open the file) and you have forgotten it, you cannot unlock it using this tool. You must obtain the password from the document's creator.</div>
+      <div class="faq-q">Can I use this on a mobile phone?</div>
+      <div class="faq-a">Yes. The tool is fully mobile-responsive and works on Android and iOS in Chrome, Safari and Firefox. You can upload a PDF from your phone's storage or Google Drive, enter the password, and download the unlocked file directly to your device.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if I forgot the PDF password?</div>
+      <div class="faq-a">If the PDF requires a password to open (User Password) and you have forgotten it, this tool cannot help — it does not crack or guess passwords. You would need to obtain the password from the document's creator. However, if your PDF only has owner/printing restrictions without an open password, the tool may remove those without any password at all.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How fast is the unlocking process?</div>
+      <div class="faq-a">Most PDFs unlock in 1–3 seconds because all processing happens locally on your device — there is no server round-trip. The speed depends only on your device's CPU and the PDF's size, not your internet speed. Very large PDFs (50MB+) may take 5–15 seconds on older devices.</div>
     </div>
   </div>
 
 </div>
 
+<!-- OTHER FREE TOOLS -->
 <div class="oft-section">
   <div class="oft-card-wrap">
     <div class="oft-header">
       <span style="font-size:22px;">🛠️</span>
-      <span class="oft-title" style="font-size: 18px; font-weight: 800; color: #fff;">Other Free Tools</span>
+      <span class="oft-title">Other Free Tools</span>
     </div>
-    <p class="oft-sub" style="font-size: 12px; color: #6b6b80; margin-bottom: 20px;">All tools — no signup required, no files uploaded, 100% private & browser-based.</p>
-    
+    <p class="oft-sub" id="oftSub">All tools — no signup required, no files uploaded, 100% private &amp; browser-based.</p>
     <div class="oft-grid" id="oftGrid"></div>
-    
-    <div class="oft-footer" style="text-align: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);">
-      <a class="oft-view-all" href="tools-hub.html" style="font-size: 12px; font-weight: 700; color: #06b6d4; text-decoration: none;">View All Free Tools &nbsp;→</a>
+    <div class="oft-footer">
+      <a class="oft-view-all" href="tools-hub.html" id="oftViewAll">View All Free Tools &nbsp;→</a>
     </div>
   </div>
 </div>
@@ -279,110 +355,92 @@
 </footer>
 
 <script>
-  let pdfFileBytes = null;
-  let unlockedBytes = null;
-  let originalFileName = "";
-  let isEncrypted = false;
+  var pdfFileBytes   = null;
+  var unlockedBytes  = null;
+  var originalFileName = "";
+  var isEncrypted    = false;
 
-  const uzPdf = document.getElementById("uzPdf");
-  const pdfInput = document.getElementById("pdfInput");
-  const unlockBtn = document.getElementById("unlockBtn");
-  const resetBtn = document.getElementById("resetBtn");
-  const pwdWrap = document.getElementById("pwdWrap");
-  const pdfPassword = document.getElementById("pdfPassword");
-  const toggleEye = document.getElementById("toggleEye");
-  const pdfProg = document.getElementById("pdfProg");
-  const pdfFill = document.getElementById("pdfFill");
-  const pdfResult = document.getElementById("pdfResult");
-  const dlBtn = document.getElementById("dlBtn");
+  var uzPdf       = document.getElementById("uzPdf");
+  var pdfInput    = document.getElementById("pdfInput");
+  var unlockBtn   = document.getElementById("unlockBtn");
+  var resetBtn    = document.getElementById("resetBtn");
+  var pwdWrap     = document.getElementById("pwdWrap");
+  var pdfPassword = document.getElementById("pdfPassword");
+  var toggleEye   = document.getElementById("toggleEye");
+  var pdfProg     = document.getElementById("pdfProg");
+  var pdfFill     = document.getElementById("pdfFill");
+  var pdfResult   = document.getElementById("pdfResult");
+  var dlBtn       = document.getElementById("dlBtn");
 
-  // Toast Function
   function showToast(msg) {
-    const t = document.getElementById("toast");
+    var t = document.getElementById("toast");
     t.textContent = msg; t.classList.add("show");
-    setTimeout(() => t.classList.remove("show"), 2500);
+    setTimeout(function(){ t.classList.remove("show"); }, 2500);
   }
 
-  // Upload Logic
-  uzPdf.addEventListener("click", () => pdfInput.click());
-  uzPdf.addEventListener("dragover", (e) => { e.preventDefault(); uzPdf.classList.add("dragover"); });
-  uzPdf.addEventListener("dragleave", () => uzPdf.classList.remove("dragover"));
-  uzPdf.addEventListener("drop", (e) => {
+  /* ── UPLOAD ── */
+  uzPdf.addEventListener("click", function(){ pdfInput.click(); });
+  uzPdf.addEventListener("dragover", function(e){ e.preventDefault(); uzPdf.classList.add("dragover"); });
+  uzPdf.addEventListener("dragleave", function(){ uzPdf.classList.remove("dragover"); });
+  uzPdf.addEventListener("drop", function(e){
     e.preventDefault(); uzPdf.classList.remove("dragover");
-    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+    if(e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
   });
-  pdfInput.addEventListener("change", function() {
-    if (this.files.length) handleFile(this.files[0]);
+  pdfInput.addEventListener("change", function(){
+    if(this.files.length) handleFile(this.files[0]);
   });
 
   async function handleFile(file) {
-    if (file.type !== "application/pdf") {
-      showToast("Please upload a valid PDF file.");
-      return;
-    }
+    if(file.type !== "application/pdf"){ showToast("Please upload a valid PDF file."); return; }
     originalFileName = file.name;
     document.getElementById("uzTitle").textContent = file.name;
-    document.getElementById("uzSub").textContent = (file.size / 1024).toFixed(1) + " KB";
+    document.getElementById("uzSub").textContent   = (file.size / 1024).toFixed(1) + " KB";
     uzPdf.classList.add("has-file");
-    
-    // Reset UI
     pwdWrap.classList.remove("show");
     pdfResult.classList.remove("show");
     pdfProg.classList.remove("show");
     pdfPassword.value = "";
-    unlockedBytes = null;
-    isEncrypted = false;
+    unlockedBytes = null; isEncrypted = false;
     unlockBtn.disabled = true;
 
-    // Read File to ArrayBuffer
-    const reader = new FileReader();
-    reader.onload = async function(e) {
+    var reader = new FileReader();
+    reader.onload = async function(e){
       pdfFileBytes = new Uint8Array(e.target.result);
       await detectEncryption();
     };
     reader.readAsArrayBuffer(file);
   }
 
-  // Detect Encryption (Try to load without password)
   async function detectEncryption() {
     try {
-      // Trying to load normally
       await PDFLib.PDFDocument.load(pdfFileBytes);
       isEncrypted = false;
       unlockBtn.disabled = false;
       showToast("Ready! Click Unlock to remove restrictions.");
-    } catch (err) {
-      // It requires a password
+    } catch(err) {
       isEncrypted = true;
       pwdWrap.classList.add("show");
       unlockBtn.disabled = true;
-      showToast("File is locked. Please enter password.");
+      showToast("File is locked. Please enter the password.");
     }
     resetBtn.style.display = "inline-flex";
   }
 
-  // Eye Toggle Logic
-  toggleEye.addEventListener('click', function() {
-    const type = pdfPassword.getAttribute('type') === 'password' ? 'text' : 'password';
-    pdfPassword.setAttribute('type', type);
-    this.textContent = type === 'password' ? '👁️' : '🙈'; 
+  /* ── EYE TOGGLE ── */
+  toggleEye.addEventListener("click", function(){
+    var type = pdfPassword.getAttribute("type") === "password" ? "text" : "password";
+    pdfPassword.setAttribute("type", type);
+    this.textContent = type === "password" ? "👁️" : "🙈";
+  });
+  pdfPassword.addEventListener("input", function(){
+    unlockBtn.disabled = (this.value.length === 0);
   });
 
-  // Enable button when typing password
-  pdfPassword.addEventListener("input", function() {
-    if (this.value.length > 0) unlockBtn.disabled = false;
-    else unlockBtn.disabled = true;
-  });
-
-  // Unlock Process
-  unlockBtn.addEventListener("click", async function() {
-    if (!pdfFileBytes) return;
-    
-    const pwd = pdfPassword.value;
-    if (isEncrypted && !pwd) {
-      showToast("Password is required!");
-      return;
-    }
+  /* ── UNLOCK ── */
+  unlockBtn.addEventListener("click", async function(){
+    if(!pdfFileBytes) return;
+    var pwd = pdfPassword.value;
+    if(isEncrypted && !pwd){ showToast("Password is required!"); return; }
 
     unlockBtn.disabled = true;
     pdfProg.classList.add("show");
@@ -391,83 +449,74 @@
 
     try {
       pdfFill.style.width = "30%";
-      const loadOptions = {};
-      if (isEncrypted) loadOptions.password = pwd;
-      
-      const pdfDoc = await PDFLib.PDFDocument.load(pdfFileBytes, loadOptions);
-      
+      var loadOptions = {};
+      if(isEncrypted) loadOptions.password = pwd;
+
+      var pdfDoc = await PDFLib.PDFDocument.load(pdfFileBytes, loadOptions);
       pdfFill.style.width = "70%";
       document.getElementById("pdfLbl").textContent = "Removing Protection...";
 
       unlockedBytes = await pdfDoc.save();
-      
       pdfFill.style.width = "100%";
       document.getElementById("pdfLbl").textContent = "Done!";
 
-      setTimeout(() => {
+      setTimeout(function(){
         pdfProg.classList.remove("show");
         document.getElementById("resTitle").textContent = "✅ PDF Unlocked Successfully!";
-        document.getElementById("resDesc").textContent = "Password and restrictions have been removed.";
+        document.getElementById("resDesc").textContent  = "Password and restrictions have been removed. Ready to edit and print.";
+        pdfResult.classList.remove("error");
         pdfResult.classList.add("show");
         showToast("PDF Unlocked!");
       }, 500);
 
-    } catch (err) {
+    } catch(err) {
       pdfProg.classList.remove("show");
       unlockBtn.disabled = false;
-      pdfResult.classList.add("show", "error");
+      pdfResult.classList.add("show","error");
       document.getElementById("resTitle").textContent = "❌ Unlock Failed";
-      
-      const errorMsg = err.message.toLowerCase();
-      
-      if (errorMsg.includes("aes-256") || errorMsg.includes("unsupported format") || errorMsg.includes("ignoreencryption")) {
-        document.getElementById("resDesc").textContent = "High-Security PDF Detected: Aadhaar cards or modern Bank Statements using AES-256 encryption cannot be unlocked in the browser to protect your privacy.";
+      var msg = (err.message || "").toLowerCase();
+      if(msg.includes("aes-256") || msg.includes("unsupported") || msg.includes("ignoreencryption")){
+        document.getElementById("resDesc").textContent = "High-Security PDF: Aadhaar cards or bank statements with AES-256 encryption cannot be unlocked in the browser. We refuse to upload your sensitive files to any server.";
         showToast("AES-256 Encryption not supported.");
-      } 
-      else if (errorMsg.includes("password")) {
-        document.getElementById("resDesc").textContent = "Incorrect password. Please check and try again.";
+      } else if(msg.includes("password") || msg.includes("incorrect")){
+        document.getElementById("resDesc").textContent = "Incorrect password. Please check and try again. Make sure Caps Lock is off.";
         showToast("Incorrect Password.");
-      } 
-      else {
-        document.getElementById("resDesc").textContent = "Error: Could not process this file format.";
+      } else {
+        document.getElementById("resDesc").textContent = "Error: " + err.message;
         showToast("Failed to unlock.");
       }
     }
   });
 
-  // Download Process
-  dlBtn.addEventListener("click", function() {
-    if (!unlockedBytes) return;
-    const blob = new Blob([unlockedBytes], { type: "application/pdf" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = originalFileName.replace(".pdf", "_unlocked.pdf");
-    a.click();
-    URL.revokeObjectURL(url);
+  /* ── DOWNLOAD ── */
+  dlBtn.addEventListener("click", function(){
+    if(!unlockedBytes) return;
+    var blob = new Blob([unlockedBytes], {type:"application/pdf"});
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement("a");
+    a.href = url; a.download = originalFileName.replace(".pdf","_unlocked.pdf");
+    a.click(); URL.revokeObjectURL(url);
     showToast("Download Started!");
   });
 
-  // Reset Tool
-  resetBtn.addEventListener("click", function() {
-    pdfFileBytes = null;
-    originalFileName = "";
+  /* ── RESET ── */
+  resetBtn.addEventListener("click", function(){
+    pdfFileBytes = null; originalFileName = "";
     uzPdf.classList.remove("has-file");
     document.getElementById("uzTitle").textContent = "Drag & Drop your locked PDF here";
-    document.getElementById("uzSub").textContent = "or click to browse — 100% Private";
+    document.getElementById("uzSub").textContent   = "or click to browse — 100% Private";
     pwdWrap.classList.remove("show");
     pdfResult.classList.remove("show");
     pdfProg.classList.remove("show");
     unlockBtn.disabled = true;
     resetBtn.style.display = "none";
     pdfPassword.value = "";
-    pdfPassword.setAttribute('type', 'password');
-    toggleEye.textContent = '👁️';
+    pdfPassword.setAttribute("type","password");
+    toggleEye.textContent = "👁️";
   });
 </script>
 
 <script src="tools-data.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
