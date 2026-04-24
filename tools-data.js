@@ -276,6 +276,7 @@ var TOOLS_DATA = [
     emoji: "🔓",
     badge: "new",
     color: "#ff6584"
+    status: "active"
   }
 ];
 
