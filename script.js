@@ -1,236 +1,259 @@
 /* ═══════════════════════════════════════
-   NAVBAR AUTO-LOADER
-   Injects the global navbar + mobile sidebar
-   into any page that has #navbar-placeholder.
-   Mobile toggle buttons work after injection.
+   NAVBAR AUTO-LOADER v2
+   Works on ALL pages automatically.
+   - If #navbar-placeholder found → inject there
+   - If existing <nav> found → replace it + inject mobile menu after
+   - No HTML changes needed in any page!
 ═══════════════════════════════════════ */
 (function injectNavbar() {
 
-  var placeholder = document.getElementById("navbar-placeholder");
-  if (!placeholder) return; /* Skip if page has its own nav */
-
   /* ── Detect active page for .act highlight ── */
   var currentPath = window.location.pathname.split("/").pop() || "index.html";
+  if (currentPath === "") currentPath = "index.html";
 
-  function isActive(href) {
+  function navClass(href) {
     var page = href.split("/").pop();
-    return currentPath === page ? ' class="nl act"' : ' class="nl"';
+    return currentPath === page ? 'class="nl act"' : 'class="nl"';
   }
 
-  /* ── NAVBAR HTML ── */
-  var navHTML = `
-<nav id="mainNav">
-  <a class="logo" href="/">Tools<span>AI</span><em>Pro</em></a>
+  /* ── Build Navbar HTML ── */
+  var NAV_HTML = [
+    '<nav id="mainNav">',
+    '  <a class="logo" href="/">Tools<span>AI</span><em>Pro</em></a>',
+    '  <div class="nav-links" id="desktopNav">',
+    '    <a ' + navClass("index.html")    + ' href="/">Home</a>',
+    '    <a ' + navClass("about.html")    + ' href="/about.html">About</a>',
+    '    <a ' + navClass("tools-hub.html")+ ' href="/tools-hub.html">Tools Hub</a>',
+    '    <div class="dropdown" id="guidesDropdown">',
+    '      <button class="dropdown-toggle nl" id="guidesToggleBtn">',
+    '        Guides <span class="dropdown-arrow">&#9662;</span>',
+    '      </button>',
+    '      <div class="dropdown-menu">',
+    '        <a class="dm-item" href="/pdf-merger.html"><span class="dm-icon">📄</span>Merge PDF Files</a>',
+    '        <a class="dm-item" href="/pdf-splitter.html"><span class="dm-icon">✂️</span>Split PDF Pages</a>',
+    '        <a class="dm-item" href="/pdf-compressor.html"><span class="dm-icon">📦</span>Compress PDF</a>',
+    '        <a class="dm-item" href="/pdf-to-jpg.html"><span class="dm-icon">🖼️</span>PDF to JPG</a>',
+    '        <a class="dm-item" href="/pdf-unlock.html"><span class="dm-icon">🔓</span>Unlock PDF</a>',
+    '        <div class="dm-divider"></div>',
+    '        <a class="dm-all" href="/tools-hub.html">View All Guides &nbsp;&#8594;</a>',
+    '      </div>',
+    '    </div>',
+    '    <a ' + navClass("contact.html") + ' href="/contact.html">Contact</a>',
+    '    <a ' + navClass("privacy.html") + ' href="/privacy.html">Privacy</a>',
+    '  </div>',
+    '  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">',
+    '    <span></span><span></span><span></span>',
+    '  </button>',
+    '</nav>'
+  ].join("\n");
 
-  <div class="nav-links" id="desktopNav">
-    <a${isActive("index.html")} href="/">Home</a>
-    <a${isActive("about.html")} href="/about.html">About</a>
-    <a${isActive("tools-hub.html")} href="/tools-hub.html">Tools Hub</a>
+  /* ── Build Mobile Menu HTML ── */
+  var MOBILE_HTML = [
+    '<div class="mobile-menu" id="mobileMenu">',
+    '  <a class="nl" href="/">&#127968; Home</a>',
+    '  <a class="nl" href="/about.html">&#8505;&#65039; About</a>',
+    '  <a class="nl" href="/tools-hub.html">&#128736;&#65039; Tools Hub</a>',
+    '  <div class="mm-label">&#128218; Guides</div>',
+    '  <a class="dm-item" href="/pdf-merger.html"><span class="dm-icon">📄</span>Merge PDF Files</a>',
+    '  <a class="dm-item" href="/pdf-splitter.html"><span class="dm-icon">✂️</span>Split PDF Pages</a>',
+    '  <a class="dm-item" href="/pdf-compressor.html"><span class="dm-icon">📦</span>Compress PDF</a>',
+    '  <a class="dm-item" href="/pdf-to-jpg.html"><span class="dm-icon">🖼️</span>PDF to JPG</a>',
+    '  <a class="dm-item" href="/pdf-unlock.html"><span class="dm-icon">🔓</span>Unlock PDF</a>',
+    '  <a class="nl" href="/contact.html">&#9993;&#65039; Contact</a>',
+    '  <a class="nl" href="/privacy.html">&#128274; Privacy</a>',
+    '</div>'
+  ].join("\n");
 
-    <!-- GUIDES DROPDOWN -->
-    <div class="dropdown" id="guidesDropdown">
-      <button class="dropdown-toggle nl" id="guidesToggleBtn">
-        Guides <span class="dropdown-arrow">▾</span>
-      </button>
-      <div class="dropdown-menu">
-        <a class="dm-item" href="/pdf-merger.html"><span class="dm-icon">📄</span>Merge PDF Files</a>
-        <a class="dm-item" href="/pdf-splitter.html"><span class="dm-icon">✂️</span>Split PDF Pages</a>
-        <a class="dm-item" href="/pdf-compressor.html"><span class="dm-icon">📦</span>Compress PDF</a>
-        <a class="dm-item" href="/pdf-to-jpg.html"><span class="dm-icon">🖼️</span>PDF to JPG</a>
-        <a class="dm-item" href="/pdf-unlock.html"><span class="dm-icon">🔓</span>Unlock PDF</a>
-        <div class="dm-divider"></div>
-        <a class="dm-all" href="/tools-hub.html">View All Guides &nbsp;→</a>
-      </div>
-    </div>
+  /* ── INJECT LOGIC ── */
+  var placeholder = document.getElementById("navbar-placeholder");
+  var existingNav = document.querySelector("nav");
 
-    <a${isActive("contact.html")} href="/contact.html">Contact</a>
-    <a${isActive("privacy.html")} href="/privacy.html">Privacy</a>
-  </div>
+  if (placeholder) {
+    /* Has placeholder div → inject nav + mobile menu inside it */
+    placeholder.innerHTML = NAV_HTML + MOBILE_HTML;
 
-  <!-- Mobile hamburger -->
-  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  } else if (existingNav) {
+    /* Has existing hardcoded nav → replace it */
+    var wrapper = document.createElement("div");
+    wrapper.innerHTML = NAV_HTML + MOBILE_HTML;
 
-<!-- MOBILE SIDEBAR MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a class="nl" href="/">🏠 Home</a>
-  <a class="nl" href="/about.html">ℹ️ About</a>
-  <a class="nl" href="/tools-hub.html">🛠️ Tools Hub</a>
-  <div class="mm-label">📚 Guides</div>
-  <a class="dm-item" href="/pdf-merger.html"><span class="dm-icon">📄</span>Merge PDF Files</a>
-  <a class="dm-item" href="/pdf-splitter.html"><span class="dm-icon">✂️</span>Split PDF Pages</a>
-  <a class="dm-item" href="/pdf-compressor.html"><span class="dm-icon">📦</span>Compress PDF</a>
-  <a class="dm-item" href="/pdf-to-jpg.html"><span class="dm-icon">🖼️</span>PDF to JPG</a>
-  <a class="dm-item" href="/pdf-unlock.html"><span class="dm-icon">🔓</span>Unlock PDF</a>
-  <a class="nl" href="/contact.html">✉️ Contact</a>
-  <a class="nl" href="/privacy.html">🔒 Privacy</a>
-</div>`;
+    /* Insert new nav before old nav, then remove old nav */
+    existingNav.parentNode.insertBefore(wrapper, existingNav);
+    existingNav.parentNode.removeChild(existingNav);
 
-  /* ── INJECT into placeholder ── */
-  placeholder.innerHTML = navHTML;
+    /* Also remove any existing hardcoded mobile-menu (if present) */
+    var oldMobile = document.getElementById("mobileMenu");
+    if (oldMobile && !wrapper.contains(oldMobile)) {
+      oldMobile.parentNode.removeChild(oldMobile);
+    }
 
-  /* ── NAVBAR CSS (only injected once) ── */
+  } else {
+    /* No nav found → prepend to body */
+    var wrapper2 = document.createElement("div");
+    wrapper2.innerHTML = NAV_HTML + MOBILE_HTML;
+    document.body.insertBefore(wrapper2, document.body.firstChild);
+  }
+
+  /* ── INJECT CSS (only once) ── */
   if (!document.getElementById("navbar-auto-css")) {
     var style = document.createElement("style");
     style.id = "navbar-auto-css";
-    style.textContent = `
-      nav {
-        position: sticky; top: 0; z-index: 200;
-        background: rgba(13,13,20,0.97);
-        backdrop-filter: blur(24px);
-        border-bottom: 1px solid #2a2a3a;
-        display: flex; align-items: center;
-        justify-content: space-between;
-        padding: 0 28px; height: 64px;
-      }
-      .logo { font-size: 19px; font-weight: 800; color: #fff; text-decoration: none; flex-shrink: 0; }
-      .logo span { color: #6c63ff; }
-      .logo em   { color: #ff6584; font-style: normal; }
+    style.textContent = [
+      "/* Navbar Auto CSS */",
 
-      .nav-links { display: flex; align-items: center; gap: 3px; }
-      .nl {
-        padding: 5px 11px; border-radius: 16px;
-        font-size: 11px; font-weight: 600; color: #6b6b80;
-        text-decoration: none; border: 1px solid transparent; transition: all 0.2s;
-      }
-      .nl:hover { color: #f7971e; border-color: rgba(247,151,30,0.3); }
-      .nl.act   { background: #f7971e; color: #fff; border-color: #f7971e; }
+      /* Base nav */
+      "#mainNav{",
+        "position:sticky;top:0;z-index:200;",
+        "background:rgba(13,13,20,0.97);",
+        "backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);",
+        "border-bottom:1px solid #2a2a3a;",
+        "display:flex;align-items:center;justify-content:space-between;",
+        "padding:0 28px;height:64px;",
+      "}",
+
+      /* Logo */
+      "#mainNav .logo{font-size:19px;font-weight:800;color:#fff;text-decoration:none;flex-shrink:0;}",
+      "#mainNav .logo span{color:#6c63ff;}",
+      "#mainNav .logo em{color:#ff6584;font-style:normal;}",
+
+      /* Nav links */
+      "#mainNav .nav-links{display:flex;align-items:center;gap:3px;}",
+      "#mainNav .nl{",
+        "padding:5px 11px;border-radius:16px;font-size:11px;font-weight:600;",
+        "color:#6b6b80;text-decoration:none;border:1px solid transparent;",
+        "transition:all 0.2s;white-space:nowrap;",
+      "}",
+      "#mainNav .nl:hover{color:#f7971e;border-color:rgba(247,151,30,0.3);}",
+      "#mainNav .nl.act{background:#f7971e;color:#fff;border-color:#f7971e;}",
 
       /* Dropdown */
-      .dropdown { position: relative; }
-      .dropdown-toggle {
-        padding: 5px 11px; border-radius: 16px; font-size: 11px;
-        font-weight: 600; color: #6b6b80; background: none;
-        border: 1px solid transparent; cursor: pointer; transition: all 0.2s;
-        display: flex; align-items: center; gap: 4px;
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-      .dropdown-toggle:hover,
-      .dropdown.open .dropdown-toggle { color: #a78bfa; border-color: rgba(167,139,250,0.3); }
-      .dropdown-arrow { font-size: 9px; transition: transform 0.25s; }
-      .dropdown.open .dropdown-arrow { transform: rotate(180deg); }
-
-      .dropdown-menu {
-        position: absolute; top: calc(100% + 10px); right: 0;
-        width: 220px; background: rgba(22,22,35,0.98);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(167,139,250,0.2);
-        border-radius: 16px; padding: 10px;
-        box-shadow: 0 16px 48px rgba(0,0,0,0.45);
-        opacity: 0; visibility: hidden;
-        transform: translateY(-8px);
-        transition: all 0.25s cubic-bezier(0.34,1.2,0.64,1); z-index: 300;
-      }
-      .dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-      .dm-item {
-        display: flex; align-items: center; gap: 10px;
-        padding: 9px 12px; border-radius: 10px;
-        text-decoration: none; color: #e8e8f0;
-        font-size: 12px; font-weight: 600; transition: all 0.18s;
-      }
-      .dm-item:hover { background: rgba(167,139,250,0.1); color: #fff; }
-      .dm-icon { font-size: 14px; flex-shrink: 0; width: 20px; text-align: center; }
-      .dm-divider { height: 1px; background: #2a2a3a; margin: 6px 0; }
-      .dm-all {
-        display: flex; align-items: center; justify-content: center; gap: 6px;
-        padding: 9px; border-radius: 10px;
-        background: linear-gradient(135deg,rgba(167,139,250,0.15),rgba(108,99,255,0.1));
-        color: #a78bfa; font-size: 11px; font-weight: 700;
-        text-decoration: none;
-        border: 1px solid rgba(167,139,250,0.2); transition: all 0.2s;
-      }
-      .dm-all:hover { background: linear-gradient(135deg,rgba(167,139,250,0.25),rgba(108,99,255,0.18)); color: #fff; }
+      "#mainNav .dropdown{position:relative;}",
+      "#mainNav .dropdown-toggle{",
+        "padding:5px 11px;border-radius:16px;font-size:11px;font-weight:600;",
+        "color:#6b6b80;background:none;border:1px solid transparent;cursor:pointer;",
+        "transition:all 0.2s;display:flex;align-items:center;gap:4px;",
+        "font-family:'Plus Jakarta Sans',sans-serif;",
+      "}",
+      "#mainNav .dropdown-toggle:hover,",
+      "#mainNav .dropdown.open .dropdown-toggle{color:#a78bfa;border-color:rgba(167,139,250,0.3);}",
+      "#mainNav .dropdown-arrow{font-size:9px;transition:transform 0.25s;display:inline-block;}",
+      "#mainNav .dropdown.open .dropdown-arrow{transform:rotate(180deg);}",
+      "#mainNav .dropdown-menu{",
+        "position:absolute;top:calc(100% + 10px);right:0;width:220px;",
+        "background:rgba(22,22,35,0.98);backdrop-filter:blur(20px);",
+        "border:1px solid rgba(167,139,250,0.2);border-radius:16px;padding:10px;",
+        "box-shadow:0 16px 48px rgba(0,0,0,0.45);",
+        "opacity:0;visibility:hidden;transform:translateY(-8px);",
+        "transition:all 0.25s cubic-bezier(0.34,1.2,0.64,1);z-index:300;",
+      "}",
+      "#mainNav .dropdown.open .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}",
+      "#mainNav .dm-item{",
+        "display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;",
+        "text-decoration:none;color:#e8e8f0;font-size:12px;font-weight:600;transition:all 0.18s;",
+      "}",
+      "#mainNav .dm-item:hover{background:rgba(167,139,250,0.1);color:#fff;}",
+      "#mainNav .dm-icon{font-size:14px;flex-shrink:0;width:20px;text-align:center;}",
+      "#mainNav .dm-divider{height:1px;background:#2a2a3a;margin:6px 0;}",
+      "#mainNav .dm-all{",
+        "display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;",
+        "border-radius:10px;",
+        "background:linear-gradient(135deg,rgba(167,139,250,0.15),rgba(108,99,255,0.1));",
+        "color:#a78bfa;font-size:11px;font-weight:700;text-decoration:none;",
+        "border:1px solid rgba(167,139,250,0.2);transition:all 0.2s;",
+      "}",
+      "#mainNav .dm-all:hover{",
+        "background:linear-gradient(135deg,rgba(167,139,250,0.25),rgba(108,99,255,0.18));",
+        "color:#fff;",
+      "}",
 
       /* Hamburger */
-      .hamburger {
-        display: none; flex-direction: column;
-        gap: 5px; cursor: pointer; padding: 6px;
-        border: none; background: none;
-      }
-      .hamburger span {
-        display: block; width: 22px; height: 2px;
-        background: #6b6b80; border-radius: 2px; transition: all 0.3s;
-      }
-      .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-      .hamburger.open span:nth-child(2) { opacity: 0; }
-      .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      "#mainNav .hamburger{",
+        "display:none;flex-direction:column;gap:5px;cursor:pointer;",
+        "padding:6px;border:none;background:none;",
+      "}",
+      "#mainNav .hamburger span{",
+        "display:block;width:22px;height:2px;",
+        "background:#6b6b80;border-radius:2px;transition:all 0.3s;",
+      "}",
+      "#mainNav .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}",
+      "#mainNav .hamburger.open span:nth-child(2){opacity:0;}",
+      "#mainNav .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}",
 
       /* Mobile menu */
-      .mobile-menu {
-        display: none; position: fixed;
-        top: 64px; left: 0; right: 0;
-        background: rgba(13,13,20,0.98);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid #2a2a3a;
-        padding: 16px 20px 20px;
-        z-index: 199; flex-direction: column; gap: 6px;
-      }
-      .mobile-menu.open { display: flex; }
-      .mobile-menu .nl {
-        padding: 10px 14px; border-radius: 10px;
-        font-size: 13px; border: 1px solid #2a2a3a;
-      }
-      .mobile-menu .dm-item {
-        padding: 10px 14px; border-radius: 10px;
-        border: 1px solid #2a2a3a; font-size: 12px;
-      }
-      .mm-label {
-        font-size: 10px; font-weight: 700; color: #6b6b80;
-        text-transform: uppercase; letter-spacing: 1.2px; padding: 8px 4px 4px;
-      }
+      "#mobileMenu{",
+        "display:none;position:fixed;top:64px;left:0;right:0;",
+        "background:rgba(13,13,20,0.98);backdrop-filter:blur(20px);",
+        "border-bottom:1px solid #2a2a3a;",
+        "padding:16px 20px 20px;z-index:199;flex-direction:column;gap:6px;",
+      "}",
+      "#mobileMenu.open{display:flex;}",
+      "#mobileMenu .nl{",
+        "padding:10px 14px;border-radius:10px;font-size:13px;",
+        "border:1px solid #2a2a3a;color:#e8e8f0;text-decoration:none;",
+        "transition:all 0.2s;",
+      "}",
+      "#mobileMenu .nl:hover{background:rgba(247,151,30,0.08);color:#f7971e;}",
+      "#mobileMenu .nl.act{background:#f7971e;color:#fff;}",
+      "#mobileMenu .dm-item{",
+        "display:flex;align-items:center;gap:10px;",
+        "padding:10px 14px;border-radius:10px;",
+        "border:1px solid #2a2a3a;font-size:12px;",
+        "color:#e8e8f0;text-decoration:none;transition:all 0.2s;",
+      "}",
+      "#mobileMenu .dm-item:hover{background:rgba(167,139,250,0.1);color:#fff;}",
+      "#mobileMenu .mm-label{",
+        "font-size:10px;font-weight:700;color:#6b6b80;",
+        "text-transform:uppercase;letter-spacing:1.2px;padding:8px 4px 4px;",
+      "}",
 
-      @media(max-width: 680px) {
-        nav { padding: 0 16px; }
-        .nav-links { display: none; }
-        .hamburger { display: flex; }
-      }
-    `;
+      /* Responsive */
+      "@media(max-width:680px){",
+        "#mainNav{padding:0 16px;}",
+        "#mainNav .nav-links{display:none;}",
+        "#mainNav .hamburger{display:flex;}",
+      "}"
+
+    ].join("");
     document.head.appendChild(style);
   }
 
-  /* ── WIRE UP TOGGLE BUTTONS (after DOM injection) ── */
+  /* ── WIRE UP EVENT LISTENERS ── */
 
   /* 1. Guides Dropdown */
   var guidesBtn = document.getElementById("guidesToggleBtn");
   var guidesDd  = document.getElementById("guidesDropdown");
-
   if (guidesBtn && guidesDd) {
     guidesBtn.addEventListener("click", function (e) {
       e.stopPropagation();
       guidesDd.classList.toggle("open");
     });
-    /* Close on outside click */
     document.addEventListener("click", function (e) {
-      if (guidesDd && !guidesDd.contains(e.target)) {
+      if (!guidesDd.contains(e.target)) {
         guidesDd.classList.remove("open");
       }
     });
   }
 
-  /* 2. Hamburger / Mobile Menu */
+  /* 2. Hamburger Toggle */
   var hamburger  = document.getElementById("hamburgerBtn");
   var mobileMenu = document.getElementById("mobileMenu");
-
   if (hamburger && mobileMenu) {
     hamburger.addEventListener("click", function () {
       mobileMenu.classList.toggle("open");
       hamburger.classList.toggle("open");
     });
-    /* Close mobile menu when any link inside is clicked */
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
+    /* Auto-close on link click */
+    var mobileLinks = mobileMenu.querySelectorAll("a");
+    for (var i = 0; i < mobileLinks.length; i++) {
+      mobileLinks[i].addEventListener("click", function () {
         mobileMenu.classList.remove("open");
         hamburger.classList.remove("open");
       });
-    });
+    }
   }
 
 })();
-/* ═══════════════════════════════════════
-   END NAVBAR AUTO-LOADER
-═══════════════════════════════════════ */
+/* ═══ END NAVBAR AUTO-LOADER ═══ */
 /**
  * ToolsAI Pro — Master Script
  * ============================
