@@ -61,7 +61,7 @@
     '  <a class="nl" href="/tools-hub.html">&#128736;&#65039; Tools Hub</a>',
     '  ',
     '  <div class="mobile-accordion">',
-    '    <div class="accordion-header" onclick="toggleAcc(this)">🛠️ PDF TOOLS <span class="acc-arrow">▼</span></div>',
+    '  <div class="accordion-header" onclick="toggleAcc(this)">🛠️ POPULAR TOOLS <span class="acc-arrow">▼</span></div>',
     '    <div class="accordion-content">',
     '      <a class="dm-item" href="/pdf-merger.html"><span class="dm-icon">📄</span>Merge PDF</a>',
     '      <a class="dm-item" href="/pdf-splitter.html"><span class="dm-icon">✂️</span>Split PDF</a>',
