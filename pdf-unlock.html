@@ -464,6 +464,7 @@
         pdfProg.classList.remove("show");
         document.getElementById("resTitle").textContent = "✅ PDF Unlocked Successfully!";
         document.getElementById("resDesc").textContent  = "Password and restrictions have been removed. Ready to edit and print.";
+        dlBtn.style.display = "inline-flex"; // <-- YE LINE ADD KI HAI (Success hone par button dikhega)
         pdfResult.classList.remove("error");
         pdfResult.classList.add("show");
         showToast("PDF Unlocked!");
@@ -473,6 +474,7 @@
       pdfProg.classList.remove("show");
       unlockBtn.disabled = false;
       pdfResult.classList.add("show","error");
+      dlBtn.style.display = "none"; // <-- YE LINE ADD KI HAI (Error aane par button gayab ho jayega)
       document.getElementById("resTitle").textContent = "❌ Unlock Failed";
       var msg = (err.message || "").toLowerCase();
       if(msg.includes("aes-256") || msg.includes("unsupported") || msg.includes("ignoreencryption")){
