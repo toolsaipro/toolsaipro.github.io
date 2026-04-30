@@ -444,27 +444,14 @@ unlockBtn.addEventListener("click", async function(){
     unlockBtn.disabled = true;
     pdfProg.classList.add("show");
     pdfResult.classList.remove("show", "error");
-    pdfFill.style.width = "20%";
-    document.getElementById("pdfLbl").textContent = "Checking Security...";
+    pdfFill.style.width = "30%";
+    document.getElementById("pdfLbl").textContent = "Removing Protection...";
 
     try {
-        // Sirf wahi load karenge jo hum asliyat mein khol sakte hain
-        const pdfDoc = await PDFLib.PDFDocument.load(pdfFileBytes, { 
-            password: pwd, 
-            ignoreEncryption: false // Bypass band (Blank file nahi aayegi)
-        });
-
-        pdfFill.style.width = "60%";
-        document.getElementById("pdfLbl").textContent = "Removing Restrictions...";
+        const pdfDoc = await PDFLib.PDFDocument.load(pdfFileBytes, { password: pwd });
         
-        // Nayi file banayenge taaki restrictions hat jayein
-        const resultDoc = await PDFLib.PDFDocument.create();
-        const indices = pdfDoc.getPageIndices();
-        const copiedPages = await resultDoc.copyPages(pdfDoc, indices);
-        copiedPages.forEach((page) => resultDoc.addPage(page));
-
-        pdfFill.style.width = "90%";
-        unlockedBytes = await resultDoc.save();
+        pdfFill.style.width = "70%";
+        unlockedBytes = await pdfDoc.save();
         
         pdfFill.style.width = "100%";
         document.getElementById("pdfLbl").textContent = "Done!";
@@ -472,31 +459,21 @@ unlockBtn.addEventListener("click", async function(){
         setTimeout(function(){
             pdfProg.classList.remove("show");
             document.getElementById("resTitle").textContent = "✅ PDF Unlocked Successfully!";
-            document.getElementById("resDesc").textContent  = "Password and printing restrictions have been removed. You can now download the file.";
+            document.getElementById("resDesc").textContent  = "Password and restrictions have been removed.";
             dlBtn.style.display = "inline-flex"; 
             pdfResult.classList.remove("error");
             pdfResult.classList.add("show");
-            showToast("Success!");
         }, 500);
 
     } catch(err) {
-        console.error(err);
         pdfProg.classList.remove("show");
         unlockBtn.disabled = false;
         pdfResult.classList.add("show","error");
         dlBtn.style.display = "none";
         
+        // Wahi professional message jo aapko pasand tha
         document.getElementById("resTitle").textContent = "❌ Unlock Failed";
-        let msg = (err.message || "").toLowerCase();
-        
-        // User ko saaf wajah batana
-        if(msg.includes("password")) {
-            document.getElementById("resDesc").textContent = "The password you entered is incorrect. Please try again.";
-        } else if(msg.includes("aes-256") || msg.includes("unsupported")) {
-            document.getElementById("resDesc").textContent = "This is a High-Security (AES-256) PDF (like Aadhaar/Bank Statements). Our tool processes files 100% locally for your privacy, and browser technology cannot bypass this encryption level without a server.";
-        } else {
-            document.getElementById("resDesc").textContent = "Something went wrong. Please ensure the file is not corrupted and the password is correct.";
-        }
+        document.getElementById("resDesc").textContent = "High-Security PDF: Aadhaar cards or bank statements with AES-256 encryption cannot be unlocked in the browser. We refuse to upload your sensitive files to any server.";
         showToast("Error processing PDF");
     }
 });
