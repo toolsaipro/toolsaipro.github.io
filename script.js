@@ -35,12 +35,10 @@
     '         <a class="dm-item" href="/percentage-calculator.html"><span class="dm-icon">%</span>Percentage Calculator</a>',
     '        </div>',
     '        <div class="menu-col">',
-    '          <div class="menu-label">📚 Expert Guides</div>',
-    '          <a class="dm-item" href="/how-to-unlock-pdf-online.html"><span class="dm-icon">📖</span>Unlock PDF Guide</a>',
+    '          <span class="dm-section-label">📚 Expert Guides</span>' +
     '          <a class="dm-item" href="/how-to-merge-pdf-online.html"><span class="dm-icon">📄</span>Merge PDF Guide</a>' +
-    '          <a class="dm-item" href="/blog-pdf-compressor.html"><span class="dm-icon">📖</span>Compress Guide</a>',
-    '          <a class="dm-item" href="/blog-pdf-splitter.html"><span class="dm-icon">📖</span>Split Guide</a>',
-    '          <a class="dm-item" href="/blog-percentage-calculator.html"><span class="dm-icon">📖</span>Percentage Guide</a>',
+    '          <a class="dm-item" href="/how-to-unlock-pdf-online.html"><span class="dm-icon">🔓</span>Unlock PDF Guide</a>' +
+    '          <a class="dm-item" href="/blog-percentage-calculator.html"><span class="dm-icon">🔢</span>Percentage Guide</a>'
     '          <div class="dm-divider"></div>',
     '          <a class="dm-all" href="/tools-hub.html">View All Guides &nbsp;&#8594;</a>',
     '        </div>',
@@ -74,13 +72,10 @@
     '    </div>',
     '  </div>',
     '  ',
-    '  <div class="mobile-accordion">',
-    '    <div class="accordion-header" onclick="toggleAcc(this)">📚 GUIDES & ARTICLES <span class="acc-arrow">▼</span></div>',
-    '    <div class="accordion-content">',
-    '      <a class="dm-item" href="/how-to-merge-pdf-files-online.html"><span class="dm-icon">📖</span>How to Merge PDF</a>',
-    '      <a class="dm-item" href="/how-to-unlock-pdf-online.html"><span class="dm-icon">📖</span>How to Unlock PDF</a>',
-    '      <a class="dm-item" href="/blog-pdf-to-jpg.html"><span class="dm-icon">📖</span>PDF to JPG Guide</a>',
-    '      <a class="dm-item" href="/blog-percentage-calculator.html"><span class="dm-icon">📖</span>Percentage Guide</a>',
+    '      <div class="accordion-content">' +
+    '      <a class="dm-item" href="/how-to-merge-pdf-online.html"><span class="dm-icon">📄</span>How to Merge PDF</a>' +
+    '      <a class="dm-item" href="/how-to-unlock-pdf-online.html"><span class="dm-icon">🔓</span>How to Unlock PDF</a>' +
+    '      <a class="dm-item" href="/blog-percentage-calculator.html"><span class="dm-icon">📊</span>Percentage Guide</a>' +
     '    </div>',
     '  </div>',
     '  ',
