@@ -37,7 +37,7 @@
     '        <div class="menu-col">',
     '          <div class="menu-label">📚 Expert Guides</div>',
     '          <a class="dm-item" href="/how-to-unlock-pdf-online.html"><span class="dm-icon">📖</span>Unlock PDF Guide</a>',
-    '          <a class="dm-item" href="/how-to-merge-pdf-files-online.html"><span class="dm-icon">📖</span>Merge PDF Guide</a>',
+    '          <a class="dm-item" href="/blog/how-to-merge-pdf-online.html"><span class="dm-icon">📄</span>Merge PDF Guide</a>' +
     '          <a class="dm-item" href="/blog-pdf-compressor.html"><span class="dm-icon">📖</span>Compress Guide</a>',
     '          <a class="dm-item" href="/blog-pdf-splitter.html"><span class="dm-icon">📖</span>Split Guide</a>',
     '          <a class="dm-item" href="/blog-percentage-calculator.html"><span class="dm-icon">📖</span>Percentage Guide</a>',
