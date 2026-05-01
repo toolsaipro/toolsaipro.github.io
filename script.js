@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   NAVBAR AUTO-LOADER v2 (With Mobile Accordion & 5+5 Mega Menu)
+   NAVBAR AUTO-LOADER v2 (With Mobile Accordion & Mega Menu)
    Works on ALL pages automatically.
 ═══════════════════════════════════════ */
 (function injectNavbar() {
@@ -12,7 +12,7 @@
     return currentPath === page ? 'class="nl act"' : 'class="nl"';
   }
 
-  /* ── Build Navbar HTML (5+5 Mega Menu) ── */
+  /* ── Build Navbar HTML (Mega Menu) ── */
   var NAV_HTML = [
     '<nav id="mainNav">',
     '  <a class="logo" href="/">Tools<span>AI</span><em>Pro</em></a>',
